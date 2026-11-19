@@ -3,122 +3,80 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FOOTNITE | Football & Gaming</title>
-
 <style>
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:#08090d;color:#fff;font-family:Arial,sans-serif}
-:root{--red:#ff303b;--orange:#ff7518;--panel:#14151b;--muted:#a7a7b1}
-header{position:sticky;top:0;z-index:20;background:#090a0eee;border-bottom:1px solid #272832;backdrop-filter:blur(15px)}
-nav{max-width:1250px;margin:auto;padding:17px 24px;display:flex;align-items:center;justify-content:space-between}
+body{margin:0;background:#090a0e;color:#fff;font-family:Arial,sans-serif}
+:root{--red:#ff303b;--orange:#ff7518}
+header{position:sticky;top:0;z-index:10;background:#090a0eee;border-bottom:1px solid #292a33}
+nav{max-width:1200px;margin:auto;padding:16px 22px;display:flex;align-items:center;justify-content:space-between}
 .logo{font-size:29px;font-weight:1000;font-style:italic;letter-spacing:-2px}
-.logo span{color:var(--orange)}
-nav a{color:#ddd;text-decoration:none;margin:0 12px;font-size:13px;font-weight:bold}
-nav a:hover{color:var(--orange)}
+.logo span,.orange{color:var(--orange)}
+nav a{color:#ddd;text-decoration:none;margin:0 10px;font-size:13px}
 button{cursor:pointer}
-.cart-btn{background:#1c1d24;border:1px solid #3b3c45;color:white;padding:12px 17px;border-radius:8px;font-weight:bold}
-.cart-btn b{color:var(--orange);margin-left:5px}
-
-.hero{max-width:1250px;margin:28px auto;padding:0 22px}
-.hero-box{min-height:470px;position:relative;overflow:hidden;border:1px solid #38303a;border-radius:20px;background:radial-gradient(ellipse at 75% 40%,#7e1d24 0,transparent 35%),radial-gradient(ellipse at 100% 100%,#a33c12 0,transparent 38%),linear-gradient(115deg,#191a22,#090a0e 65%);padding:65px 55px;display:flex;align-items:center}
-.hero-box:after{content:"";position:absolute;width:400px;height:600px;right:8%;top:-80px;transform:rotate(25deg);border-left:2px solid #ff593a55;border-right:2px solid #ff593a22;background:linear-gradient(90deg,#ff343308,#ff711b20);pointer-events:none}
-.hero-content{position:relative;z-index:2;max-width:650px}
-.eyebrow{font-size:12px;color:#ff8a39;font-weight:bold;letter-spacing:4px}
-.hero h1{font-size:clamp(52px,8vw,94px);line-height:.92;letter-spacing:-5px;margin:22px 0}
-.hero h1 span{color:var(--red);text-shadow:0 0 35px #ff303b55}
-.hero p{max-width:510px;color:#c5c5ce;line-height:1.8;font-size:15px}
-.cta{display:inline-block;background:linear-gradient(110deg,var(--red),var(--orange));padding:15px 22px;color:white;text-decoration:none;border-radius:8px;font-weight:bold;margin-top:17px;box-shadow:0 8px 30px #ff3c3033}
-.hero-label{position:absolute;right:6%;bottom:35px;font-size:12px;color:#ffffff66;letter-spacing:5px;transform:rotate(-90deg);transform-origin:right}
-.hero-tag{display:inline-block;border:1px solid #ffffff30;background:#ffffff0c;padding:9px 13px;border-radius:30px;color:#ddd;font-size:11px;margin-top:15px}
-
-.stats{max-width:1200px;margin:0 auto;padding:0 22px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.stat{padding:17px;background:#111218;border:1px solid #292a33;border-radius:10px}
-.stat strong{font-size:20px;color:#fff}
-.stat span{display:block;color:#858590;font-size:11px;margin-top:5px;letter-spacing:1px}
-
-.section{max-width:1250px;margin:65px auto;padding:0 22px}
-.section-heading{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:22px}
-.section-heading h2{font-size:27px;margin:0;letter-spacing:-1px}
-.section-heading p{color:var(--muted);font-size:13px;margin:8px 0 0}
-.kicker{color:var(--orange);font-size:10px;font-weight:bold;letter-spacing:3px;margin-bottom:9px}
-.universes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.universe{position:relative;min-height:155px;overflow:hidden;padding:25px;border:1px solid #30313a;border-radius:13px;background:linear-gradient(125deg,#20212a,#111218);color:white;text-decoration:none;transition:.25s}
-.universe:after{content:"";position:absolute;right:-20px;bottom:-70px;width:160px;height:190px;background:linear-gradient(130deg,#ff303b55,#ff751822);transform:rotate(35deg)}
-.universe:hover{transform:translateY(-5px);border-color:var(--orange)}
-.universe strong{display:block;font-size:20px;position:relative;z-index:1}
-.universe small{display:block;color:#aaa;margin-top:12px;position:relative;z-index:1}
-.universe .symbol{font-size:33px;display:block;margin-bottom:14px;position:relative;z-index:1}
-
-.toolbar{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
-#search{flex:1;min-width:220px;background:#15161d;border:1px solid #343540;color:white;padding:14px;border-radius:8px;outline:none}
-#search:focus{border-color:var(--orange)}
+.cart-btn{background:#1b1c23;border:1px solid #444;color:white;padding:12px 16px;border-radius:8px}
+.cart-btn b{color:var(--orange)}
+.hero{max-width:1200px;margin:25px auto;padding:0 20px}
+.hero-box{min-height:430px;padding:55px;display:flex;align-items:center;border:1px solid #493039;border-radius:18px;background:radial-gradient(ellipse at 80% 40%,#8b2029,transparent 35%),linear-gradient(120deg,#20212a,#090a0e);position:relative;overflow:hidden}
+.hero-content{position:relative;z-index:1}
+.hero small{letter-spacing:4px;color:#ff8b43;font-weight:bold}
+.hero h1{font-size:clamp(55px,8vw,90px);line-height:.9;letter-spacing:-5px;margin:22px 0}
+.hero h1 span{color:var(--red)}
+.hero p{color:#c4c4cc;max-width:520px;line-height:1.7}
+.cta{display:inline-block;background:linear-gradient(100deg,var(--red),var(--orange));color:white;text-decoration:none;padding:15px 22px;border-radius:7px;font-weight:bold;margin-top:15px}
+.section{max-width:1200px;margin:55px auto;padding:0 20px}
+.kicker{font-size:10px;letter-spacing:3px;color:var(--orange);font-weight:bold;margin-bottom:10px}
+.section h2{font-size:27px;margin:0}
+.sub{color:#999;font-size:13px;margin:8px 0 22px}
+.universes{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.universe{padding:25px;min-height:145px;border:1px solid #30313a;border-radius:12px;background:linear-gradient(130deg,#22232c,#111218);color:white;text-decoration:none;transition:.2s}
+.universe:hover{border-color:var(--orange);transform:translateY(-4px)}
+.universe strong{display:block;font-size:20px;margin-bottom:12px}
+.universe small{color:#aaa}
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}
+#search{flex:1;min-width:210px;padding:13px;background:#171820;border:1px solid #393a44;color:white;border-radius:8px}
 .filters{display:flex;flex-wrap:wrap;gap:8px}
-.filters button{background:#171820;border:1px solid #343540;color:#ccc;padding:11px 14px;border-radius:7px;font-size:12px}
-.filters button.active,.filters button:hover{background:#491c20;border-color:var(--red);color:white}
-.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px}
-.product{background:#14151b;border:1px solid #292a33;border-radius:12px;overflow:hidden;transition:.25s}
-.product:hover{transform:translateY(-5px);border-color:#a94435;box-shadow:0 12px 35px #0008}
-.product-img{height:220px;background:#f7f7f7;position:relative;display:flex;align-items:center;justify-content:center;padding:13px;overflow:hidden}
+.filters button{background:#171820;border:1px solid #393a44;color:#ddd;padding:10px 13px;border-radius:7px}
+.filters button.active{background:#501b20;border-color:var(--red);color:white}
+.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.product{background:#15161c;border:1px solid #2b2c35;border-radius:12px;overflow:hidden;transition:.2s}
+.product:hover{transform:translateY(-4px);border-color:#b34a36}
+.product-img{height:215px;background:#f5f5f5;padding:12px;position:relative;display:flex;align-items:center;justify-content:center}
 .product-img img{width:100%;height:100%;object-fit:contain}
-.product-img.game{background:linear-gradient(145deg,#25232c,#101116)}
-.product-img.game img{object-fit:cover;border-radius:5px}
-.product-img.vbucks{background:radial-gradient(circle,#303b4b,#10131b)}
-.product-img.vbucks img{width:155px;height:155px;object-fit:contain}
-.tag{position:absolute;top:11px;left:11px;background:#101116;color:white;padding:6px 8px;border-radius:4px;font-size:9px;font-weight:bold;letter-spacing:1px;z-index:2}
-.product-info{padding:15px}
+.product-img.game{background:#171923;padding:0}
+.product-img.game img{object-fit:cover}
+.product-img.vbucks{background:radial-gradient(circle,#334052,#10131b)}
+.product-img.vbucks img{width:145px;height:145px}
+.tag{position:absolute;top:10px;left:10px;background:#101116;color:white;padding:6px 8px;border-radius:4px;font-size:9px;font-weight:bold;z-index:1}
+.product-info{padding:14px}
 .product-info h3{font-size:15px;margin:0 0 8px}
 .product-info p{font-size:12px;color:#999;min-height:30px;line-height:1.5}
-.price-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:15px}
-.price{font-weight:bold;font-size:17px}
-.add{background:linear-gradient(110deg,var(--red),var(--orange));border:0;color:white;padding:10px 12px;border-radius:7px;font-weight:bold;font-size:12px}
-.add:hover{filter:brightness(1.15)}
+.price-row{display:flex;align-items:center;justify-content:space-between;gap:7px;margin-top:12px}
+.price{font-size:16px;font-weight:bold}
+.add{background:linear-gradient(100deg,var(--red),var(--orange));color:white;border:0;border-radius:6px;padding:9px 11px;font-weight:bold}
 .empty{color:#aaa;padding:20px}
-
-.cart-panel{display:none;position:fixed;right:18px;top:85px;width:min(390px,calc(100% - 36px));max-height:75vh;overflow:auto;background:#171820;border:1px solid #484955;border-radius:14px;padding:19px;z-index:30;box-shadow:0 15px 50px #000c}
+.cart-panel{display:none;position:fixed;right:18px;top:80px;width:min(390px,calc(100% - 36px));max-height:75vh;overflow:auto;background:#191a21;border:1px solid #484955;border-radius:13px;padding:18px;z-index:30;box-shadow:0 15px 40px #000}
 .cart-panel.open{display:block}
 .cart-top{display:flex;justify-content:space-between;align-items:center}
-.cart-top h3{margin:5px 0 18px}
-.close{background:none;color:white;border:0;font-size:26px}
-.cart-item{display:flex;justify-content:space-between;gap:10px;padding:13px 0;border-bottom:1px solid #333;font-size:13px}
+.close{background:none;color:white;border:0;font-size:25px}
+.cart-item{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid #333;font-size:13px}
 .cart-item button{background:none;color:#ff8585;border:0}
-.cart-total{display:flex;justify-content:space-between;font-weight:bold;margin:18px 0}
-.notice{font-size:11px;color:#888;line-height:1.6}
-footer{border-top:1px solid #292a33;margin-top:70px;padding:35px 20px;text-align:center;color:#777;font-size:12px}
-.footer-logo{font-size:24px;font-weight:1000;color:white;margin-bottom:10px}
-.footer-logo span{color:var(--orange)}
-
-@media(max-width:950px){.products{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.cart-total{display:flex;justify-content:space-between;margin:17px 0;font-weight:bold}
+.notice{font-size:11px;color:#999;line-height:1.5}
+footer{text-align:center;border-top:1px solid #292a33;padding:35px;color:#888;font-size:12px;margin-top:60px}
+@media(max-width:900px){.products{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:650px){
-nav{padding:14px}
-nav a{display:none}
-.logo{font-size:25px}
-.hero{padding:0 12px;margin-top:15px}
-.hero-box{padding:40px 23px;min-height:390px}
-.hero h1{font-size:58px;letter-spacing:-3px}
-.hero-label{display:none}
-.stats{padding:0 12px;gap:7px}
-.stat{padding:12px 9px}
-.stat strong{font-size:16px}
-.stat span{font-size:9px}
-.section{padding:0 13px;margin:48px auto}
-.section-heading h2{font-size:23px}
-.universes{grid-template-columns:1fr}
-.universe{min-height:125px}
-.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.product-img{height:155px}
-.product-img.vbucks img{width:115px;height:115px}
-.product-info{padding:10px}
-.product-info h3{font-size:13px}
-.product-info p{font-size:11px}
-.price{font-size:14px}
-.add{padding:8px;font-size:11px}
-.filters button{padding:9px}
+nav a{display:none}.hero{padding:0 12px}.hero-box{padding:35px 22px;min-height:370px}
+.hero h1{font-size:58px}.section{padding:0 13px;margin:45px auto}
+.universes{grid-template-columns:1fr}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.product-img{height:155px}.product-img.vbucks img{width:110px;height:110px}
+.product-info{padding:10px}.product-info h3{font-size:13px}.price{font-size:14px}
+.add{font-size:11px;padding:8px}
 }
 </style>
 </head>
-
 <body>
 
 <header>
@@ -136,59 +94,29 @@ nav a{display:none}
 <section class="hero">
 <div class="hero-box">
 <div class="hero-content">
-<div class="eyebrow">FOOTBALL • GAMING • TECH</div>
+<small>FOOTBALL • GAMING • TECH</small>
 <h1>PLAY<br>YOUR <span>GAME.</span></h1>
-<p>Bienvenue chez FOOTNITE. Le meilleur du football, du gaming et de la technologie réuni dans un univers unique.</p>
-<a class="cta" href="#boutique">EXPLORER LA BOUTIQUE ↗</a>
-<div class="hero-tag">⚡ LE TERRAIN RENCONTRE LE GAMING</div>
+<p>Le football rencontre le gaming. Découvre les maillots, les accessoires tech, les V-Bucks et tes jeux vidéo préférés dans l'univers FOOTNITE.</p>
+<a class="cta" href="#boutique">DÉCOUVRIR LA BOUTIQUE ↗</a>
 </div>
-<div class="hero-label">FOOTNITE EXPERIENCE</div>
 </div>
 </section>
 
-<div class="stats">
-<div class="stat"><strong>44+</strong><span>PRODUITS</span></div>
-<div class="stat"><strong>03</strong><span>UNIVERS</span></div>
-<div class="stat"><strong>100%</strong><span>PASSION</span></div>
-</div>
-
 <section class="section" id="univers">
-<div class="section-heading">
-<div>
-<div class="kicker">DÉCOUVRE NOS CATÉGORIES</div>
-<h2>CHOISIS TON UNIVERS</h2>
-<p>Trois univers. Une seule boutique.</p>
-</div>
-</div>
-
+<div class="kicker">TROUVE TON UNIVERS</div>
+<h2>CHOISIS TON STYLE</h2>
+<p class="sub">Trois univers, une seule boutique.</p>
 <div class="universes">
-<a class="universe" href="#boutique" data-jump="football">
-<span class="symbol">⚽</span>
-<strong>FOOTBALL</strong>
-<small>Maillots et clubs légendaires</small>
-</a>
-<a class="universe" href="#boutique" data-jump="jeu">
-<span class="symbol">🎮</span>
-<strong>GAMING</strong>
-<small>Jeux vidéo et V-Bucks</small>
-</a>
-<a class="universe" href="#boutique" data-jump="iphone">
-<span class="symbol">⚡</span>
-<strong>TECH & AUDIO</strong>
-<small>iPhone et écouteurs sans fil</small>
-</a>
+<a class="universe" href="#boutique" data-jump="football"><strong>⚽ FOOTBALL</strong><small>Maillots et clubs légendaires</small></a>
+<a class="universe" href="#boutique" data-jump="jeu"><strong>🎮 GAMING</strong><small>Jeux vidéo et V-Bucks</small></a>
+<a class="universe" href="#boutique" data-jump="iphone"><strong>⚡ TECH & AUDIO</strong><small>iPhone et écouteurs sans fil</small></a>
 </div>
 </section>
 
 <section class="section" id="boutique">
-<div class="section-heading">
-<div>
 <div class="kicker">FOOTNITE STORE</div>
 <h2>LA BOUTIQUE</h2>
-<p>Trouve ton prochain équipement.</p>
-</div>
-</div>
-
+<p class="sub">Retrouve tous les produits et jeux vidéo.</p>
 <div class="toolbar">
 <input id="search" type="search" placeholder="Rechercher un produit...">
 <div class="filters" id="filters">
@@ -204,94 +132,89 @@ nav a{display:none}
 </section>
 
 <aside class="cart-panel" id="cartPanel">
-<div class="cart-top">
-<h3>TON PANIER</h3>
-<button class="close" id="cartClose">×</button>
-</div>
+<div class="cart-top"><h3>TON PANIER</h3><button class="close" id="cartClose">×</button></div>
 <div id="cartItems">Ton panier est vide.</div>
-<div class="cart-total">
-<span>Total</span>
-<span id="cartTotal">0,00 €</span>
-</div>
-<p class="notice">Panier de démonstration : aucune commande ni aucun paiement réel n'est effectué.</p>
+<div class="cart-total"><span>Total</span><span id="cartTotal">0,00 €</span></div>
+<p class="notice">Panier de démonstration : aucune commande ni aucun paiement réel.</p>
 </aside>
 
 <footer id="footer">
-<div class="footer-logo">FOO<span>TNITE</span></div>
+<div class="logo">FOO<span>TNITE</span></div><br>
 FOOTBALL × GAMING × TECH<br><br>
-FOOTNITE © 2026 — Site de démonstration. Prix indicatifs.
+FOOTNITE © 2026 — Site de démonstration
 </footer>
 
 <script>
-const vbucksLogo="https://www.halopedia.org/images/8/89/Fortnite_-_V-Bucks_icon.png";
+/* LOGO V-BUCKS */
+const vbucksLogo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/V-Bucks_icon.png/512px-V-Bucks_icon.png";
 
-const games={
-fc:"https://cdn.cloudflare.steamstatic.com/steam/apps/2669320/header.jpg",
-fortnite:"https://www.pcgamingwiki.com/images/0/0b/Fortnite_Battle_Royale_cover.jpg",
-rocket:"https://upload.wikimedia.org/wikipedia/commons/9/9d/Rocket_League_coverart.jpg",
-gta:"https://cdn.cloudflare.steamstatic.com/steam/apps/271590/header.jpg"
+/* IMAGES DES JEUX : jaquettes et visuels */
+const gameImages={
+fc:"https://cdn.akamai.steamstatic.com/steam/apps/2669320/header.jpg",
+fortnite:"https://cdn2.unrealengine.com/fortnite-og-social-1920x1080-1920x1080-8c5e9b9b9b9b.jpg",
+rocket:"https://cdn.akamai.steamstatic.com/steam/apps/252950/header.jpg",
+gta:"https://cdn.akamai.steamstatic.com/steam/apps/271590/header.jpg"
 };
 
 const products=[
 {id:1,name:"Maillot PSG",category:"football",price:89.99,tag:"FOOTBALL",desc:"Maillot domicile du Paris Saint-Germain.",image:"https://soccerwearhouse.com/cdn/shop/files/nike-paris-saint-germain-authentic-home-jersey-2526-midnight-navy-soccerwearhouse-7022127_3000x.jpg?v=1777945212"},
 {id:2,name:"Maillot Barcelone",category:"football",price:89.99,tag:"FOOTBALL",desc:"Maillot du FC Barcelone.",image:"https://shootify.us/wp-content/uploads/2024/09/flat-lay-photography_4-1-500x563.jpg"},
-{id:3,name:"Maillot Real Madrid",category:"football",price:94.99,tag:"FOOTBALL",desc:"Maillot domicile du Real Madrid.",image:"https://ultraslb.com/cdn/shop/files/81C252BA-0B4C-4EF3-A11C-12E485676819.png?v=1760099620"},
+{id:3,name:"Maillot Real Madrid",category:"football",price:94.99,tag:"FOOTBALL",desc:"Maillot du Real Madrid.",image:"https://ultraslb.com/cdn/shop/files/81C252BA-0B4C-4EF3-A11C-12E485676819.png?v=1760099620"},
 {id:4,name:"Maillot Liverpool",category:"football",price:89.99,tag:"FOOTBALL",desc:"Maillot de Liverpool.",image:"https://static.ticimax.cloud/60559/uploads/urunresimleri/buyuk/yeni-sezon-liverpool-fc-2025-ic-saha-p-ca6-e2.jpg"},
-{id:5,name:"Maillot AC Milan",category:"football",price:84.99,tag:"FOOTBALL",desc:"Maillot rouge et noir de l'AC Milan.",image:"https://santkicks.com/cdn/shop/files/cl_3c73cdaf-dc1e-4ea9-ad99-c69db60d55e6.png?v=1749669900&width=3840"},
-{id:6,name:"Maillot Arsenal",category:"football",price:89.99,tag:"FOOTBALL",desc:"Maillot domicile d'Arsenal.",image:"https://laligasoccer.ca/cdn/shop/files/IT6140_2_APPAREL_Photography_FrontCenterView_white_800x.jpg?v=1754341054"},
-{id:7,name:"Maillot Dortmund",category:"football",price:84.99,tag:"FOOTBALL",desc:"Maillot du Borussia Dortmund.",image:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/774956/02/fnd/IND/fmt/png/Borussia-Dortmund-24/25-Away-Men's-Football-Jersey"},
-{id:8,name:"Maillot Manchester City",category:"football",price:89.99,tag:"FOOTBALL",desc:"Maillot de Manchester City.",image:"https://shop.mancity.com/dw/image/v2/BDWJ_PRD/on/demandware.static/-/Sites-master-catalog-MAN/default/dwd3cc3a78/images/large/701237128001_pp_01_mcfc.png?sh=1600&sm=fit&sw=1600"},
-{id:9,name:"Maillot France",category:"football",price:94.99,tag:"FOOTBALL",desc:"Maillot de l'équipe de France.",image:"https://www.rsport.co.il/cdn/shop/files/44_3502df66-db17-4202-b7e8-650fd6db2f02.jpg?v=1751244115"},
-{id:10,name:"Maillot Inter Milan",category:"football",price:89.99,tag:"FOOTBALL",desc:"Maillot bleu et noir de l'Inter.",image:"https://cdn.shopify.com/s/files/1/0603/3031/1875/files/Capture-2025-06-10-193545.png?v=1749609614"},
+{id:5,name:"Maillot AC Milan",category:"football",price:84.99,tag:"FOOTBALL",desc:"Maillot AC Milan.",image:"https://santkicks.com/cdn/shop/files/cl_3c73cdaf-dc1e-4ea9-ad99-c69db60d55e6.png?v=1749669900&width=3840"},
+{id:6,name:"Maillot Arsenal",category:"football",price:89.99,tag:"FOOTBALL",desc:"Maillot Arsenal.",image:"https://laligasoccer.ca/cdn/shop/files/IT6140_2_APPAREL_Photography_FrontCenterView_white_800x.jpg?v=1754341054"},
+{id:7,name:"Maillot Dortmund",category:"football",price:84.99,tag:"FOOTBALL",desc:"Maillot Dortmund.",image:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/774956/02/fnd/IND/fmt/png/Borussia-Dortmund-24/25-Away-Men's-Football-Jersey"},
+{id:8,name:"Maillot Manchester City",category:"football",price:89.99,tag:"FOOTBALL",desc:"Maillot Manchester City.",image:"https://shop.mancity.com/dw/image/v2/BDWJ_PRD/on/demandware.static/-/Sites-master-catalog-MAN/default/dwd3cc3a78/images/large/701237128001_pp_01_mcfc.png?sh=1600&sm=fit&sw=1600"},
+{id:9,name:"Maillot France",category:"football",price:94.99,tag:"FOOTBALL",desc:"Maillot équipe de France.",image:"https://www.rsport.co.il/cdn/shop/files/44_3502df66-db17-4202-b7e8-650fd6db2f02.jpg?v=1751244115"},
+{id:10,name:"Maillot Inter Milan",category:"football",price:89.99,tag:"FOOTBALL",desc:"Maillot Inter Milan.",image:"https://cdn.shopify.com/s/files/1/0603/3031/1875/files/Capture-2025-06-10-193545.png?v=1749609614"},
 
-{id:11,name:"iPhone 17",category:"iphone",price:999,tag:"APPLE",desc:"iPhone 17 nouvelle génération.",image:"https://cdn.mafrservices.com/pim-content/UAE/media/product/2258787/1757614204/2258787_main.jpg"},
+{id:11,name:"iPhone 17",category:"iphone",price:999,tag:"APPLE",desc:"iPhone 17.",image:"https://cdn.mafrservices.com/pim-content/UAE/media/product/2258787/1757614204/2258787_main.jpg"},
 {id:12,name:"iPhone 16",category:"iphone",price:899,tag:"APPLE",desc:"iPhone 16 blanc.",image:"https://www.anmolmobiles.com/cdn/shop/files/Apple-iphone-16-white-128gb-Front-Back-View.png?v=1757338598&width=1346"},
-{id:13,name:"iPhone 16 Pro",category:"iphone",price:1099,tag:"APPLE",desc:"iPhone 16 Pro titane blanc.",image:"https://www.pbtech.co.nz/imgprod/M/P/MPHAPP416221.jpg?h=155183543"},
-{id:14,name:"iPhone 15",category:"iphone",price:749,tag:"APPLE",desc:"iPhone 15 bleu clair.",image:"https://switchtechnology.pt/switch-cont/uploads/2023/09/MTP93QL.jpg"},
-{id:15,name:"iPhone 15 Pro",category:"iphone",price:949,tag:"APPLE",desc:"iPhone 15 Pro titane noir.",image:"https://i.ebayimg.com/images/g/qm4AAOSwqilmTGDD/s-l1600.jpg"},
-{id:16,name:"iPhone 14 Pro",category:"iphone",price:799,tag:"APPLE",desc:"iPhone 14 Pro noir.",image:"https://istore.co.na/cdn/shop/products/iPhone14Pro_SpaceBlack_e1992f7b-0359-4fdb-bb0a-a85dfeff8763_2048x.png?v=1664344280"},
-{id:17,name:"iPhone 17 Pro",category:"iphone",price:1199,tag:"APPLE",desc:"iPhone 17 Pro argent.",image:"https://img.landtop.com.tw/landtop_prod/productimage/4711/image/0b3cfc975a39a95788faa53c724310d1.png"},
-{id:18,name:"iPhone 14",category:"iphone",price:649,tag:"APPLE",desc:"iPhone 14 lumière stellaire.",image:"https://cdn.shopify.com/s/files/1/0566/7120/7498/files/416251-Product-0-I-638917018778832953.jpg?v=1756111325"},
-{id:19,name:"iPhone 13 Pro",category:"iphone",price:599,tag:"APPLE",desc:"iPhone 13 Pro argent.",image:"https://media.ldlc.com/r1600/ld/products/00/05/88/62/LD0005886266_1.jpg"},
+{id:13,name:"iPhone 16 Pro",category:"iphone",price:1099,tag:"APPLE",desc:"iPhone 16 Pro.",image:"https://www.pbtech.co.nz/imgprod/M/P/MPHAPP416221.jpg?h=155183543"},
+{id:14,name:"iPhone 15",category:"iphone",price:749,tag:"APPLE",desc:"iPhone 15.",image:"https://switchtechnology.pt/switch-cont/uploads/2023/09/MTP93QL.jpg"},
+{id:15,name:"iPhone 15 Pro",category:"iphone",price:949,tag:"APPLE",desc:"iPhone 15 Pro.",image:"https://i.ebayimg.com/images/g/qm4AAOSwqilmTGDD/s-l1600.jpg"},
+{id:16,name:"iPhone 14 Pro",category:"iphone",price:799,tag:"APPLE",desc:"iPhone 14 Pro.",image:"https://istore.co.na/cdn/shop/products/iPhone14Pro_SpaceBlack_e1992f7b-0359-4fdb-bb0a-a85dfeff8763_2048x.png?v=1664344280"},
+{id:17,name:"iPhone 17 Pro",category:"iphone",price:1199,tag:"APPLE",desc:"iPhone 17 Pro.",image:"https://img.landtop.com.tw/landtop_prod/productimage/4711/image/0b3cfc975a39a95788faa53c724310d1.png"},
+{id:18,name:"iPhone 14",category:"iphone",price:649,tag:"APPLE",desc:"iPhone 14.",image:"https://cdn.shopify.com/s/files/1/0566/7120/7498/files/416251-Product-0-I-638917018778832953.jpg?v=1756111325"},
+{id:19,name:"iPhone 13 Pro",category:"iphone",price:599,tag:"APPLE",desc:"iPhone 13 Pro.",image:"https://media.ldlc.com/r1600/ld/products/00/05/88/62/LD0005886266_1.jpg"},
 {id:20,name:"iPhone 12",category:"iphone",price:399,tag:"APPLE",desc:"iPhone 12 blanc.",image:"https://www.tunisianet.com.tn/185683-large/telephone-portable-apple-iphone-12-128-go-blanc.jpg"},
 
 {id:21,name:"AirPods Pro 2",category:"ecouteurs",price:249,tag:"APPLE",desc:"Écouteurs sans fil Apple.",image:"https://newtime.ua/upload/2022-09/apple-airpods-pro-2-magsafe-charging-case-with-speaker-mqd83.webp"},
-{id:22,name:"Galaxy Buds3 Pro",category:"ecouteurs",price:199,tag:"SAMSUNG",desc:"Écouteurs Samsung argentés.",image:"https://service.pcconnection.com/images/inhouse/9839014E-0543-4CF6-9189-F32E52FE57EE.jpg?downsize=800%3A%2A&interpolation=lanczos-none"},
-{id:23,name:"Sony WF-1000XM5",category:"ecouteurs",price:229,tag:"SONY",desc:"Écouteurs Sony sans fil.",image:"https://tainghe.com.vn/media/product/5292_tai_nghe_true_wireless_sony_wf_1000xm5_xuan_vu_audio_4.png"},
-{id:24,name:"JBL Tune Buds",category:"ecouteurs",price:79,tag:"JBL",desc:"Écouteurs JBL noirs.",image:"https://www.jbl.com.au/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw14ea1478/01.JBL_Tune%20Buds_Product%20Image_Hero_Black.png"},
-{id:25,name:"Nothing Ear",category:"ecouteurs",price:149,tag:"NOTHING",desc:"Écouteurs au design transparent.",image:"https://cdn11.bigcommerce.com/s-q8jsr/images/stencil/2560w/products/4724/32471/Nothing_Ear_Wht-2__25377.1719629541.jpg?c=2"},
-{id:26,name:"Bose QuietComfort Ultra",category:"ecouteurs",price:299,tag:"BOSE",desc:"Écouteurs Bose blancs.",image:"https://www.virginmegastore.ae/medias/62420-main.jpg"},
-{id:27,name:"Beats Studio Buds+",category:"ecouteurs",price:169,tag:"BEATS",desc:"Écouteurs Beats couleur ivoire.",image:"https://media.tatacroma.com/Croma%20Assets/Entertainment/Wireless%20Earbuds/Images/310085_myjugy.png"},
-{id:28,name:"Google Pixel Buds Pro 2",category:"ecouteurs",price:229,tag:"GOOGLE",desc:"Écouteurs Google couleur porcelaine.",image:"https://www.proshop.no/Images/915x900/3317376_8a11f284c30b.jpg"},
-{id:29,name:"Huawei FreeBuds Pro 3",category:"ecouteurs",price:179,tag:"HUAWEI",desc:"Écouteurs Huawei blancs.",image:"https://api.technodom.kz/f3/api/v1/images/800/800/naushniki_huawei_freebuds_pro_3_ceramic_white_277918_2.jpg"},
-{id:30,name:"Soundcore Liberty 4 NC",category:"ecouteurs",price:99,tag:"SOUNDCORE",desc:"Écouteurs Soundcore noirs.",image:"https://www.phoneplacekenya.com/wp-content/uploads/2024/06/Anker-Liberty-4-NC.jpg"},
+{id:22,name:"Galaxy Buds3 Pro",category:"ecouteurs",price:199,tag:"SAMSUNG",desc:"Écouteurs Samsung.",image:"https://service.pcconnection.com/images/inhouse/9839014E-0543-4CF6-9189-F32E52FE57EE.jpg?downsize=800%3A%2A&interpolation=lanczos-none"},
+{id:23,name:"Sony WF-1000XM5",category:"ecouteurs",price:229,tag:"SONY",desc:"Écouteurs Sony.",image:"https://tainghe.com.vn/media/product/5292_tai_nghe_true_wireless_sony_wf_1000xm5_xuan_vu_audio_4.png"},
+{id:24,name:"JBL Tune Buds",category:"ecouteurs",price:79,tag:"JBL",desc:"Écouteurs JBL.",image:"https://www.jbl.com.au/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw14ea1478/01.JBL_Tune%20Buds_Product%20Image_Hero_Black.png"},
+{id:25,name:"Nothing Ear",category:"ecouteurs",price:149,tag:"NOTHING",desc:"Écouteurs Nothing.",image:"https://cdn11.bigcommerce.com/s-q8jsr/images/stencil/2560w/products/4724/32471/Nothing_Ear_Wht-2__25377.1719629541.jpg?c=2"},
+{id:26,name:"Bose QuietComfort Ultra",category:"ecouteurs",price:299,tag:"BOSE",desc:"Écouteurs Bose.",image:"https://www.virginmegastore.ae/medias/62420-main.jpg"},
+{id:27,name:"Beats Studio Buds+",category:"ecouteurs",price:169,tag:"BEATS",desc:"Écouteurs Beats.",image:"https://media.tatacroma.com/Croma%20Assets/Entertainment/Wireless%20Earbuds/Images/310085_myjugy.png"},
+{id:28,name:"Google Pixel Buds Pro 2",category:"ecouteurs",price:229,tag:"GOOGLE",desc:"Écouteurs Google.",image:"https://www.proshop.no/Images/915x900/3317376_8a11f284c30b.jpg"},
+{id:29,name:"Huawei FreeBuds Pro 3",category:"ecouteurs",price:179,tag:"HUAWEI",desc:"Écouteurs Huawei.",image:"https://api.technodom.kz/f3/api/v1/images/800/800/naushniki_huawei_freebuds_pro_3_ceramic_white_277918_2.jpg"},
+{id:30,name:"Soundcore Liberty 4 NC",category:"ecouteurs",price:99,tag:"SOUNDCORE",desc:"Écouteurs Soundcore.",image:"https://www.phoneplacekenya.com/wp-content/uploads/2024/06/Anker-Liberty-4-NC.jpg"},
 
-{id:31,name:"1 000 V-Bucks",category:"vbuck",price:8.99,tag:"FORTNITE",desc:"Pack V-Bucks - démonstration.",image:vbucksLogo},
-{id:32,name:"2 800 V-Bucks",category:"vbuck",price:22.99,tag:"FORTNITE",desc:"Pack V-Bucks - démonstration.",image:vbucksLogo},
-{id:33,name:"5 000 V-Bucks",category:"vbuck",price:36.99,tag:"FORTNITE",desc:"Pack V-Bucks - démonstration.",image:vbucksLogo},
-{id:34,name:"13 500 V-Bucks",category:"vbuck",price:89.99,tag:"FORTNITE",desc:"Pack V-Bucks - démonstration.",image:vbucksLogo},
-{id:35,name:"Carte cadeau gaming",category:"vbuck",price:10,tag:"GAMING",desc:"Carte cadeau de démonstration.",image:"https://images.unsplash.com/photo-1605899435973-ca2d1a8861cf?auto=format&fit=crop&w=800&q=85"},
-{id:36,name:"Pack V-Bucks découverte",category:"vbuck",price:4.99,tag:"FORTNITE",desc:"Pack V-Bucks découverte.",image:vbucksLogo},
-{id:37,name:"Pack V-Bucks standard",category:"vbuck",price:12.99,tag:"FORTNITE",desc:"Pack V-Bucks standard.",image:vbucksLogo},
-{id:38,name:"Pack V-Bucks premium",category:"vbuck",price:29.99,tag:"FORTNITE",desc:"Pack V-Bucks premium.",image:vbucksLogo},
-{id:39,name:"Pack V-Bucks ultime",category:"vbuck",price:49.99,tag:"FORTNITE",desc:"Pack V-Bucks ultime.",image:vbucksLogo},
-{id:40,name:"Accessoire gaming",category:"vbuck",price:14.99,tag:"GAMING",desc:"Accessoire gaming de démonstration.",image:"https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=800&q=85"},
+{id:31,name:"1 000 V-Bucks",category:"vbuck",price:8.99,tag:"FORTNITE",desc:"Pack V-Bucks de démonstration.",image:vbucksLogo},
+{id:32,name:"2 800 V-Bucks",category:"vbuck",price:22.99,tag:"FORTNITE",desc:"Pack V-Bucks de démonstration.",image:vbucksLogo},
+{id:33,name:"5 000 V-Bucks",category:"vbuck",price:36.99,tag:"FORTNITE",desc:"Pack V-Bucks de démonstration.",image:vbucksLogo},
+{id:34,name:"13 500 V-Bucks",category:"vbuck",price:89.99,tag:"FORTNITE",desc:"Pack V-Bucks de démonstration.",image:vbucksLogo},
+{id:35,name:"Carte cadeau gaming",category:"vbuck",price:10,tag:"GAMING",desc:"Carte cadeau fictive.",image:"https://images.unsplash.com/photo-1605899435973-ca2d1a8861cf?auto=format&fit=crop&w=800&q=85"},
+{id:36,name:"Pack V-Bucks découverte",category:"vbuck",price:4.99,tag:"FORTNITE",desc:"Pack de démonstration.",image:vbucksLogo},
+{id:37,name:"Pack V-Bucks standard",category:"vbuck",price:12.99,tag:"FORTNITE",desc:"Pack de démonstration.",image:vbucksLogo},
+{id:38,name:"Pack V-Bucks premium",category:"vbuck",price:29.99,tag:"FORTNITE",desc:"Pack de démonstration.",image:vbucksLogo},
+{id:39,name:"Pack V-Bucks ultime",category:"vbuck",price:49.99,tag:"FORTNITE",desc:"Pack de démonstration.",image:vbucksLogo},
+{id:40,name:"Accessoire gaming",category:"vbuck",price:14.99,tag:"GAMING",desc:"Accessoire fictif.",image:"https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=800&q=85"},
 
-{id:41,name:"EA SPORTS FC",category:"jeu",price:69.99,tag:"JEU VIDÉO",desc:"Jeu de football.",image:games.fc,game:true},
-{id:42,name:"Fortnite",category:"jeu",price:0,tag:"FREE TO PLAY",desc:"Battle royale gratuit.",image:"https://www.pcgamingwiki.com/images/0/0b/Fortnite_Battle_Royale_cover.jpg",game:true},
-{id:43,name:"Rocket League",category:"jeu",price:0,tag:"FREE TO PLAY",desc:"Football et voitures.",image:"https://upload.wikimedia.org/wikipedia/commons/9/9d/Rocket_League_coverart.jpg",game:true},
-{id:44,name:"Grand Theft Auto V",category:"jeu",price:29.99,tag:"PEGI 18",desc:"Fiche informative - jeu réservé aux adultes.",image:games.gta,game:true}
+/* LES 4 JEUX VIDÉO SONT BIEN DANS LA CATÉGORIE JEU */
+{id:41,name:"EA SPORTS FC",category:"jeu",price:69.99,tag:"FOOTBALL",desc:"Jeu vidéo de football EA SPORTS.",image:gameImages.fc,game:true},
+{id:42,name:"Fortnite",category:"jeu",price:0,tag:"FREE TO PLAY",desc:"Battle royale gratuit par Epic Games.",image:"https://cdn2.unrealengine.com/fortnite-og-social-1920x1080-1920x1080-8c5e9b9b9b9b.jpg",game:true},
+{id:43,name:"Rocket League",category:"jeu",price:0,tag:"FREE TO PLAY",desc:"Football et voitures.",image:gameImages.rocket,game:true},
+{id:44,name:"Grand Theft Auto V",category:"jeu",price:29.99,tag:"PEGI 18",desc:"Fiche informative, jeu réservé aux adultes.",image:gameImages.gta,game:true}
 ];
 
 let activeFilter="tout";
 let cart=[];
-
 const money=n=>n.toLocaleString("fr-FR",{style:"currency",currency:"EUR"});
 const productsEl=document.getElementById("products");
 
 function renderProducts(){
 const q=document.getElementById("search").value.toLowerCase().trim();
-
 const list=products.filter(p=>
 (activeFilter==="tout"||p.category===activeFilter)&&
 (`${p.name} ${p.desc} ${p.tag}`).toLowerCase().includes(q)
@@ -311,15 +234,14 @@ productsEl.innerHTML=list.map(p=>`
 <button class="add" onclick="addToCart(${p.id})">Ajouter +</button>
 </div>
 </div>
-</article>
-`).join("");
+</article>`).join("");
 
 if(!list.length)productsEl.innerHTML='<p class="empty">Aucun produit trouvé.</p>';
 
+/* Une image indisponible retire uniquement sa fiche */
 productsEl.querySelectorAll(".product img").forEach(img=>{
 img.addEventListener("error",()=>{
-const card=img.closest(".product");
-if(card)card.remove();
+img.closest(".product")?.remove();
 });
 });
 }
@@ -332,23 +254,15 @@ else cart.push({...p,qty:1});
 renderCart();
 document.getElementById("cartPanel").classList.add("open");
 }
-
 function removeFromCart(id){
 cart=cart.filter(x=>x.id!==id);
 renderCart();
 }
-
 function renderCart(){
 document.getElementById("cartCount").textContent=cart.reduce((s,p)=>s+p.qty,0);
 document.getElementById("cartItems").innerHTML=cart.length?
-cart.map(p=>`
-<div class="cart-item">
-<span>${p.name} × ${p.qty}</span>
-<span>${money(p.price*p.qty)}
-<button onclick="removeFromCart(${p.id})">Retirer</button>
-</span>
-</div>
-`).join(""):"Ton panier est vide.";
+cart.map(p=>`<div class="cart-item"><span>${p.name} × ${p.qty}</span><span>${money(p.price*p.qty)} <button onclick="removeFromCart(${p.id})">Retirer</button></span></div>`).join("")
+:"Ton panier est vide.";
 document.getElementById("cartTotal").textContent=money(cart.reduce((s,p)=>s+p.price*p.qty,0));
 }
 
@@ -373,7 +287,6 @@ renderProducts();
 document.getElementById("cartToggle").addEventListener("click",()=>{
 document.getElementById("cartPanel").classList.toggle("open");
 });
-
 document.getElementById("cartClose").addEventListener("click",()=>{
 document.getElementById("cartPanel").classList.remove("open");
 });
@@ -381,6 +294,5 @@ document.getElementById("cartPanel").classList.remove("open");
 renderProducts();
 renderCart();
 </script>
-
 </body>
 </html>
