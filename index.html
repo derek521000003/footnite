@@ -4,77 +4,117 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FOOTNITE - Football & Gaming</title>
+<title>FOOTNITE | Football & Gaming</title>
 
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#09090b;color:white;font-family:Arial,sans-serif}
-header{position:sticky;top:0;background:#09090bf2;border-bottom:1px solid #292930;z-index:10}
-nav{max-width:1200px;margin:auto;padding:16px 22px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:28px;font-weight:1000;font-style:italic;color:white}
-.logo span{color:#ff681e}
-nav a{color:white;text-decoration:none;margin:0 10px}
+html{scroll-behavior:smooth}
+body{margin:0;background:#08090d;color:#fff;font-family:Arial,sans-serif}
+:root{--red:#ff303b;--orange:#ff7518;--panel:#14151b;--muted:#a7a7b1}
+header{position:sticky;top:0;z-index:20;background:#090a0eee;border-bottom:1px solid #272832;backdrop-filter:blur(15px)}
+nav{max-width:1250px;margin:auto;padding:17px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:29px;font-weight:1000;font-style:italic;letter-spacing:-2px}
+.logo span{color:var(--orange)}
+nav a{color:#ddd;text-decoration:none;margin:0 12px;font-size:13px;font-weight:bold}
+nav a:hover{color:var(--orange)}
 button{cursor:pointer}
-.cart-btn{background:#19191f;color:white;border:1px solid #444;padding:11px 15px;border-radius:8px}
-.cart-btn b{color:#ff681e}
-.hero{max-width:1200px;margin:35px auto;padding:25px}
-.hero-box{padding:55px 40px;min-height:330px;border-radius:20px;background:radial-gradient(circle at 80%,#761d18,transparent 40%),linear-gradient(120deg,#202027,#09090b);border:1px solid #482522;overflow:hidden}
-.hero small{color:#ff7a18;letter-spacing:3px;font-weight:bold}
-.hero h1{font-size:clamp(42px,7vw,75px);margin:18px 0;line-height:1}
-.hero h1 span{color:#ff3838}
-.hero p{color:#ccc;max-width:550px;line-height:1.6}
-.cta{display:inline-block;background:linear-gradient(100deg,#ff3434,#ff7a18);padding:14px 20px;border-radius:8px;color:white;text-decoration:none;font-weight:bold;margin-top:12px}
-.section{max-width:1200px;margin:35px auto;padding:0 22px}
-.section h2{font-size:27px}
-.section p{color:#aaa}
-.universes{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.universe{padding:25px;border:1px solid #303038;border-radius:14px;background:linear-gradient(130deg,#202027,#101014);text-decoration:none;color:white;transition:.2s}
-.universe:hover{border-color:#ff681e;transform:translateY(-4px)}
-.universe strong{font-size:20px;display:block;margin-bottom:10px}
-.universe small{color:#aaa}
-.toolbar{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}
-#search{flex:1;min-width:200px;background:#17171c;color:white;border:1px solid #333;padding:13px;border-radius:8px}
-.filters{display:flex;gap:8px;flex-wrap:wrap}
-.filters button{background:#17171c;color:#ddd;border:1px solid #333;padding:10px 13px;border-radius:8px}
-.filters button.active{background:#581c19;border-color:#ff3434}
-.products{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.product{background:#131317;border:1px solid #292930;border-radius:13px;overflow:hidden;transition:.2s}
-.product:hover{transform:translateY(-4px);border-color:#ff681e}
-.product-img{height:210px;background:white;display:flex;align-items:center;justify-content:center;padding:12px;position:relative}
+.cart-btn{background:#1c1d24;border:1px solid #3b3c45;color:white;padding:12px 17px;border-radius:8px;font-weight:bold}
+.cart-btn b{color:var(--orange);margin-left:5px}
+
+.hero{max-width:1250px;margin:28px auto;padding:0 22px}
+.hero-box{min-height:470px;position:relative;overflow:hidden;border:1px solid #38303a;border-radius:20px;background:radial-gradient(ellipse at 75% 40%,#7e1d24 0,transparent 35%),radial-gradient(ellipse at 100% 100%,#a33c12 0,transparent 38%),linear-gradient(115deg,#191a22,#090a0e 65%);padding:65px 55px;display:flex;align-items:center}
+.hero-box:after{content:"";position:absolute;width:400px;height:600px;right:8%;top:-80px;transform:rotate(25deg);border-left:2px solid #ff593a55;border-right:2px solid #ff593a22;background:linear-gradient(90deg,#ff343308,#ff711b20);pointer-events:none}
+.hero-content{position:relative;z-index:2;max-width:650px}
+.eyebrow{font-size:12px;color:#ff8a39;font-weight:bold;letter-spacing:4px}
+.hero h1{font-size:clamp(52px,8vw,94px);line-height:.92;letter-spacing:-5px;margin:22px 0}
+.hero h1 span{color:var(--red);text-shadow:0 0 35px #ff303b55}
+.hero p{max-width:510px;color:#c5c5ce;line-height:1.8;font-size:15px}
+.cta{display:inline-block;background:linear-gradient(110deg,var(--red),var(--orange));padding:15px 22px;color:white;text-decoration:none;border-radius:8px;font-weight:bold;margin-top:17px;box-shadow:0 8px 30px #ff3c3033}
+.hero-label{position:absolute;right:6%;bottom:35px;font-size:12px;color:#ffffff66;letter-spacing:5px;transform:rotate(-90deg);transform-origin:right}
+.hero-tag{display:inline-block;border:1px solid #ffffff30;background:#ffffff0c;padding:9px 13px;border-radius:30px;color:#ddd;font-size:11px;margin-top:15px}
+
+.stats{max-width:1200px;margin:0 auto;padding:0 22px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.stat{padding:17px;background:#111218;border:1px solid #292a33;border-radius:10px}
+.stat strong{font-size:20px;color:#fff}
+.stat span{display:block;color:#858590;font-size:11px;margin-top:5px;letter-spacing:1px}
+
+.section{max-width:1250px;margin:65px auto;padding:0 22px}
+.section-heading{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:22px}
+.section-heading h2{font-size:27px;margin:0;letter-spacing:-1px}
+.section-heading p{color:var(--muted);font-size:13px;margin:8px 0 0}
+.kicker{color:var(--orange);font-size:10px;font-weight:bold;letter-spacing:3px;margin-bottom:9px}
+.universes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.universe{position:relative;min-height:155px;overflow:hidden;padding:25px;border:1px solid #30313a;border-radius:13px;background:linear-gradient(125deg,#20212a,#111218);color:white;text-decoration:none;transition:.25s}
+.universe:after{content:"";position:absolute;right:-20px;bottom:-70px;width:160px;height:190px;background:linear-gradient(130deg,#ff303b55,#ff751822);transform:rotate(35deg)}
+.universe:hover{transform:translateY(-5px);border-color:var(--orange)}
+.universe strong{display:block;font-size:20px;position:relative;z-index:1}
+.universe small{display:block;color:#aaa;margin-top:12px;position:relative;z-index:1}
+.universe .symbol{font-size:33px;display:block;margin-bottom:14px;position:relative;z-index:1}
+
+.toolbar{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+#search{flex:1;min-width:220px;background:#15161d;border:1px solid #343540;color:white;padding:14px;border-radius:8px;outline:none}
+#search:focus{border-color:var(--orange)}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.filters button{background:#171820;border:1px solid #343540;color:#ccc;padding:11px 14px;border-radius:7px;font-size:12px}
+.filters button.active,.filters button:hover{background:#491c20;border-color:var(--red);color:white}
+.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px}
+.product{background:#14151b;border:1px solid #292a33;border-radius:12px;overflow:hidden;transition:.25s}
+.product:hover{transform:translateY(-5px);border-color:#a94435;box-shadow:0 12px 35px #0008}
+.product-img{height:220px;background:#f7f7f7;position:relative;display:flex;align-items:center;justify-content:center;padding:13px;overflow:hidden}
 .product-img img{width:100%;height:100%;object-fit:contain}
-.product-img.vbucks{background:radial-gradient(circle,#25252c,#101014)}
-.product-img.vbucks img{width:160px;height:160px;object-fit:contain}
-.tag{position:absolute;top:10px;left:10px;background:#171717;color:white;padding:5px 7px;border-radius:5px;font-size:10px;font-weight:bold;z-index:1}
-.product-info{padding:14px}
+.product-img.game{background:linear-gradient(145deg,#25232c,#101116)}
+.product-img.game img{object-fit:cover;border-radius:5px}
+.product-img.vbucks{background:radial-gradient(circle,#303b4b,#10131b)}
+.product-img.vbucks img{width:155px;height:155px;object-fit:contain}
+.tag{position:absolute;top:11px;left:11px;background:#101116;color:white;padding:6px 8px;border-radius:4px;font-size:9px;font-weight:bold;letter-spacing:1px;z-index:2}
+.product-info{padding:15px}
 .product-info h3{font-size:15px;margin:0 0 8px}
-.product-info p{font-size:12px;color:#aaa;min-height:30px}
-.price-row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.product-info p{font-size:12px;color:#999;min-height:30px;line-height:1.5}
+.price-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:15px}
 .price{font-weight:bold;font-size:17px}
-.add{background:linear-gradient(100deg,#ff3434,#ff7a18);color:white;border:0;padding:9px 11px;border-radius:7px;font-weight:bold}
-.cart-panel{display:none;position:fixed;right:18px;top:80px;width:min(380px,calc(100% - 36px));max-height:75vh;overflow:auto;background:#19191f;border:1px solid #444;border-radius:14px;padding:18px;z-index:20;box-shadow:0 15px 40px #000}
+.add{background:linear-gradient(110deg,var(--red),var(--orange));border:0;color:white;padding:10px 12px;border-radius:7px;font-weight:bold;font-size:12px}
+.add:hover{filter:brightness(1.15)}
+.empty{color:#aaa;padding:20px}
+
+.cart-panel{display:none;position:fixed;right:18px;top:85px;width:min(390px,calc(100% - 36px));max-height:75vh;overflow:auto;background:#171820;border:1px solid #484955;border-radius:14px;padding:19px;z-index:30;box-shadow:0 15px 50px #000c}
 .cart-panel.open{display:block}
 .cart-top{display:flex;justify-content:space-between;align-items:center}
-.close{background:none;color:white;border:0;font-size:25px}
-.cart-item{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid #333;font-size:13px}
-.cart-item button{background:none;color:#ff7777;border:0}
-.cart-total{display:flex;justify-content:space-between;font-weight:bold;margin:16px 0}
-.notice{font-size:11px;color:#aaa;line-height:1.5}
-footer{text-align:center;color:#888;border-top:1px solid #292930;padding:30px;margin-top:60px;font-size:12px}
+.cart-top h3{margin:5px 0 18px}
+.close{background:none;color:white;border:0;font-size:26px}
+.cart-item{display:flex;justify-content:space-between;gap:10px;padding:13px 0;border-bottom:1px solid #333;font-size:13px}
+.cart-item button{background:none;color:#ff8585;border:0}
+.cart-total{display:flex;justify-content:space-between;font-weight:bold;margin:18px 0}
+.notice{font-size:11px;color:#888;line-height:1.6}
+footer{border-top:1px solid #292a33;margin-top:70px;padding:35px 20px;text-align:center;color:#777;font-size:12px}
+.footer-logo{font-size:24px;font-weight:1000;color:white;margin-bottom:10px}
+.footer-logo span{color:var(--orange)}
 
-@media(max-width:900px){.products{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:950px){.products{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:650px){
+nav{padding:14px}
 nav a{display:none}
-.hero{padding:15px}
-.hero-box{padding:35px 22px}
-.section{padding:0 15px}
+.logo{font-size:25px}
+.hero{padding:0 12px;margin-top:15px}
+.hero-box{padding:40px 23px;min-height:390px}
+.hero h1{font-size:58px;letter-spacing:-3px}
+.hero-label{display:none}
+.stats{padding:0 12px;gap:7px}
+.stat{padding:12px 9px}
+.stat strong{font-size:16px}
+.stat span{font-size:9px}
+.section{padding:0 13px;margin:48px auto}
+.section-heading h2{font-size:23px}
 .universes{grid-template-columns:1fr}
+.universe{min-height:125px}
 .products{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .product-img{height:155px}
-.product-img.vbucks img{width:125px;height:125px}
+.product-img.vbucks img{width:115px;height:115px}
 .product-info{padding:10px}
 .product-info h3{font-size:13px}
+.product-info p{font-size:11px}
 .price{font-size:14px}
-.add{padding:8px}
+.add{padding:8px;font-size:11px}
+.filters button{padding:9px}
 }
 </style>
 </head>
@@ -85,9 +125,9 @@ nav a{display:none}
 <nav>
 <div class="logo">FOO<span>TNITE</span></div>
 <div>
-<a href="#univers">Univers</a>
-<a href="#boutique">Boutique</a>
-<a href="#footer">À propos</a>
+<a href="#univers">UNIVERS</a>
+<a href="#boutique">BOUTIQUE</a>
+<a href="#footer">À PROPOS</a>
 </div>
 <button class="cart-btn" id="cartToggle">PANIER <b id="cartCount">0</b></button>
 </nav>
@@ -95,35 +135,60 @@ nav a{display:none}
 
 <section class="hero">
 <div class="hero-box">
-<small>FOOTBALL • GAMING • ACCESSOIRES</small>
-<h1>CHANGE DE<br><span>DIMENSION.</span></h1>
-<p>Le terrain rencontre le gaming. Découvre les maillots de football, les iPhone, les écouteurs sans fil, les V-Bucks et les jeux vidéo dans l'univers FOOTNITE.</p>
-<a class="cta" href="#boutique">DÉCOUVRIR LA BOUTIQUE ↗</a>
+<div class="hero-content">
+<div class="eyebrow">FOOTBALL • GAMING • TECH</div>
+<h1>PLAY<br>YOUR <span>GAME.</span></h1>
+<p>Bienvenue chez FOOTNITE. Le meilleur du football, du gaming et de la technologie réuni dans un univers unique.</p>
+<a class="cta" href="#boutique">EXPLORER LA BOUTIQUE ↗</a>
+<div class="hero-tag">⚡ LE TERRAIN RENCONTRE LE GAMING</div>
+</div>
+<div class="hero-label">FOOTNITE EXPERIENCE</div>
 </div>
 </section>
 
+<div class="stats">
+<div class="stat"><strong>44+</strong><span>PRODUITS</span></div>
+<div class="stat"><strong>03</strong><span>UNIVERS</span></div>
+<div class="stat"><strong>100%</strong><span>PASSION</span></div>
+</div>
+
 <section class="section" id="univers">
-<h2>LES UNIVERS FOOTNITE</h2>
-<p>Deux passions. Une seule destination.</p>
+<div class="section-heading">
+<div>
+<div class="kicker">DÉCOUVRE NOS CATÉGORIES</div>
+<h2>CHOISIS TON UNIVERS</h2>
+<p>Trois univers. Une seule boutique.</p>
+</div>
+</div>
+
 <div class="universes">
 <a class="universe" href="#boutique" data-jump="football">
-<strong>⚽ FOOTBALL</strong>
-<small>Maillots et culture du ballon rond</small>
+<span class="symbol">⚽</span>
+<strong>FOOTBALL</strong>
+<small>Maillots et clubs légendaires</small>
 </a>
-<a class="universe" href="#boutique" data-jump="vbuck">
-<strong>🎮 GAMING</strong>
-<small>V-Bucks et jeux vidéo</small>
+<a class="universe" href="#boutique" data-jump="jeu">
+<span class="symbol">🎮</span>
+<strong>GAMING</strong>
+<small>Jeux vidéo et V-Bucks</small>
 </a>
 <a class="universe" href="#boutique" data-jump="iphone">
-<strong>⚡ TECH & AUDIO</strong>
+<span class="symbol">⚡</span>
+<strong>TECH & AUDIO</strong>
 <small>iPhone et écouteurs sans fil</small>
 </a>
 </div>
 </section>
 
 <section class="section" id="boutique">
+<div class="section-heading">
+<div>
+<div class="kicker">FOOTNITE STORE</div>
 <h2>LA BOUTIQUE</h2>
-<p>Découvre tous les produits FOOTNITE.</p>
+<p>Trouve ton prochain équipement.</p>
+</div>
+</div>
+
 <div class="toolbar">
 <input id="search" type="search" placeholder="Rechercher un produit...">
 <div class="filters" id="filters">
@@ -152,35 +217,22 @@ nav a{display:none}
 </aside>
 
 <footer id="footer">
-FOOTNITE © 2026 — FOOTBALL × GAMING<br><br>
-Site de démonstration. Prix indicatifs.
+<div class="footer-logo">FOO<span>TNITE</span></div>
+FOOTBALL × GAMING × TECH<br><br>
+FOOTNITE © 2026 — Site de démonstration. Prix indicatifs.
 </footer>
 
 <script>
+const vbucksLogo="https://www.halopedia.org/images/8/89/Fortnite_-_V-Bucks_icon.png";
 
-/* LOGO V-BUCKS INTÉGRÉ AU SITE */
-const vbucksLogo = "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(`
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
-<defs>
-<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
-<stop offset="0" stop-color="#fff5a0"/>
-<stop offset=".45" stop-color="#e9a900"/>
-<stop offset="1" stop-color="#8b4b00"/>
-</linearGradient>
-</defs>
-<circle cx="150" cy="150" r="139" fill="#171717" stroke="#ffcf32" stroke-width="12"/>
-<circle cx="150" cy="150" r="119" fill="url(#gold)" stroke="#fff0a0" stroke-width="5"/>
-<circle cx="150" cy="150" r="100" fill="#20232b" stroke="#ffcf32" stroke-width="5"/>
-<path d="M85 65 L145 65 L215 235 L155 235 Z" fill="#fff" stroke="#a8b4c8" stroke-width="5"/>
-<path d="M85 65 L145 65 L165 115 L125 115 Z" fill="#ffcf32"/>
-<path d="M125 115 L165 115 L215 235 L155 235 Z" fill="#e7a900"/>
-<text x="150" y="273" font-family="Arial" font-size="25" font-weight="bold" text-anchor="middle" fill="#ffcf32">V-BUCKS</text>
-</svg>
-`);
+const games={
+fc:"https://cdn.cloudflare.steamstatic.com/steam/apps/2669320/header.jpg",
+fortnite:"https://www.pcgamingwiki.com/images/0/0b/Fortnite_Battle_Royale_cover.jpg",
+rocket:"https://upload.wikimedia.org/wikipedia/commons/9/9d/Rocket_League_coverart.jpg",
+gta:"https://cdn.cloudflare.steamstatic.com/steam/apps/271590/header.jpg"
+};
 
-/* PRODUITS */
-const products = [
-
+const products=[
 {id:1,name:"Maillot PSG",category:"football",price:89.99,tag:"FOOTBALL",desc:"Maillot domicile du Paris Saint-Germain.",image:"https://soccerwearhouse.com/cdn/shop/files/nike-paris-saint-germain-authentic-home-jersey-2526-midnight-navy-soccerwearhouse-7022127_3000x.jpg?v=1777945212"},
 {id:2,name:"Maillot Barcelone",category:"football",price:89.99,tag:"FOOTBALL",desc:"Maillot du FC Barcelone.",image:"https://shootify.us/wp-content/uploads/2024/09/flat-lay-photography_4-1-500x563.jpg"},
 {id:3,name:"Maillot Real Madrid",category:"football",price:94.99,tag:"FOOTBALL",desc:"Maillot domicile du Real Madrid.",image:"https://ultraslb.com/cdn/shop/files/81C252BA-0B4C-4EF3-A11C-12E485676819.png?v=1760099620"},
@@ -214,24 +266,21 @@ const products = [
 {id:29,name:"Huawei FreeBuds Pro 3",category:"ecouteurs",price:179,tag:"HUAWEI",desc:"Écouteurs Huawei blancs.",image:"https://api.technodom.kz/f3/api/v1/images/800/800/naushniki_huawei_freebuds_pro_3_ceramic_white_277918_2.jpg"},
 {id:30,name:"Soundcore Liberty 4 NC",category:"ecouteurs",price:99,tag:"SOUNDCORE",desc:"Écouteurs Soundcore noirs.",image:"https://www.phoneplacekenya.com/wp-content/uploads/2024/06/Anker-Liberty-4-NC.jpg"},
 
-/* V-BUCKS : LOGO LOCAL INTÉGRÉ */
-{id:31,name:"1 000 V-Bucks",category:"vbuck",price:8.99,tag:"FORTNITE",desc:"Pack de V-Bucks - démonstration.",image:vbucksLogo},
-{id:32,name:"2 800 V-Bucks",category:"vbuck",price:22.99,tag:"FORTNITE",desc:"Pack de V-Bucks - démonstration.",image:vbucksLogo},
-{id:33,name:"5 000 V-Bucks",category:"vbuck",price:36.99,tag:"FORTNITE",desc:"Pack de V-Bucks - démonstration.",image:vbucksLogo},
-{id:34,name:"13 500 V-Bucks",category:"vbuck",price:89.99,tag:"FORTNITE",desc:"Pack de V-Bucks - démonstration.",image:vbucksLogo},
+{id:31,name:"1 000 V-Bucks",category:"vbuck",price:8.99,tag:"FORTNITE",desc:"Pack V-Bucks - démonstration.",image:vbucksLogo},
+{id:32,name:"2 800 V-Bucks",category:"vbuck",price:22.99,tag:"FORTNITE",desc:"Pack V-Bucks - démonstration.",image:vbucksLogo},
+{id:33,name:"5 000 V-Bucks",category:"vbuck",price:36.99,tag:"FORTNITE",desc:"Pack V-Bucks - démonstration.",image:vbucksLogo},
+{id:34,name:"13 500 V-Bucks",category:"vbuck",price:89.99,tag:"FORTNITE",desc:"Pack V-Bucks - démonstration.",image:vbucksLogo},
 {id:35,name:"Carte cadeau gaming",category:"vbuck",price:10,tag:"GAMING",desc:"Carte cadeau de démonstration.",image:"https://images.unsplash.com/photo-1605899435973-ca2d1a8861cf?auto=format&fit=crop&w=800&q=85"},
-{id:36,name:"Pack V-Bucks découverte",category:"vbuck",price:4.99,tag:"FORTNITE",desc:"Fiche de présentation fictive.",image:vbucksLogo},
-{id:37,name:"Pack V-Bucks standard",category:"vbuck",price:12.99,tag:"FORTNITE",desc:"Fiche de présentation fictive.",image:vbucksLogo},
-{id:38,name:"Pack V-Bucks premium",category:"vbuck",price:29.99,tag:"FORTNITE",desc:"Fiche de présentation fictive.",image:vbucksLogo},
-{id:39,name:"Pack V-Bucks ultime",category:"vbuck",price:49.99,tag:"FORTNITE",desc:"Fiche de présentation fictive.",image:vbucksLogo},
-{id:40,name:"Accessoire gaming",category:"vbuck",price:14.99,tag:"GAMING",desc:"Accessoire fictif pour la maquette.",image:"https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=800&q=85"},
+{id:36,name:"Pack V-Bucks découverte",category:"vbuck",price:4.99,tag:"FORTNITE",desc:"Pack V-Bucks découverte.",image:vbucksLogo},
+{id:37,name:"Pack V-Bucks standard",category:"vbuck",price:12.99,tag:"FORTNITE",desc:"Pack V-Bucks standard.",image:vbucksLogo},
+{id:38,name:"Pack V-Bucks premium",category:"vbuck",price:29.99,tag:"FORTNITE",desc:"Pack V-Bucks premium.",image:vbucksLogo},
+{id:39,name:"Pack V-Bucks ultime",category:"vbuck",price:49.99,tag:"FORTNITE",desc:"Pack V-Bucks ultime.",image:vbucksLogo},
+{id:40,name:"Accessoire gaming",category:"vbuck",price:14.99,tag:"GAMING",desc:"Accessoire gaming de démonstration.",image:"https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=800&q=85"},
 
-/* JEUX VIDÉO */
-{id:41,name:"EA SPORTS FC",category:"jeu",price:69.99,tag:"JEU VIDÉO",desc:"Jeu de football - démonstration.",image:"https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=85"},
-{id:42,name:"Fortnite",category:"jeu",price:0,tag:"FREE TO PLAY",desc:"Jeu gratuit - fiche de présentation.",image:"https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=85"},
-{id:43,name:"Rocket League",category:"jeu",price:0,tag:"FREE TO PLAY",desc:"Football et voitures - jeu gratuit.",image:"https://images.unsplash.com/photo-1493711662062-fa541ad?auto=format&fit=crop&w=800&q=85"},
-{id:44,name:"Grand Theft Auto V",category:"jeu",price:29.99,tag:"PEGI 18",desc:"Jeu réservé aux adultes - fiche informative.",image:"https://images.unsplash.com/photo-1493711662062-fa541ad?auto=format&fit=crop&w=800&q=85"}
-
+{id:41,name:"EA SPORTS FC",category:"jeu",price:69.99,tag:"JEU VIDÉO",desc:"Jeu de football.",image:games.fc,game:true},
+{id:42,name:"Fortnite",category:"jeu",price:0,tag:"FREE TO PLAY",desc:"Battle royale gratuit.",image:"https://www.pcgamingwiki.com/images/0/0b/Fortnite_Battle_Royale_cover.jpg",game:true},
+{id:43,name:"Rocket League",category:"jeu",price:0,tag:"FREE TO PLAY",desc:"Football et voitures.",image:"https://upload.wikimedia.org/wikipedia/commons/9/9d/Rocket_League_coverart.jpg",game:true},
+{id:44,name:"Grand Theft Auto V",category:"jeu",price:29.99,tag:"PEGI 18",desc:"Fiche informative - jeu réservé aux adultes.",image:games.gta,game:true}
 ];
 
 let activeFilter="tout";
@@ -249,8 +298,8 @@ const list=products.filter(p=>
 );
 
 productsEl.innerHTML=list.map(p=>`
-<article class="product" data-product-id="${p.id}">
-<div class="product-img ${p.category==="vbuck"?"vbucks":""}">
+<article class="product">
+<div class="product-img ${p.game?"game":""} ${p.category==="vbuck"?"vbucks":""}">
 <span class="tag">${p.tag}</span>
 <img src="${p.image}" alt="${p.name}" loading="lazy">
 </div>
@@ -265,11 +314,8 @@ productsEl.innerHTML=list.map(p=>`
 </article>
 `).join("");
 
-if(!list.length){
-productsEl.innerHTML="<p>Aucun produit trouvé.</p>";
-}
+if(!list.length)productsEl.innerHTML='<p class="empty">Aucun produit trouvé.</p>';
 
-/* SI L'IMAGE NE CHARGE PAS, ON SUPPRIME TOUTE LA FICHE */
 productsEl.querySelectorAll(".product img").forEach(img=>{
 img.addEventListener("error",()=>{
 const card=img.closest(".product");
@@ -281,10 +327,8 @@ if(card)card.remove();
 function addToCart(id){
 const p=products.find(x=>x.id===id);
 const found=cart.find(x=>x.id===id);
-
 if(found)found.qty++;
 else cart.push({...p,qty:1});
-
 renderCart();
 document.getElementById("cartPanel").classList.add("open");
 }
@@ -295,11 +339,8 @@ renderCart();
 }
 
 function renderCart(){
-document.getElementById("cartCount").textContent=
-cart.reduce((s,p)=>s+p.qty,0);
-
-document.getElementById("cartItems").innerHTML=
-cart.length?
+document.getElementById("cartCount").textContent=cart.reduce((s,p)=>s+p.qty,0);
+document.getElementById("cartItems").innerHTML=cart.length?
 cart.map(p=>`
 <div class="cart-item">
 <span>${p.name} × ${p.qty}</span>
@@ -307,11 +348,8 @@ cart.map(p=>`
 <button onclick="removeFromCart(${p.id})">Retirer</button>
 </span>
 </div>
-`).join("")
-:"Ton panier est vide.";
-
-document.getElementById("cartTotal").textContent=
-money(cart.reduce((s,p)=>s+p.price*p.qty,0));
+`).join(""):"Ton panier est vide.";
+document.getElementById("cartTotal").textContent=money(cart.reduce((s,p)=>s+p.price*p.qty,0));
 }
 
 document.getElementById("search").addEventListener("input",renderProducts);
@@ -319,9 +357,7 @@ document.getElementById("search").addEventListener("input",renderProducts);
 document.querySelectorAll("#filters button").forEach(b=>{
 b.addEventListener("click",()=>{
 activeFilter=b.dataset.filter;
-document.querySelectorAll("#filters button").forEach(x=>{
-x.classList.toggle("active",x===b);
-});
+document.querySelectorAll("#filters button").forEach(x=>x.classList.toggle("active",x===b));
 renderProducts();
 });
 });
@@ -329,9 +365,7 @@ renderProducts();
 document.querySelectorAll("[data-jump]").forEach(a=>{
 a.addEventListener("click",()=>{
 activeFilter=a.dataset.jump;
-document.querySelectorAll("#filters button").forEach(x=>{
-x.classList.toggle("active",x.dataset.filter===activeFilter);
-});
+document.querySelectorAll("#filters button").forEach(x=>x.classList.toggle("active",x.dataset.filter===activeFilter));
 renderProducts();
 });
 });
@@ -346,7 +380,7 @@ document.getElementById("cartPanel").classList.remove("open");
 
 renderProducts();
 renderCart();
-
 </script>
+
 </body>
 </html>
