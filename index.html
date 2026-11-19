@@ -1,945 +1,610 @@
 
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080b12">
-<title>FOOTNITE | Football meets Gaming</title>
-
+<meta name="theme-color" content="#080a12">
+<title>FOOTNITE — Three Worlds. One Passion.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --bg:#080b12;
-  --panel:#121a27;
-  --blue:#287fff;
-  --white:#f5f7fb;
-  --muted:#9ba8ba;
-  --border:rgba(255,255,255,.10);
+  --bg:#080a12;
+  --panel:#121826;
+  --blue:#338dff;
+  --white:#f6f7fa;
+  --muted:#a1aabd;
+  --border:#ffffff18;
 }
-
 * {box-sizing:border-box;margin:0;padding:0}
 html {scroll-behavior:smooth}
-body {
-  background:var(--bg);
-  color:var(--white);
-  font-family:Inter,Arial,sans-serif;
-}
+body {background:var(--bg);color:var(--white);font-family:Inter,Arial,sans-serif}
 a {text-decoration:none;color:inherit}
 button,input {font:inherit}
 button {cursor:pointer}
 
-/* TOP BAR */
-
+/* HEADER */
 .topbar {
-  background:linear-gradient(90deg,#1261d9,#318cff,#1261d9);
-  padding:10px;
   text-align:center;
+  padding:9px;
+  background:linear-gradient(90deg,#1858bd,#388fff,#1858bd);
   font-size:10px;
   font-weight:800;
   letter-spacing:3px;
 }
-
-/* LOGO */
-
-.brand-link {
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-
-.brand-symbol {
-  width:47px;
-  height:47px;
-  display:grid;
-  place-items:center;
-  background:linear-gradient(135deg,#64b4ff,#1261d9);
-  color:white;
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:24px;
-  font-weight:900;
-  font-style:italic;
-  clip-path:polygon(15% 0,100% 0,85% 100%,0 100%);
-  box-shadow:0 0 25px #267cff55;
-}
-
-.brand-word {
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:36px;
-  font-weight:900;
-  letter-spacing:2px;
-  line-height:.85;
-}
-
-.brand-word span {color:var(--blue)}
-
-.brand-word small {
-  display:block;
-  font-family:Inter,sans-serif;
-  font-size:7px;
-  letter-spacing:2.5px;
-  color:#8c9bb0;
-  margin-top:8px;
-}
-
-/* HEADER */
-
 header {
   height:82px;
   padding:0 6%;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  background:rgba(8,11,18,.97);
+  background:#090c14;
   border-bottom:1px solid var(--border);
   position:sticky;
   top:0;
   z-index:50;
-  backdrop-filter:blur(15px);
 }
-
-nav {
+.brand {
   display:flex;
   align-items:center;
-  gap:27px;
+  gap:11px;
 }
-
+.brand-icon {
+  width:44px;
+  height:44px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(135deg,#6cc0ff,#1557cf);
+  clip-path:polygon(15% 0,100% 0,85% 100%,0 100%);
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;
+  font-size:23px;
+  font-style:italic;
+}
+.brand-text {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:35px;
+  font-weight:900;
+  letter-spacing:2px;
+}
+.brand-text span {color:var(--blue)}
+.brand-text small {
+  display:block;
+  color:#8795aa;
+  font:800 7px Inter,sans-serif;
+  letter-spacing:2px;
+  margin-top:5px;
+}
+nav {display:flex;gap:23px}
 nav a {
   font-size:10px;
   font-weight:800;
-  letter-spacing:1.3px;
+  letter-spacing:1px;
   text-transform:uppercase;
-  transition:.2s;
 }
-
-nav a:hover {color:#6bb6ff}
-
+nav a:hover {color:var(--blue)}
 .cart-open {
-  padding:13px 17px;
-  background:#172338;
   color:white;
-  border:1px solid #344963;
+  background:#192338;
+  border:1px solid #35445d;
+  padding:12px 15px;
   font-size:10px;
   font-weight:900;
-  letter-spacing:1px;
 }
+#cartCount {color:#80bcff}
 
-.cart-open:hover {
-  border-color:var(--blue);
-  background:#1b3151;
-}
-
-#cartCount {color:#74baff}
-
-/* HERO */
-
-.hero {
-  min-height:690px;
-  padding:75px 6%;
-  display:grid;
-  grid-template-columns:1.05fr .95fr;
-  align-items:center;
-  gap:35px;
-  position:relative;
-  overflow:hidden;
-
+/* INTRO */
+.intro {
+  text-align:center;
+  padding:74px 20px 42px;
   background:
-    radial-gradient(ellipse at 80% 35%,#164e9270,transparent 45%),
-    linear-gradient(90deg,#080b12 0%,#090e19e8 45%,#080b1260 100%),
-    linear-gradient(0deg,#080b12,transparent 60%),
-    url("https://images.unsplash.com/photo-1508098682722-e99c643e7f0b?auto=format&fit=crop&w=2000&q=90");
-
-  background-size:cover;
-  background-position:center;
+    radial-gradient(ellipse at center,#19345d55,transparent 65%);
 }
-
-.hero-content {position:relative;z-index:2}
-
-.eyebrow {
-  display:flex;
-  align-items:center;
-  gap:12px;
-  color:#70b8ff;
-  font-size:11px;
+.kicker {
+  color:#79baff;
+  font-size:10px;
   font-weight:900;
   letter-spacing:4px;
-  text-transform:uppercase;
 }
-
-.eyebrow:before {
-  content:"";
-  width:34px;
-  height:2px;
-  background:var(--blue);
-}
-
-.hero h1 {
+.intro h1 {
   font-family:'Barlow Condensed',sans-serif;
-  font-size:clamp(65px,8vw,116px);
+  font-size:clamp(55px,8vw,100px);
   font-weight:900;
-  line-height:.85;
-  letter-spacing:-2px;
-  margin:30px 0;
+  line-height:.9;
+  margin:20px 0;
   text-transform:uppercase;
 }
-
-.hero h1 span {
-  display:block;
-  color:var(--blue);
-  text-shadow:0 0 35px #267cff55;
-}
-
-.hero-description {
-  max-width:475px;
-  border-left:2px solid var(--blue);
-  padding-left:18px;
-  color:#c5cbd6;
-  font-size:13px;
-  line-height:1.9;
-}
-
-.hero-buttons {
-  display:flex;
-  gap:13px;
-  flex-wrap:wrap;
-  margin-top:32px;
-}
-
-.primary-button,.secondary-button {
-  display:inline-block;
-  padding:16px 22px;
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:1.2px;
-  transition:.2s;
-}
-
-.primary-button {
-  background:var(--blue);
-  color:white;
-  border:1px solid var(--blue);
-  box-shadow:0 0 24px #267cff45;
-}
-
-.primary-button:hover {
-  background:#155fce;
-  transform:translateY(-2px);
-}
-
-.secondary-button {
-  border:1px solid #75849b;
-  color:white;
-}
-
-.secondary-button:hover {
-  border-color:var(--blue);
-  color:#7cbaff;
-}
-
-/* JOUEURS */
-
-.characters {
-  height:390px;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-  position:relative;
-  z-index:2;
-}
-
-.character {
-  position:relative;
-  overflow:hidden;
-  border:1px solid #ffffff28;
-  background:linear-gradient(145deg,#1b3355,#111722);
-  box-shadow:0 20px 55px #0009;
-  transition:.3s;
-}
-
-.character:hover {
-  border-color:var(--blue);
-  transform:translateY(-7px);
-  box-shadow:0 15px 40px #267cff45;
-}
-
-.character img {
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:top center;
-  transition:.4s;
-}
-
-.character:hover img {transform:scale(1.06)}
-
-.character:after {
-  content:"";
-  position:absolute;
-  inset:30% 0 0;
-  background:linear-gradient(transparent,rgba(0,0,0,.96));
-  pointer-events:none;
-}
-
-.character-name {
-  position:absolute;
-  z-index:2;
-  bottom:17px;
-  left:12px;
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:24px;
-  font-weight:900;
-  text-transform:uppercase;
-}
-
-.character-name small {
-  display:block;
-  color:#7cbaff;
-  font:800 8px Inter,sans-serif;
-  letter-spacing:2px;
-  margin-bottom:6px;
-}
-
-/* SIGNATURE */
-
-.signature {
-  padding:22px 6%;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  background:#0e1420;
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-}
-
-.signature div {
-  text-align:center;
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:2px;
-}
-
-.signature span {
-  color:#69b1ff;
-  margin-right:9px;
-}
-
-/* SECTIONS */
-
-.section {
-  padding:80px 6%;
-  scroll-margin-top:90px;
-}
-
-.section-heading {
-  display:flex;
-  align-items:end;
-  justify-content:space-between;
-  gap:20px;
-  margin-bottom:32px;
-}
-
-.kicker {
-  color:#6eafff;
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:3px;
-  margin-bottom:10px;
-}
-
-.section-heading h2 {
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:53px;
-  line-height:1;
-  text-transform:uppercase;
-  font-weight:900;
-}
-
-.section-heading p {
+.intro h1 span {color:var(--blue)}
+.intro p {
   color:var(--muted);
   font-size:12px;
   line-height:1.8;
 }
 
-/* UNIVERS */
-
-.category-grid {
+/* THE THREE WORLDS */
+.worlds {
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:17px;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+  padding:0 5% 80px;
 }
-
-.category-card {
-  height:285px;
+.world {
+  min-height:485px;
   position:relative;
   overflow:hidden;
-  background:#151d2a;
-  border:1px solid var(--border);
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding:27px;
+  border:1px solid #ffffff20;
+  background-size:cover;
+  background-position:center;
+  transition:.35s;
 }
-
-.category-card img {
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  opacity:.82;
-  transition:.5s;
+.world:hover {
+  transform:translateY(-7px);
+  border-color:#ffffffa0;
 }
-
-.category-card:hover img {
-  transform:scale(1.07);
-  opacity:1;
-}
-
-.category-card:after {
+.world:before {
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(0deg,#080b12,transparent 80%);
-  pointer-events:none;
+  transition:.4s;
 }
-
-.category-info {
-  position:absolute;
-  z-index:2;
-  left:23px;
-  bottom:24px;
+.world:hover:before {opacity:.75}
+.world.fortnite {
+  background-image:url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1000&q=85");
 }
-
-.category-info small {
-  font-size:9px;
-  font-weight:900;
-  color:#78baff;
-  letter-spacing:2px;
+.world.fortnite:before {
+  background:linear-gradient(0deg,#090c1b 0%,#192d5c88 45%,#1e77c655);
 }
-
-.category-info h3 {
+.world.gta {
+  background-image:url("https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1000&q=85");
+}
+.world.gta:before {
+  background:linear-gradient(0deg,#100a17 0%,#421d3a88 48%,#192b5b44);
+}
+.world.football {
+  background-image:url("https://images.unsplash.com/photo-1508098682722-e99c643e7f0b?auto=format&fit=crop&w=1000&q=85");
+}
+.world.football:before {
+  background:linear-gradient(0deg,#07131b 0%,#073c4288 50%,#105b8b44);
+}
+.world-content {position:relative;z-index:2}
+.world-number {
   font-family:'Barlow Condensed',sans-serif;
-  font-size:36px;
-  margin:6px 0;
+  font-size:15px;
+  font-weight:800;
+  letter-spacing:4px;
+  color:#b0d6ff;
+}
+.world h2 {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;
+  font-size:54px;
+  line-height:.9;
+  margin:12px 0;
+}
+.world p {
+  color:#e0e5ed;
+  font-size:11px;
+  line-height:1.8;
+  max-width:280px;
+}
+.world-button {
+  display:inline-block;
+  margin-top:22px;
+  padding:13px 17px;
+  background:white;
+  color:#101522;
+  font-size:9px;
+  letter-spacing:1px;
+  font-weight:900;
+}
+
+/* PLAYER STRIP */
+.players {
+  padding:65px 6%;
+  background:#0d131f;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+.players-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+.player-card {
+  height:285px;
+  position:relative;
+  background:#192338;
+  overflow:hidden;
+}
+.player-card img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:top;
+  transition:.4s;
+}
+.player-card:hover img {transform:scale(1.05)}
+.player-card:after {
+  content:"";
+  position:absolute;
+  inset:35% 0 0;
+  background:linear-gradient(transparent,#060a12);
+}
+.player-label {
+  position:absolute;
+  bottom:19px;
+  left:18px;
+  z-index:2;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:27px;
+  font-weight:900;
+}
+.player-label small {
+  display:block;
+  color:#77baff;
+  font:800 9px Inter,sans-serif;
+  letter-spacing:2px;
+  margin-bottom:5px;
+}
+
+/* SECTIONS */
+.section {
+  padding:75px 6%;
+  scroll-margin-top:90px;
+}
+.section-head {
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:20px;
+  margin-bottom:30px;
+}
+.section-head h2 {
+  font:900 53px/.95 'Barlow Condensed',sans-serif;
   text-transform:uppercase;
 }
-
-.category-info a {
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:1px;
+.section-head p {
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.8;
 }
 
-/* BOUTIQUE */
-
+/* STORE */
 .store {background:#0d131e}
-
 .store-tools {
   display:flex;
   justify-content:space-between;
   align-items:center;
-  gap:15px;
   flex-wrap:wrap;
-  margin-bottom:30px;
+  gap:14px;
+  margin-bottom:28px;
 }
-
-.filters {
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-}
-
+.filters {display:flex;gap:8px;flex-wrap:wrap}
 .filter {
   background:#192333;
-  color:#dce3ed;
+  color:#dae2ed;
+  padding:11px 16px;
   border:1px solid var(--border);
-  padding:12px 17px;
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:1px;
-}
-
-.filter.active,.filter:hover {
-  background:var(--blue);
-  border-color:var(--blue);
-  color:white;
-}
-
-.search {
-  width:270px;
-  padding:13px 15px;
-  background:#171f2c;
-  border:1px solid #303e53;
-  color:white;
-  outline:none;
-  font-size:12px;
-}
-
-.search:focus {border-color:var(--blue)}
-
-.products {
-  display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:18px;
-}
-
-.product {
-  background:#151d29;
-  border:1px solid rgba(255,255,255,.08);
-  min-width:0;
-  transition:.25s;
-}
-
-.product:hover {
-  transform:translateY(-5px);
-  border-color:#367fcf;
-  box-shadow:0 15px 35px #0005;
-}
-
-.product-photo {
-  height:225px;
-  position:relative;
-  overflow:hidden;
-  background:#edf0f4;
-  display:grid;
-  place-items:center;
-}
-
-.product-photo img {
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  transition:.4s;
-}
-
-.product:hover .product-photo img {transform:scale(1.05)}
-
-.product-photo.fallback {
-  background:linear-gradient(145deg,#263a55,#111723);
-}
-
-.product-photo.fallback:after {
-  content:attr(data-name);
-  color:#a5c8f4;
-  font-family:'Barlow Condensed',sans-serif;
-  font-weight:800;
-  font-size:25px;
-  text-align:center;
-  padding:15px;
-  text-transform:uppercase;
-}
-
-.product-tag {
-  position:absolute;
-  top:12px;
-  left:12px;
-  z-index:2;
-  background:var(--blue);
-  padding:7px 10px;
-  color:white;
   font-size:9px;
   font-weight:900;
   letter-spacing:1px;
 }
-
-.product-details {padding:17px}
-
-.product-category {
-  color:#78baff;
+.filter.active,.filter:hover {
+  background:var(--blue);
+  color:white;
+}
+.search {
+  background:#171f2d;
+  border:1px solid #36435a;
+  color:white;
+  width:260px;
+  padding:12px;
+  font-size:11px;
+  outline:none;
+}
+.search:focus {border-color:var(--blue)}
+.products {
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:17px;
+}
+.product {
+  background:#151d2a;
+  border:1px solid #ffffff13;
+  min-width:0;
+  transition:.25s;
+}
+.product:hover {
+  transform:translateY(-5px);
+  border-color:var(--blue);
+}
+.product-image {
+  position:relative;
+  height:210px;
+  display:grid;
+  place-items:center;
+  background:#eceff3;
+  overflow:hidden;
+}
+.product-image img {
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+.product-image.fallback {
+  background:linear-gradient(135deg,#263854,#101722);
+}
+.product-image.fallback:after {
+  content:attr(data-name);
+  color:#b5d5ff;
+  font:800 25px 'Barlow Condensed',sans-serif;
+  text-align:center;
+  padding:12px;
+}
+.product-tag {
+  position:absolute;
+  z-index:2;
+  top:12px;
+  left:12px;
+  background:var(--blue);
+  padding:7px 10px;
+  font-size:9px;
+  font-weight:900;
+}
+.product-info {padding:16px}
+.product-type {
+  color:#7ebcff;
   font-size:9px;
   font-weight:900;
   letter-spacing:2px;
 }
-
-.product-details h3 {
-  font-size:14px;
-  margin:10px 0 8px;
-}
-
+.product-info h3 {font-size:13px;margin:10px 0}
 .product-description {
-  min-height:31px;
   color:var(--muted);
   font-size:10px;
   line-height:1.6;
+  min-height:30px;
 }
-
 .product-bottom {
   display:flex;
   justify-content:space-between;
   align-items:center;
+  flex-wrap:wrap;
   gap:8px;
-  margin-top:15px;
-  padding-top:13px;
   border-top:1px solid var(--border);
+  padding-top:13px;
+  margin-top:13px;
 }
-
-.product-price {
-  font-weight:900;
-  font-size:16px;
-  white-space:nowrap;
-}
-
-.add-button {
-  padding:10px 11px;
+.price {font-size:15px;font-weight:900}
+.add {
+  padding:9px 11px;
   background:transparent;
+  color:#8ac4ff;
   border:1px solid var(--blue);
-  color:#86c2ff;
   font-size:9px;
   font-weight:900;
-  white-space:nowrap;
 }
+.add:hover {background:var(--blue);color:white}
+.no-results {display:none;color:var(--muted);padding:25px}
 
-.add-button:hover {
+/* FINAL BANNER */
+.final-banner {
+  padding:75px 6%;
+  background:linear-gradient(120deg,#102446,#111827 55%,#24182e);
+  text-align:center;
+}
+.final-banner h2 {
+  font:900 clamp(45px,7vw,75px)/.95 'Barlow Condensed',sans-serif;
+}
+.final-banner h2 span {color:#55a3ff}
+.final-banner p {
+  color:#bec9d8;
+  font-size:12px;
+  margin:17px 0 24px;
+}
+.cta {
+  display:inline-block;
+  padding:15px 23px;
   background:var(--blue);
   color:white;
-}
-
-.no-results {
-  display:none;
-  color:var(--muted);
-  padding:30px 0;
-}
-
-/* BANNIÈRE */
-
-.promo {
-  padding:60px;
-  min-height:320px;
-  border:1px solid var(--border);
-  background:
-    linear-gradient(90deg,rgba(4,8,16,.96),rgba(4,8,16,.48)),
-    url("https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1600&q=85") center/cover;
-}
-
-.promo h2 {
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:62px;
+  font-size:10px;
   font-weight:900;
-  line-height:.9;
-}
-
-.promo h2 span {color:var(--blue)}
-
-.promo p {
-  max-width:430px;
-  margin-top:16px;
-  color:#c4cbd7;
-  font-size:12px;
-  line-height:1.8;
+  letter-spacing:1px;
 }
 
 /* FOOTER */
-
 footer {
-  padding:48px 6% 22px;
+  padding:42px 6% 20px;
   border-top:1px solid var(--border);
-  background:#080b12;
 }
-
 .footer-grid {
   display:grid;
   grid-template-columns:2fr 1fr 1fr;
   gap:30px;
   padding-bottom:35px;
 }
-
 .footer-about p {
-  max-width:370px;
-  margin-top:13px;
   color:var(--muted);
+  max-width:360px;
   font-size:11px;
-  line-height:1.9;
+  line-height:1.8;
+  margin-top:12px;
 }
-
 .footer-column h4 {
   font-size:10px;
   letter-spacing:2px;
-  margin-bottom:16px;
+  margin-bottom:14px;
 }
-
 .footer-column a {
   display:block;
-  margin:11px 0;
-  color:var(--muted);
+  margin:10px 0;
   font-size:11px;
+  color:var(--muted);
 }
-
-.footer-column a:hover {color:#75baff}
-
 .copyright {
   border-top:1px solid var(--border);
-  padding-top:20px;
+  padding-top:19px;
   text-align:center;
-  color:#77869a;
-  font-size:10px;
+  color:#8290a3;
+  font-size:9px;
   line-height:1.9;
 }
 
 /* PANIER */
-
-.cart-overlay {
+.overlay {
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.75);
+  z-index:80;
+  background:#000b;
   opacity:0;
   visibility:hidden;
-  z-index:80;
   transition:.25s;
 }
-
-.cart-overlay.open {
-  opacity:1;
-  visibility:visible;
-}
-
-.cart-panel {
+.overlay.open {opacity:1;visibility:visible}
+.cart {
   position:fixed;
-  top:0;
-  bottom:0;
-  right:-450px;
-  width:min(420px,100%);
-  background:#111a27;
-  padding:24px;
+  top:0;bottom:0;right:-430px;
+  z-index:90;
+  width:min(410px,100%);
+  background:#121b29;
+  padding:23px;
   display:flex;
   flex-direction:column;
-  z-index:90;
   transition:.3s;
 }
-
-.cart-panel.open {right:0}
-
-.cart-header {
+.cart.open {right:0}
+.cart-head {
   display:flex;
   justify-content:space-between;
-  align-items:center;
-  padding-bottom:17px;
   border-bottom:1px solid var(--border);
+  padding-bottom:17px;
 }
-
-.cart-header h2 {
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:30px;
+.cart-head h2 {
+  font:900 30px 'Barlow Condensed',sans-serif;
 }
-
-.close-cart {
+.close {
+  color:white;
   background:none;
   border:0;
-  color:white;
-  font-size:27px;
+  font-size:25px;
 }
-
-.cart-items {
-  flex:1;
-  overflow-y:auto;
-  padding:15px 0;
-}
-
+.cart-items {flex:1;overflow:auto;padding:15px 0}
 .cart-row {
   display:grid;
-  grid-template-columns:65px 1fr;
+  grid-template-columns:62px 1fr;
   gap:12px;
-  border-bottom:1px solid var(--border);
   padding:13px 0;
+  border-bottom:1px solid var(--border);
 }
-
 .cart-row img {
-  width:65px;
-  height:65px;
-  object-fit:contain;
-  background:#edf0f4;
+  width:62px;height:62px;
+  object-fit:contain;background:#eee;
 }
-
 .cart-row h4 {font-size:12px;margin-bottom:8px}
-.cart-row p {font-size:12px;color:#80bdff}
-
-.quantity {
-  display:flex;
-  align-items:center;
-  gap:8px;
-  margin-top:9px;
-  font-size:11px;
+.cart-row p {color:#85bfff;font-size:12px}
+.qty {display:flex;gap:8px;align-items:center;margin-top:8px}
+.qty button {
+  width:23px;height:23px;
+  background:#202d40;color:white;
+  border:1px solid #43536b;
 }
-
-.quantity button {
-  background:#202e42;
-  color:white;
-  border:1px solid #3b4d67;
-  width:24px;
-  height:24px;
+.qty .remove {
+  width:auto;border:0;background:none;color:#ff8888;
 }
-
-.quantity .remove {
-  width:auto;
-  background:none;
-  border:0;
-  color:#ff8181;
-  margin-left:5px;
-}
-
 .cart-footer {
   border-top:1px solid var(--border);
-  padding-top:18px;
+  padding-top:17px;
 }
-
 .total {
-  display:flex;
-  justify-content:space-between;
-  font-size:17px;
-  font-weight:900;
-  margin-bottom:15px;
+  display:flex;justify-content:space-between;
+  font-weight:900;font-size:17px;margin-bottom:14px;
 }
-
-.demo-message {
-  background:#142943;
-  color:#acd2ff;
-  padding:12px;
-  font-size:10px;
-  line-height:1.7;
+.demo {
+  padding:12px;background:#172d48;
+  color:#b4d5ff;font-size:10px;line-height:1.7;
 }
-
-.clear-cart {
-  width:100%;
-  margin-top:13px;
-  padding:13px;
-  color:white;
-  background:var(--blue);
-  border:0;
-  font-size:10px;
-  font-weight:900;
+.clear {
+  width:100%;padding:12px;margin-top:12px;
+  background:var(--blue);color:white;border:0;
+  font-weight:900;font-size:10px;
 }
-
 .toast {
-  position:fixed;
-  bottom:24px;
-  left:50%;
+  position:fixed;z-index:100;bottom:20px;left:50%;
   transform:translate(-50%,20px);
-  z-index:100;
-  background:#17273c;
-  border:1px solid var(--blue);
-  padding:13px 20px;
-  font-size:11px;
-  opacity:0;
-  pointer-events:none;
-  transition:.2s;
+  background:#162942;border:1px solid var(--blue);
+  padding:13px 18px;font-size:11px;opacity:0;
+  pointer-events:none;transition:.2s;
 }
+.toast.show {opacity:1;transform:translate(-50%,0)}
 
-.toast.show {
-  opacity:1;
-  transform:translate(-50%,0);
-}
-
-/* MOBILE */
-
+/* RESPONSIVE */
 @media(max-width:1050px) {
-  .hero {grid-template-columns:1fr}
-  .characters {max-width:700px}
+  .worlds {grid-template-columns:repeat(3,minmax(0,1fr))}
+  .world {min-height:420px;padding:18px}
+  .world h2 {font-size:42px}
   .products {grid-template-columns:repeat(3,minmax(0,1fr))}
 }
-
 @media(max-width:700px) {
-  header {
-    height:auto;
-    min-height:75px;
-    padding:14px 5%;
-    flex-wrap:wrap;
-    gap:12px;
-  }
-
-  .brand-symbol {width:39px;height:39px}
-  .brand-word {font-size:30px}
-
-  nav {
-    order:3;
-    width:100%;
-    justify-content:space-between;
-    gap:7px;
-  }
-
-  nav a {font-size:9px}
-
-  .hero {
-    min-height:auto;
-    padding:60px 5%;
-  }
-
-  .hero h1 {font-size:72px}
-  .characters {height:260px;gap:6px}
-
-  .character-name {
-    font-size:16px;
-    left:7px;
-    bottom:10px;
-  }
-
-  .character-name small {font-size:7px}
-
-  .signature {padding:18px 3%}
-  .signature div {font-size:8px}
-
+  header {height:auto;min-height:70px;flex-wrap:wrap;padding:12px 5%;gap:12px}
+  .brand-icon {width:38px;height:38px}
+  .brand-text {font-size:30px}
+  nav {order:3;width:100%;justify-content:space-between;gap:6px}
+  nav a {font-size:8px}
+  .intro {padding:55px 16px 30px}
+  .worlds {grid-template-columns:1fr;padding:0 5% 50px}
+  .world {min-height:310px}
+  .world h2 {font-size:48px}
+  .players-grid {gap:7px}
+  .player-card {height:195px}
+  .player-label {font-size:16px;left:7px}
+  .player-label small {font-size:6px}
   .section {padding:55px 5%}
-
-  .section-heading {display:block}
-  .section-heading h2 {font-size:43px}
-  .section-heading p {margin-top:12px}
-
-  .category-grid {grid-template-columns:1fr}
-  .category-card {height:240px}
-
+  .section-head {display:block}
+  .section-head h2 {font-size:43px}
+  .section-head p {margin-top:12px}
   .store-tools {align-items:stretch}
   .filters {width:100%}
   .filter {flex:1;padding:10px 5px;font-size:8px}
   .search {width:100%}
-
-  .products {
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:10px;
-  }
-
-  .product-photo {height:160px}
-  .product-details {padding:11px}
-  .product-details h3 {font-size:12px}
-
-  .product-bottom {
-    align-items:flex-start;
-    flex-direction:column;
-  }
-
-  .product-price {font-size:14px}
-  .add-button {padding:9px 8px}
-
-  .promo {padding:35px 22px}
-  .promo h2 {font-size:46px}
-
+  .products {grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .product-image {height:155px}
+  .product-info {padding:11px}
+  .product-info h3 {font-size:12px}
+  .product-bottom {flex-direction:column;align-items:flex-start}
+  .price {font-size:14px}
+  .final-banner {padding:55px 6%}
   .footer-grid {grid-template-columns:1fr 1fr}
   .footer-about {grid-column:1/-1}
 }
-
 @media(max-width:370px) {
   .products {grid-template-columns:1fr}
-  .product-photo {height:220px}
+  .product-image {height:220px}
 }
 </style>
 </head>
 
 <body>
 
-<div class="topbar">
-  FOOTBALL × GAMING — WELCOME TO FOOTNITE
-</div>
+<div class="topbar">FORTNITE × GTA × FOOTBALL — THREE WORLDS, ONE BRAND</div>
 
 <header>
-  <a href="#accueil" class="brand-link">
-    <span class="brand-symbol">FN</span>
-    <span class="brand-word">
-      FOOT<span>NITE</span>
-      <small>FOOTBALL / GAMING</small>
-    </span>
+  <a href="#home" class="brand">
+    <span class="brand-icon">FN</span>
+    <span class="brand-text">FOOT<span>NITE</span><small>GAMING / FOOTBALL / CULTURE</small></span>
   </a>
-
   <nav>
-    <a href="#accueil">Accueil</a>
-    <a href="#univers">Univers</a>
+    <a href="#home">Accueil</a>
+    <a href="#fortnite">Fortnite</a>
+    <a href="#gta">GTA</a>
+    <a href="#football">Football</a>
     <a href="#boutique">Boutique</a>
-    <a href="#packs">Packs</a>
   </nav>
-
   <button class="cart-open" id="openCart">
     PANIER (<span id="cartCount">0</span>)
   </button>
@@ -947,131 +612,92 @@ footer {
 
 <main>
 
-<!-- ACCUEIL -->
+<!-- INTRO -->
 
-<section class="hero" id="accueil">
-
-  <div class="hero-content">
-
-    <div class="eyebrow">THE NEW GENERATION OF SPORT</div>
-
-    <h1>
-      DEUX MONDES.
-      <span>UNE PASSION.</span>
-    </h1>
-
-    <p class="hero-description">
-      Bienvenue dans l'univers FOOTNITE.
-      Les légendes du football rencontrent le monde du gaming.
-      Maillots, chaussures, consoles, manettes et jeux vidéo :
-      découvre une nouvelle génération de boutique.
-    </p>
-
-    <div class="hero-buttons">
-      <a href="#boutique" class="primary-button">
-        EXPLORER LA BOUTIQUE →
-      </a>
-      <a href="#univers" class="secondary-button">
-        DÉCOUVRIR L'UNIVERS
-      </a>
-    </div>
-
-  </div>
-
-  <div class="characters">
-
-    <div class="character">
-      <img
-        src="https://pbs.twimg.com/media/G9MPvbTbgAQorLO.jpg"
-        alt="Cristiano Ronaldo">
-      <div class="character-name">
-        <small>FOOTBALL LEGEND</small>
-        RONALDO
-      </div>
-    </div>
-
-    <div class="character">
-      <img
-        src="https://static.bongda24h.vn/medias/original/2025/08/12/doue-14-1208170833.jpg"
-        alt="Désiré Doué">
-      <div class="character-name">
-        <small>NEW GENERATION</small>
-        DOUÉ
-      </div>
-    </div>
-
-    <div class="character">
-      <img
-        src="https://i.pinimg.com/originals/85/b4/c1/85b4c1ca80e7175a9dd3919102f2680f.png"
-        alt="Chevalier noir Fortnite">
-      <div class="character-name">
-        <small>GAMING ICON</small>
-        BLACK KNIGHT
-      </div>
-    </div>
-
-  </div>
+<section class="intro" id="home">
+  <div class="kicker">WELCOME TO THE FOOTNITE UNIVERSE</div>
+  <h1>THREE WORLDS.<br><span>ONE PASSION.</span></h1>
+  <p>
+    Trois univers. Trois ambiances. Une seule identité.<br>
+    Entre dans le monde FOOTNITE.
+  </p>
 </section>
 
-<div class="signature">
-  <div><span>01</span> FOOTBALL</div>
-  <div><span>02</span> GAMING</div>
-  <div><span>03</span> COLLECTIONS</div>
-</div>
+<!-- TROIS UNIVERS À PARTS ÉGALES -->
 
-<!-- UNIVERS -->
+<section class="worlds">
 
-<section class="section" id="univers">
-
-  <div class="section-heading">
-    <div>
-      <div class="kicker">EXPLORE FOOTNITE</div>
-      <h2>CHOISIS TON UNIVERS.</h2>
+  <article class="world fortnite" id="fortnite">
+    <div class="world-content">
+      <div class="world-number">01 / BATTLE ROYALE</div>
+      <h2>FORTNITE</h2>
+      <p>
+        Une ambiance futuriste, des îles spectaculaires
+        et l'énergie du gaming.
+      </p>
+      <a class="world-button" href="#boutique">
+        EXPLORER L'UNIVERS →
+      </a>
     </div>
-    <p>Deux passions réunies dans une seule boutique.</p>
+  </article>
+
+  <article class="world gta" id="gta">
+    <div class="world-content">
+      <div class="world-number">02 / OPEN WORLD</div>
+      <h2>GTA</h2>
+      <p>
+        Une ambiance urbaine, les lumières de la ville
+        et l'esthétique des mondes ouverts.
+      </p>
+      <a class="world-button" href="#univers-gaming">
+        DÉCOUVRIR L'UNIVERS →
+      </a>
+    </div>
+  </article>
+
+  <article class="world football" id="football">
+    <div class="world-content">
+      <div class="world-number">03 / FOOTBALL CULTURE</div>
+      <h2>FOOTBALL</h2>
+      <p>
+        Les joueurs, les maillots, les crampons
+        et la passion des stades.
+      </p>
+      <a class="world-button" href="#boutique" data-filter-jump="football">
+        DÉCOUVRIR LE FOOT →
+      </a>
+    </div>
+  </article>
+
+</section>
+
+<!-- JOUEURS DE FOOT -->
+
+<section class="players">
+  <div class="section-head">
+    <div>
+      <div class="kicker">FOOTBALL LEGENDS</div>
+      <h2>LES VISAGES DU FOOT.</h2>
+    </div>
+    <p>Les grandes figures du football.</p>
   </div>
 
-  <div class="category-grid">
-
-    <div class="category-card">
-      <img
-        src="https://www.foot-sport.com/cdn/shop/files/maillot-psg-1-etoile-homme-2025-2026.jpg?v=1751770037"
-        alt="Collection football">
-      <div class="category-info">
-        <small>COLLECTION 01</small>
-        <h3>FOOTBALL</h3>
-        <a href="#boutique" data-jump-filter="football">
-          VOIR LA COLLECTION →
-        </a>
-      </div>
+  <div class="players-grid">
+    <div class="player-card">
+      <img src="https://pbs.twimg.com/media/G9MPvbTbgAQorLO.jpg"
+        alt="Cristiano Ronaldo">
+      <div class="player-label"><small>LEGEND</small>RONALDO</div>
     </div>
-
-    <div class="category-card">
-      <img
-        src="https://alabamart.com/cdn/shop/files/PS53.png?v=1699517502&width=1445"
-        alt="Collection gaming">
-      <div class="category-info">
-        <small>COLLECTION 02</small>
-        <h3>GAMING</h3>
-        <a href="#boutique" data-jump-filter="gaming">
-          VOIR LA COLLECTION →
-        </a>
-      </div>
+    <div class="player-card">
+      <img src="https://static.bongda24h.vn/medias/original/2025/08/12/doue-14-1208170833.jpg"
+        alt="Désiré Doué">
+      <div class="player-label"><small>NEW GENERATION</small>DÉSIRÉ DOUÉ</div>
     </div>
-
-    <div class="category-card">
-      <img
-        src="https://images.purexbox.com/a1f060ea00ee0/razer-reveals-new-wolverine-v2-chroma-xbox-controller.large.jpg"
-        alt="Accessoires gaming">
-      <div class="category-info">
-        <small>COLLECTION 03</small>
-        <h3>PACKS</h3>
-        <a href="#boutique" data-jump-filter="packs">
-          VOIR LES PACKS →
-        </a>
-      </div>
+    <div class="player-card">
+      <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=900&q=85"
+        alt="Terrain de football">
+      <div class="player-label"><small>THE GAME</small>THE STADIUM</div>
     </div>
-
   </div>
 </section>
 
@@ -1079,545 +705,334 @@ footer {
 
 <section class="section store" id="boutique">
 
-  <div class="section-heading">
+  <div class="section-head">
     <div>
       <div class="kicker">FOOTNITE STORE</div>
       <h2>LA BOUTIQUE.</h2>
     </div>
     <p>
-      Maillots, chaussures, consoles,
-      manettes et jeux vidéo.
+      Maillots, chaussures, consoles,<br>
+      manettes et accessoires.
     </p>
   </div>
 
   <div class="store-tools">
-
     <div class="filters">
       <button class="filter active" data-filter="all">TOUT</button>
       <button class="filter" data-filter="football">FOOT</button>
       <button class="filter" data-filter="gaming">GAMING</button>
       <button class="filter" data-filter="packs">PACKS</button>
     </div>
-
-    <input
-      class="search"
-      id="search"
-      type="search"
+    <input class="search" id="search" type="search"
       placeholder="Rechercher un produit...">
   </div>
 
   <div class="products" id="products"></div>
-  <p class="no-results" id="noResults">
-    Aucun produit trouvé.
-  </p>
+  <div class="no-results" id="noResults">Aucun produit trouvé.</div>
 
 </section>
 
-<!-- PROMOTION -->
-
-<section class="section" id="packs">
-  <div class="promo">
-    <div class="kicker">FOOTNITE EXCLUSIVE</div>
-    <h2>CHANGE DE<br><span>DIMENSION.</span></h2>
-    <p>
-      Le terrain rencontre le gaming.
-      Retrouve les équipements et accessoires
-      qui réunissent tes deux passions.
-    </p>
-    <a href="#boutique" class="primary-button"
-       style="display:inline-block;margin-top:25px">
-      DÉCOUVRIR LES PRODUITS →
-    </a>
-  </div>
+<section class="final-banner" id="univers-gaming">
+  <div class="kicker">FOOTNITE — THE NEXT LEVEL</div>
+  <h2>THREE WORLDS.<br><span>NO LIMITS.</span></h2>
+  <p>Fortnite. GTA. Football. Retrouve tes trois univers dans une même boutique.</p>
+  <a href="#boutique" class="cta">DÉCOUVRIR LA BOUTIQUE →</a>
 </section>
 
 </main>
 
-<!-- FOOTER -->
-
 <footer>
-
   <div class="footer-grid">
-
-    <div class="footer-about">
-      <a href="#accueil" class="brand-link">
-        <span class="brand-symbol">FN</span>
-        <span class="brand-word">
-          FOOT<span>NITE</span>
-          <small>FOOTBALL / GAMING</small>
-        </span>
+    <div>
+      <a href="#home" class="brand">
+        <span class="brand-icon">FN</span>
+        <span class="brand-text">FOOT<span>NITE</span><small>GAMING / FOOTBALL / CULTURE</small></span>
       </a>
-      <p>
-        FOOTNITE réunit football et gaming dans
-        une boutique au style moderne et sportif.
-        Deux univers, une passion.
+      <p style="color:#a1aabd;font-size:11px;line-height:1.8;margin-top:13px;max-width:350px">
+        FOOTNITE réunit trois univers : Fortnite, GTA et football.
+        Un concept indépendant autour du gaming et du sport.
       </p>
     </div>
-
     <div class="footer-column">
-      <h4>NAVIGATION</h4>
-      <a href="#accueil">Accueil</a>
-      <a href="#univers">Nos univers</a>
-      <a href="#boutique">Boutique</a>
-      <a href="#packs">Packs</a>
+      <h4>UNIVERS</h4>
+      <a href="#fortnite">Fortnite</a>
+      <a href="#gta">GTA</a>
+      <a href="#football">Football</a>
     </div>
-
     <div class="footer-column">
-      <h4>COLLECTIONS</h4>
-      <a href="#boutique" data-jump-filter="football">Maillots</a>
-      <a href="#boutique" data-jump-filter="football">Chaussures</a>
-      <a href="#boutique" data-jump-filter="gaming">Consoles et jeux</a>
-      <a href="#boutique" data-jump-filter="gaming">Manettes</a>
+      <h4>BOUTIQUE</h4>
+      <a href="#boutique">Maillots</a>
+      <a href="#boutique">Chaussures</a>
+      <a href="#boutique">Accessoires gaming</a>
     </div>
-
   </div>
-
   <div class="copyright">
-    © 2026 FOOTNITE — Boutique de démonstration.<br>
-    Prix fictifs, panier de démonstration, aucun paiement réel.<br>
-    Les noms, marques et visuels appartiennent à leurs propriétaires.<br>
-    FOOTNITE est un projet indépendant. Les jeux GTA sont classés PEGI 18.
+    © 2026 FOOTNITE — Projet indépendant de démonstration.<br>
+    Prix fictifs et panier sans paiement réel. Les marques et visuels appartiennent à leurs propriétaires.<br>
+    FOOTNITE n'est affilié ni à Epic Games, ni à Rockstar Games, ni aux clubs cités.
   </div>
-
 </footer>
 
 <!-- PANIER -->
 
-<div class="cart-overlay" id="cartOverlay"></div>
+<div class="overlay" id="overlay"></div>
 
-<aside class="cart-panel" id="cartPanel">
-
-  <div class="cart-header">
+<aside class="cart" id="cart">
+  <div class="cart-head">
     <h2>MON PANIER</h2>
-    <button class="close-cart" id="closeCart" aria-label="Fermer">×</button>
+    <button class="close" id="closeCart">×</button>
   </div>
-
   <div class="cart-items" id="cartItems"></div>
-
   <div class="cart-footer">
     <div class="total">
       <span>TOTAL</span>
       <span id="cartTotal">0,00 €</span>
     </div>
-
-    <div class="demo-message">
-      Panier de démonstration. Aucun paiement
-      ni aucune commande réelle.
+    <div class="demo">
+      Panier de démonstration. Aucun achat ni paiement réel.
     </div>
-
-    <button class="clear-cart" id="clearCart">
-      VIDER LE PANIER
-    </button>
+    <button class="clear" id="clearCart">VIDER LE PANIER</button>
   </div>
-
 </aside>
 
 <div class="toast" id="toast"></div>
 
 <script>
-
-/* CATALOGUE */
-
 const productsData = [
-
   {
-    id:1,
-    name:"Maillot PSG domicile",
-    category:"football",
-    type:"FOOTBALL",
-    description:"Collection maillot du Paris Saint-Germain.",
-    price:89.90,
-    label:"PSG",
+    id:1,name:"Maillot PSG domicile",category:"football",
+    type:"FOOTBALL",description:"Collection maillot Paris Saint-Germain.",
+    price:89.90,label:"PSG",
     image:"https://www.foot-sport.com/cdn/shop/files/maillot-psg-1-etoile-homme-2025-2026.jpg?v=1751770037"
   },
-
   {
-    id:2,
-    name:"Maillot Real Madrid",
-    category:"football",
-    type:"FOOTBALL",
-    description:"Maillot blanc collection Madrid.",
-    price:89.90,
-    label:"MADRID",
+    id:2,name:"Maillot Real Madrid",category:"football",
+    type:"FOOTBALL",description:"Maillot blanc collection Madrid.",
+    price:89.90,label:"MADRID",
     image:"https://soccerlocker.com.do/cdn/shop/files/REAL_MADRID_HOME_2024_25_1.jpg?v=1720031217"
   },
-
   {
-    id:3,
-    name:"Maillot équipe de France",
-    category:"football",
-    type:"FOOTBALL",
-    description:"Maillot bleu de l'équipe nationale.",
-    price:84.90,
-    label:"FRANCE",
+    id:3,name:"Maillot équipe de France",category:"football",
+    type:"FOOTBALL",description:"Maillot bleu des Bleus.",
+    price:84.90,label:"FRANCE",
     image:"https://www.prosoccer.com/cdn/shop/files/nike-2024-25-france-mens-stadium-home-jersey-7534795.webp?v=1767647353&width=1946"
   },
-
   {
-    id:4,
-    name:"Maillot football bleu",
-    category:"football",
-    type:"FOOTBALL",
-    description:"Maillot sportif bleu.",
-    price:39.90,
-    label:"SPORT",
+    id:4,name:"Maillot football bleu",category:"football",
+    type:"FOOTBALL",description:"Maillot sportif bleu.",
+    price:39.90,label:"SPORT",
     image:"https://elani.de/cdn/shop/files/elani-shirt-jako.jpg?v=1769694541&width=1800"
   },
-
   {
-    id:5,
-    name:"Nike Mercurial",
-    category:"football",
-    type:"CHAUSSURES",
-    description:"Chaussures de football Nike à crampons.",
-    price:129.90,
-    label:"NIKE",
+    id:5,name:"Nike Mercurial",category:"football",
+    type:"CHAUSSURES",description:"Chaussures de football Nike.",
+    price:129.90,label:"NIKE",
     image:"https://images.prodirectsport.com/ProductImages/Main/1034701_Main_1979203.jpg"
   },
-
   {
-    id:6,
-    name:"Adidas Predator rouge",
-    category:"football",
-    type:"CHAUSSURES",
-    description:"Chaussures Adidas Predator.",
-    price:119.90,
-    label:"ADIDAS",
+    id:6,name:"Adidas Predator",category:"football",
+    type:"CHAUSSURES",description:"Chaussures de football Adidas.",
+    price:119.90,label:"ADIDAS",
     image:"https://www.prodirectsport.it/cdn/shop/files/1026130_main.jpg?v=1784294364"
   },
-
   {
-    id:7,
-    name:"Adidas Predator blanc",
-    category:"football",
-    type:"CHAUSSURES",
-    description:"Chaussures de football Adidas.",
-    price:99.90,
-    label:"ADIDAS",
-    image:"https://contents.mediadecathlon.com/m35552981/k%24051b417a2b3b345f93e0c673641e278c/adidas-mens-league-firm-ground-football-boots-adidas-9d36aeef-1e96-4b3b-9fe2-226378022e14.jpg"
-  },
-
-  {
-    id:8,
-    name:"Manette PlayStation 5",
-    category:"gaming",
-    type:"GAMING",
-    description:"Manette sans fil DualSense.",
-    price:74.90,
-    label:"PS5",
+    id:7,name:"Manette PlayStation 5",category:"gaming",
+    type:"GAMING",description:"Manette sans fil DualSense.",
+    price:74.90,label:"PS5",
     image:"https://static.webx.pk/files/19643/Images/61ypl-ho-ws.-sl1500--19643-0-120822100235229.jpg"
   },
-
   {
-    id:9,
-    name:"Manette Xbox",
-    category:"gaming",
-    type:"GAMING",
-    description:"Manette sans fil Xbox noire.",
-    price:64.90,
-    label:"XBOX",
+    id:8,name:"Manette Xbox",category:"gaming",
+    type:"GAMING",description:"Manette sans fil Xbox noire.",
+    price:64.90,label:"XBOX",
     image:"https://oceanrobotix.com/cdn/shop/files/Xbox_Wireless_Controller_black.jpg?v=1765868693"
   },
-
   {
-    id:10,
-    name:"Grand Theft Auto VI",
-    category:"gaming",
-    type:"JEUX VIDÉO",
-    description:"GTA VI — visuel de présentation.",
-    price:79.90,
-    label:"GTA VI",
-    image:"https://www.flatpanelshd.com/pictures/gta6covers_large.jpg"
-  },
-
-  {
-    id:11,
-    name:"Grand Theft Auto V",
-    category:"gaming",
-    type:"JEUX VIDÉO",
-    description:"Grand Theft Auto V — édition console.",
-    price:29.90,
-    label:"GTA V",
-    image:"https://static.gamesmen.com.au/media/catalog/product/cache/43c1b9e48526c06c9c8010675100b71d/g/t/gtav_packshot_ps5_ft__rgb_aus.jpg"
-  },
-
-  {
-    id:12,
-    name:"EA SPORTS FC 26",
-    category:"gaming",
-    type:"JEUX VIDÉO",
-    description:"Le jeu de football de la série FIFA.",
-    price:69.90,
-    label:"FC 26",
-    image:"https://f.fcdn.app/imgs/d2e316/www.xuruguay.com.uy/xuruuy/d958/original/catalogo/0146337504920146337504921/1920-1200/ea-sports-fc-26-ps5-ea-sports-fc-26-ps5.jpg"
-  },
-
-  {
-    id:13,
-    name:"PlayStation 5",
-    category:"gaming",
-    type:"GAMING",
-    description:"Console de nouvelle génération.",
-    price:549.90,
-    label:"CONSOLE",
+    id:9,name:"PlayStation 5",category:"gaming",
+    type:"GAMING",description:"Console nouvelle génération.",
+    price:549.90,label:"CONSOLE",
     image:"https://alabamart.com/cdn/shop/files/PS53.png?v=1699517502&width=1445"
   },
-
   {
-    id:14,
-    name:"Pack accessoires gaming",
-    category:"packs",
-    type:"PACK GAMING",
-    description:"Ensemble d'accessoires gaming.",
-    price:99.90,
-    label:"PACK",
-    image:"https://images.purexbox.com/a1f060ea00ee0/razer-reveals-new-wolverine-v2-chroma-xbox-controller.large.jpg"
+    id:10,name:"Casque gaming",category:"gaming",
+    type:"GAMING",description:"Accessoire pour jouer et communiquer.",
+    price:59.90,label:"GAMING",
+    image:"https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=900&q=85"
   },
-
   {
-    id:15,
-    name:"Pack équipement football",
-    category:"packs",
-    type:"PACK FOOT",
-    description:"Sélection d'équipements football.",
-    price:59.90,
-    label:"PACK",
+    id:11,name:"Pack football",category:"packs",
+    type:"PACK FOOT",description:"Sélection équipement football.",
+    price:59.90,label:"PACK",
     image:"https://images.prodirectsport.com/ProductImages/Gallery_1/182872.jpg"
+  },
+  {
+    id:12,name:"Pack gaming",category:"packs",
+    type:"PACK GAMING",description:"Ensemble d'accessoires gaming.",
+    price:99.90,label:"PACK",
+    image:"https://images.purexbox.com/a1f060ea00ee0/razer-reveals-new-wolverine-v2-chroma-xbox-controller.large.jpg"
   }
-
 ];
 
-/* VARIABLES */
-
-const productsElement=document.getElementById("products");
-const searchElement=document.getElementById("search");
-const noResults=document.getElementById("noResults");
-
-let currentFilter="all";
+let filter="all";
 let basket=[];
 
-/* PRIX */
+const productArea=document.getElementById("products");
+const search=document.getElementById("search");
 
-function formatPrice(price) {
-  return price.toLocaleString("fr-FR",{
-    style:"currency",
-    currency:"EUR"
+function money(value) {
+  return value.toLocaleString("fr-FR",{
+    style:"currency",currency:"EUR"
   });
 }
 
-/* CHARGER PRODUITS */
-
 function displayProducts() {
+  const query=search.value.toLowerCase();
 
-  const search=searchElement.value.toLowerCase();
-
-  const results=productsData.filter(product=>{
-
-    const categoryOK=
-      currentFilter==="all" ||
-      product.category===currentFilter;
-
-    const searchOK=
-      (product.name+" "+product.description+" "+product.type)
-      .toLowerCase().includes(search);
-
-    return categoryOK && searchOK;
+  const results=productsData.filter(item=>{
+    const matchesCategory=filter==="all" || item.category===filter;
+    const matchesSearch=(item.name+" "+item.description+" "+item.type)
+      .toLowerCase().includes(query);
+    return matchesCategory && matchesSearch;
   });
 
-  productsElement.innerHTML="";
-  noResults.style.display=results.length?"none":"block";
+  productArea.innerHTML="";
+  document.getElementById("noResults").style.display=results.length?"none":"block";
 
-  results.forEach(product=>{
-
+  results.forEach(item=>{
     const card=document.createElement("article");
     card.className="product";
 
     card.innerHTML=`
-      <div class="product-photo" data-name="${product.name}">
-        <span class="product-tag">${product.label}</span>
-        <img src="${product.image}"
-          alt="${product.name}"
-          loading="lazy">
+      <div class="product-image" data-name="${item.name}">
+        <span class="product-tag">${item.label}</span>
+        <img src="${item.image}" alt="${item.name}" loading="lazy">
       </div>
-
-      <div class="product-details">
-        <div class="product-category">${product.type}</div>
-        <h3>${product.name}</h3>
-        <p class="product-description">${product.description}</p>
-
+      <div class="product-info">
+        <div class="product-type">${item.type}</div>
+        <h3>${item.name}</h3>
+        <p class="product-description">${item.description}</p>
         <div class="product-bottom">
-          <span class="product-price">${formatPrice(product.price)}</span>
-          <button class="add-button" data-add="${product.id}">
-            + AJOUTER
-          </button>
+          <span class="price">${money(item.price)}</span>
+          <button class="add" data-add="${item.id}">+ AJOUTER</button>
         </div>
-      </div>
-    `;
+      </div>`;
 
-    const image=card.querySelector("img");
-
-    image.addEventListener("error",()=>{
-      image.remove();
-      card.querySelector(".product-photo").classList.add("fallback");
+    const img=card.querySelector("img");
+    img.addEventListener("error",()=>{
+      img.remove();
+      card.querySelector(".product-image").classList.add("fallback");
     });
 
-    productsElement.appendChild(card);
+    productArea.appendChild(card);
   });
-
 }
 
-/* FILTRES */
-
-function setFilter(filter) {
-  currentFilter=filter;
-
+function setFilter(value) {
+  filter=value;
   document.querySelectorAll(".filter").forEach(button=>{
-    button.classList.toggle(
-      "active",
-      button.dataset.filter===filter
-    );
+    button.classList.toggle("active",button.dataset.filter===value);
   });
-
   displayProducts();
 }
 
 document.querySelectorAll(".filter").forEach(button=>{
-  button.addEventListener("click",()=>{
-    setFilter(button.dataset.filter);
-  });
+  button.addEventListener("click",()=>setFilter(button.dataset.filter));
 });
 
-document.querySelectorAll("[data-jump-filter]").forEach(link=>{
-  link.addEventListener("click",()=>{
-    setFilter(link.dataset.jumpFilter);
-  });
+document.querySelectorAll("[data-filter-jump]").forEach(link=>{
+  link.addEventListener("click",()=>setFilter(link.dataset.filterJump));
 });
 
-searchElement.addEventListener("input",displayProducts);
+search.addEventListener("input",displayProducts);
 
-/* AJOUT PANIER */
+/* PANIER */
 
 function addProduct(id) {
-
-  const product=productsData.find(item=>item.id===id);
-  if(!product)return;
-
-  const existing=basket.find(item=>item.id===id);
+  const item=productsData.find(p=>p.id===id);
+  if(!item)return;
+  const existing=basket.find(p=>p.id===id);
 
   if(existing)existing.quantity++;
-  else basket.push({...product,quantity:1});
+  else basket.push({...item,quantity:1});
 
-  renderBasket();
-  showToast(product.name+" ajouté au panier.");
+  renderCart();
+  showToast(item.name+" ajouté au panier.");
 }
 
-/* MODIFIER QUANTITÉ */
-
-function changeQuantity(id,amount) {
-
-  const item=basket.find(item=>item.id===id);
+function changeQty(id,difference) {
+  const item=basket.find(p=>p.id===id);
   if(!item)return;
-
-  item.quantity+=amount;
-
-  if(item.quantity<=0) {
-    basket=basket.filter(item=>item.id!==id);
-  }
-
-  renderBasket();
+  item.quantity+=difference;
+  if(item.quantity<=0)basket=basket.filter(p=>p.id!==id);
+  renderCart();
 }
 
-/* SUPPRIMER */
-
-function removeProduct(id) {
-  basket=basket.filter(item=>item.id!==id);
-  renderBasket();
-}
-
-/* AFFICHER PANIER */
-
-function renderBasket() {
-
+function renderCart() {
   const container=document.getElementById("cartItems");
+  const count=basket.reduce((sum,p)=>sum+p.quantity,0);
+  const total=basket.reduce((sum,p)=>sum+p.quantity*p.price,0);
 
-  const quantity=basket.reduce(
-    (sum,item)=>sum+item.quantity,0
-  );
-
-  const total=basket.reduce(
-    (sum,item)=>sum+item.price*item.quantity,0
-  );
-
-  document.getElementById("cartCount").textContent=quantity;
-  document.getElementById("cartTotal").textContent=formatPrice(total);
+  document.getElementById("cartCount").textContent=count;
+  document.getElementById("cartTotal").textContent=money(total);
 
   if(!basket.length) {
-    container.innerHTML=
-      '<p style="color:#9ba8ba;padding:20px 0;font-size:12px">Ton panier est vide.</p>';
+    container.innerHTML='<p style="color:#a1aabd;padding:20px 0;font-size:12px">Ton panier est vide.</p>';
     return;
   }
 
   container.innerHTML="";
 
   basket.forEach(item=>{
-
     const row=document.createElement("div");
     row.className="cart-row";
-
     row.innerHTML=`
       <img src="${item.image}" alt="${item.name}">
       <div>
         <h4>${item.name}</h4>
-        <p>${formatPrice(item.price*item.quantity)}</p>
-        <div class="quantity">
+        <p>${money(item.price*item.quantity)}</p>
+        <div class="qty">
           <button data-minus="${item.id}">−</button>
           <span>${item.quantity}</span>
           <button data-plus="${item.id}">+</button>
           <button class="remove" data-remove="${item.id}">Supprimer</button>
         </div>
-      </div>
-    `;
+      </div>`;
 
-    row.querySelector("img").addEventListener("error",event=>{
-      event.target.style.visibility="hidden";
+    row.querySelector("img").addEventListener("error",e=>{
+      e.target.style.visibility="hidden";
     });
 
     container.appendChild(row);
   });
-
 }
 
-/* ÉVÉNEMENTS PRODUITS */
-
-productsElement.addEventListener("click",event=>{
+productArea.addEventListener("click",event=>{
   const button=event.target.closest("[data-add]");
   if(button)addProduct(Number(button.dataset.add));
 });
 
-/* ÉVÉNEMENTS PANIER */
-
 document.getElementById("cartItems").addEventListener("click",event=>{
-
   const minus=event.target.closest("[data-minus]");
   const plus=event.target.closest("[data-plus]");
   const remove=event.target.closest("[data-remove]");
 
-  if(minus)changeQuantity(Number(minus.dataset.minus),-1);
-  if(plus)changeQuantity(Number(plus.dataset.plus),1);
-  if(remove)removeProduct(Number(remove.dataset.remove));
-
+  if(minus)changeQty(Number(minus.dataset.minus),-1);
+  if(plus)changeQty(Number(plus.dataset.plus),1);
+  if(remove) {
+    basket=basket.filter(item=>item.id!==Number(remove.dataset.remove));
+    renderCart();
+  }
 });
 
-/* OUVERTURE PANIER */
+/* OUVERTURE DU PANIER */
 
-const cartPanel=document.getElementById("cartPanel");
-const overlay=document.getElementById("cartOverlay");
+const cartPanel=document.getElementById("cart");
+const overlay=document.getElementById("overlay");
 
 function openCart() {
   cartPanel.classList.add("open");
   overlay.classList.add("open");
 }
-
 function closeCart() {
   cartPanel.classList.remove("open");
   overlay.classList.remove("open");
@@ -1631,36 +1046,27 @@ document.addEventListener("keydown",event=>{
   if(event.key==="Escape")closeCart();
 });
 
-/* VIDER PANIER */
-
 document.getElementById("clearCart").addEventListener("click",()=>{
   basket=[];
-  renderBasket();
+  renderCart();
   showToast("Panier vidé.");
 });
 
 /* NOTIFICATION */
 
 let toastTimer;
-
 function showToast(message) {
-
   const toast=document.getElementById("toast");
   toast.textContent=message;
   toast.classList.add("show");
-
   clearTimeout(toastTimer);
-
-  toastTimer=setTimeout(()=>{
-    toast.classList.remove("show");
-  },2200);
-
+  toastTimer=setTimeout(()=>toast.classList.remove("show"),2200);
 }
 
-/* DÉMARRAGE */
+/* INITIALISATION */
 
 displayProducts();
-renderBasket();
+renderCart();
 
 </script>
 </body>
