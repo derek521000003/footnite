@@ -4,673 +4,309 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FOOTNITE — Gaming & Football</title>
+<title>FOOTNITE | Football & Gaming</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');
-
-:root{
-  --red:#ff3030;
-  --orange:#ff792b;
-  --dark:#090a0e;
-  --panel:#12141b;
-  --muted:#9699a5;
-  --line:rgba(255,255,255,.09);
-}
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;600;700;800&display=swap');
+:root{--red:#f63832;--orange:#ff792b;--bg:#090a0e;--panel:#151720;--muted:#a3a5af}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{
-  background:var(--dark);
-  color:#fff;
-  font-family:Inter,Arial,sans-serif;
-}
+body{background:var(--bg);color:white;font-family:Inter,Arial}
+a{text-decoration:none;color:inherit}
 button,input{font:inherit}
-button{cursor:pointer}
-a{color:inherit;text-decoration:none}
-.topbar{
-  height:34px;background:#f04432;color:white;
-  display:flex;align-items:center;justify-content:center;
-  font-size:11px;font-weight:800;letter-spacing:2px;
-}
-header{
-  height:76px;padding:0 6%;display:flex;align-items:center;
-  justify-content:space-between;background:#0b0c11;
-  border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20;
-}
-.logo{
-  font-family:"Barlow Condensed",sans-serif;font-size:36px;
-  font-weight:900;font-style:italic;letter-spacing:-1px;
-}
+.top{background:#f63832;text-align:center;padding:9px;font-size:10px;font-weight:900;letter-spacing:2px}
+header{height:75px;background:#0c0d12;border-bottom:1px solid #ffffff16;display:flex;align-items:center;justify-content:space-between;padding:0 6%;position:sticky;top:0;z-index:10}
+.logo{font:italic 900 36px "Barlow Condensed";letter-spacing:-1px}
 .logo span{color:var(--red)}
-nav{display:flex;gap:28px;align-items:center}
-nav a{font-size:12px;font-weight:800;color:#c7c7ce;transition:.2s}
+nav{display:flex;gap:25px}
+nav a{font-size:11px;font-weight:800;color:#ccc}
 nav a:hover{color:var(--orange)}
-.header-right{display:flex;gap:12px;align-items:center}
-.cart-button{
-  border:1px solid var(--line);background:#171922;color:white;
-  padding:12px 17px;border-radius:7px;font-weight:800;font-size:12px;
-}
-.cart-button:hover{border-color:var(--red)}
-.cart-count{color:var(--orange)}
-.menu-button{display:none;background:none;border:0;color:white;font-size:25px}
-
-.hero{
-  min-height:600px;position:relative;overflow:hidden;
-  display:flex;align-items:center;padding:70px 8%;
-  background:
-    linear-gradient(90deg,rgba(5,6,10,.98) 0%,rgba(5,6,10,.83) 48%,rgba(5,6,10,.25) 100%),
-    linear-gradient(0deg,#090a0e 0%,transparent 35%),
-    url("https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=2000&q=85") center/cover;
-}
-.hero:after{
-  content:"";position:absolute;width:520px;height:520px;
-  right:-120px;top:20px;border:1px solid rgba(255,60,40,.22);
-  transform:rotate(35deg);pointer-events:none;
-}
-.hero-content{max-width:650px;position:relative;z-index:2}
-.eyebrow{
-  color:var(--orange);font-size:12px;font-weight:900;
-  letter-spacing:4px;margin-bottom:20px;
-}
-.hero h1{
-  font-family:"Barlow Condensed",sans-serif;
-  font-size:clamp(65px,10vw,120px);line-height:.83;
-  font-weight:900;font-style:italic;letter-spacing:-3px;
-}
-.hero h1 span{
-  display:block;color:var(--red);
-  text-shadow:0 0 35px rgba(255,48,48,.28);
-}
-.hero p{color:#c0c1c9;line-height:1.8;font-size:14px;max-width:470px;margin:28px 0}
-.hero-actions{display:flex;gap:13px;flex-wrap:wrap}
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;
-  padding:15px 24px;border-radius:5px;font-size:12px;
-  font-weight:900;letter-spacing:1px;border:1px solid transparent;
-  transition:.2s;
-}
-.btn-primary{background:linear-gradient(110deg,var(--red),var(--orange));color:white}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 30px #ff303044}
-.btn-outline{border-color:#ffffff50;background:#ffffff0a;color:white}
-.btn-outline:hover{background:#ffffff18}
-.hero-tag{
-  position:absolute;right:8%;bottom:65px;z-index:2;
-  font-family:"Barlow Condensed";font-size:22px;font-weight:800;
-  font-style:italic;letter-spacing:2px;transform:rotate(-7deg);
-  border-left:4px solid var(--red);padding:10px 18px;
-  background:#090a0ebd;
-}
-.hero-tag span{color:var(--orange)}
-
-.ticker{
-  overflow:hidden;background:#11131a;border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);padding:15px 0;
-  color:#aeb0ba;font-size:11px;font-weight:900;letter-spacing:3px;
-  text-align:center;
-}
-.ticker span{color:var(--red);margin:0 18px}
-
-section{padding:75px 7%}
-.section-head{
-  display:flex;align-items:end;justify-content:space-between;
-  gap:20px;margin-bottom:30px;
-}
-.kicker{color:var(--orange);font-size:10px;font-weight:900;letter-spacing:3px;margin-bottom:8px}
-.section-head h2{
-  font-family:"Barlow Condensed";font-size:43px;
-  line-height:1;font-weight:900;font-style:italic;text-transform:uppercase;
-}
-.section-head h2 span{color:var(--red)}
-.section-note{color:var(--muted);font-size:11px;max-width:300px;line-height:1.7}
-
-.category-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:15px;
-}
-.category{
-  height:245px;position:relative;overflow:hidden;border-radius:9px;
-  background:#171922;border:1px solid var(--line);cursor:pointer;
-  transition:.25s;
-}
-.category:hover{transform:translateY(-6px);border-color:var(--red)}
-.category img{
-  width:100%;height:100%;object-fit:cover;position:absolute;
-  inset:0;transition:.4s;
-}
-.category:hover img{transform:scale(1.08)}
-.category:after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(0deg,rgba(5,6,10,.98),rgba(5,6,10,.03) 85%);
-}
-.category-info{position:absolute;z-index:2;bottom:20px;left:20px}
-.category-info small{color:var(--orange);font-size:10px;font-weight:900;letter-spacing:2px}
-.category-info h3{
-  font-family:"Barlow Condensed";font-size:29px;font-style:italic;
-  text-transform:uppercase;margin-top:4px;
-}
-.category-info p{font-size:10px;color:#c2c2ca;margin-top:5px}
-.category-arrow{
-  position:absolute;right:17px;bottom:22px;z-index:2;
-  background:var(--red);width:34px;height:34px;border-radius:50%;
-  display:grid;place-items:center;font-size:18px;
-}
-
-.feature-band{
-  background:linear-gradient(110deg,#171019,#251014 55%,#101116);
-  border-top:1px solid #ff34342b;border-bottom:1px solid #ff34342b;
-  padding:45px 7%;display:flex;justify-content:space-between;
-  align-items:center;gap:25px;
-}
-.feature-band h2{
-  font-family:"Barlow Condensed";font-size:40px;font-style:italic;
-}
-.feature-band h2 span{color:var(--red)}
-.feature-band p{font-size:12px;color:#b7b7c1;margin-top:8px}
-
+.cartbtn{background:#191b25;color:white;border:1px solid #ffffff20;padding:12px 16px;border-radius:5px;font-weight:800}
+#count{color:var(--orange)}
+.menu{display:none;background:none;border:0;color:white;font-size:25px}
+.hero{min-height:600px;padding:90px 8%;display:flex;align-items:center;position:relative;background:linear-gradient(90deg,#08090ef5 5%,#08090eaa 60%,#08090e40),linear-gradient(0deg,#090a0e,transparent 50%),url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1800&q=85') center/cover}
+.hero-content{max-width:650px}
+.kicker{font-size:10px;color:var(--orange);font-weight:900;letter-spacing:3px;margin-bottom:12px}
+.hero h1{font:900 italic clamp(65px,10vw,120px)/.84 "Barlow Condensed";letter-spacing:-3px}
+.hero h1 span{display:block;color:var(--red)}
+.hero p{color:#c3c4cb;line-height:1.8;font-size:14px;max-width:470px;margin:25px 0}
+.btn{display:inline-block;padding:15px 22px;border-radius:4px;font-size:11px;font-weight:900;letter-spacing:1px;margin:4px}
+.primary{background:linear-gradient(110deg,var(--red),var(--orange))}
+.outline{border:1px solid #ffffff55}
+.ticker{text-align:center;padding:15px;background:#12141b;color:#aaa;font-size:10px;font-weight:900;letter-spacing:3px}
+.ticker span{color:var(--red);margin:0 15px}
+section{padding:70px 7%}
+.heading{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:28px}
+.heading h2{font:900 italic 43px "Barlow Condensed";text-transform:uppercase}
+.heading h2 span{color:var(--red)}
+.heading p{font-size:11px;color:var(--muted);max-width:300px;line-height:1.7}
+.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.category{height:230px;position:relative;overflow:hidden;border-radius:8px;cursor:pointer;background:#181a23}
+.category img{width:100%;height:100%;object-fit:cover;transition:.3s}
+.category:hover img{transform:scale(1.07)}
+.category:after,.game:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#08090ef5,transparent 80%)}
+.cattext{position:absolute;z-index:2;bottom:18px;left:17px}
+.cattext small{font-size:9px;color:var(--orange);font-weight:900;letter-spacing:2px}
+.cattext h3{font:800 28px "Barlow Condensed";font-style:italic}
+.band{background:linear-gradient(100deg,#1d1014,#291016,#11131a);display:flex;justify-content:space-between;align-items:center;gap:20px;padding:38px 7%;border-block:1px solid #f6383230}
+.band h2{font:900 italic 38px "Barlow Condensed"}
+.band h2 span{color:var(--red)}
 .shop{background:#0c0d12}
-.filters{
-  display:flex;gap:9px;flex-wrap:wrap;margin-bottom:22px;
-}
-.filter{
-  border:1px solid var(--line);background:#151720;color:#c7c8d0;
-  padding:10px 16px;border-radius:4px;font-size:10px;
-  font-weight:900;letter-spacing:.7px;
-}
-.filter.active,.filter:hover{background:var(--red);border-color:var(--red);color:white}
-.search-row{display:flex;gap:12px;margin-bottom:25px}
-.search-row input{
-  flex:1;min-width:0;background:#151720;border:1px solid var(--line);
-  border-radius:5px;color:white;padding:14px 16px;outline:none;
-}
-.search-row input:focus{border-color:var(--orange)}
-.search-row input::placeholder{color:#777b87}
-.product-grid{
-  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;
-}
-.product{
-  background:#151720;border:1px solid var(--line);border-radius:8px;
-  overflow:hidden;transition:.22s;position:relative;
-}
-.product:hover{transform:translateY(-5px);border-color:#ff4a3b80}
-.product-image{
-  height:210px;background:#f0f0f0;position:relative;overflow:hidden;
-}
-.product-image img{
-  width:100%;height:100%;object-fit:contain;padding:12px;
-  transition:.35s;
-}
-.product:hover .product-image img{transform:scale(1.05)}
-.product-label{
-  position:absolute;left:11px;top:11px;background:var(--red);
-  padding:6px 9px;border-radius:3px;font-size:9px;font-weight:900;
-}
-.product-info{padding:16px}
-.product-category{font-size:9px;color:var(--orange);font-weight:900;letter-spacing:1.5px}
-.product h3{font-size:14px;margin:8px 0;color:white}
-.product-desc{font-size:10px;color:#9699a5;line-height:1.6;min-height:30px}
-.product-bottom{
-  display:flex;align-items:center;justify-content:space-between;
-  margin-top:15px;gap:8px;
-}
-.price{font-size:18px;font-weight:900}
-.add{
-  border:0;background:#292c37;color:white;width:35px;height:35px;
-  border-radius:5px;font-size:20px;font-weight:700;
-}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.filter{padding:10px 15px;background:#191b25;border:1px solid #ffffff18;color:#ccc;border-radius:4px;font-size:10px;font-weight:900}
+.filter.active,.filter:hover{background:var(--red);color:white}
+input{width:100%;padding:14px;background:#171922;color:white;border:1px solid #ffffff20;border-radius:5px;margin-bottom:22px;outline:none}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.product{background:#151720;border:1px solid #ffffff12;border-radius:7px;overflow:hidden;transition:.2s}
+.product:hover{transform:translateY(-5px);border-color:#f6383280}
+.photo{height:215px;background:#eee;position:relative;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo.contain img{object-fit:contain;padding:12px}
+.photo.pitch img{object-fit:cover}
+.tag{position:absolute;top:10px;left:10px;background:var(--red);padding:6px 8px;font-size:9px;font-weight:900}
+.info{padding:15px}
+.info small{font-size:9px;color:var(--orange);font-weight:900;letter-spacing:1px}
+.info h3{font-size:13px;margin:8px 0}
+.info p{font-size:10px;color:#999;min-height:27px;line-height:1.5}
+.bottom{display:flex;align-items:center;justify-content:space-between;margin-top:13px}
+.price{font-size:17px;font-weight:900}
+.add{height:34px;width:35px;background:#292c37;color:white;border:0;border-radius:4px;font-size:21px}
 .add:hover{background:var(--red)}
-.no-products{color:#999;padding:30px 0;grid-column:1/-1}
-
-.games-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:15px;
-}
-.game-card{
-  position:relative;height:290px;border-radius:8px;overflow:hidden;
-  background:#171922;border:1px solid var(--line);
-}
-.game-card img{width:100%;height:100%;object-fit:cover;transition:.4s}
-.game-card:hover img{transform:scale(1.06)}
-.game-card:after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(0deg,#08090ef2,transparent 75%);
-}
-.game-info{position:absolute;bottom:18px;left:17px;z-index:2}
-.game-info small{color:var(--orange);font-size:9px;font-weight:900;letter-spacing:2px}
-.game-info h3{font-family:"Barlow Condensed";font-size:27px;font-style:italic}
-.game-info p{font-size:10px;color:#c5c5cc;margin-top:4px}
-.age{color:#ffb14c!important}
-
-.vbucks-area{
-  background:linear-gradient(130deg,#15101c,#1d1228,#101116);
-}
-.vbucks-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.vbuck{
-  background:#171522;border:1px solid #5d3b7c;border-radius:8px;
-  padding:20px;text-align:center;transition:.2s;
-}
-.vbuck:hover{transform:translateY(-5px);border-color:#c084fc}
-.vbuck img{width:100%;height:115px;object-fit:contain;margin-bottom:12px}
-.vbuck h3{font-size:16px}
-.vbuck p{font-size:10px;color:#a9a4b4;margin:8px 0 15px}
-.vbuck strong{font-size:20px;color:#d5a7ff}
-.vbuck button{
-  margin-top:14px;width:100%;padding:11px;border:0;border-radius:4px;
-  background:#7543a9;color:white;font-weight:900;font-size:10px;
-}
-
-.cart-panel{
-  position:fixed;right:18px;top:90px;width:min(370px,calc(100% - 36px));
-  max-height:75vh;overflow:auto;background:#171922;
-  border:1px solid #ffffff25;border-radius:9px;padding:20px;
-  z-index:40;box-shadow:0 20px 70px #000b;display:none;
-}
-.cart-panel.open{display:block}
-.cart-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
-.cart-title h3{font-family:"Barlow Condensed";font-size:26px}
-.close-cart{background:none;color:white;border:0;font-size:22px}
-.cart-item{
-  display:flex;justify-content:space-between;gap:10px;
-  padding:12px 0;border-bottom:1px solid var(--line);font-size:12px;
-}
-.cart-item small{color:#a5a6b0}
-.cart-total{display:flex;justify-content:space-between;padding:18px 0;font-weight:900}
-.empty{color:#aaa;font-size:12px;padding:20px 0}
-.checkout{
-  width:100%;padding:13px;border:0;background:var(--red);
-  color:white;border-radius:4px;font-weight:900;
-}
-.disclaimer{font-size:9px;color:#8f929e;line-height:1.6;margin-top:12px}
-
-footer{
-  background:#07080b;border-top:1px solid var(--line);
-  padding:35px 7%;display:flex;justify-content:space-between;
-  gap:20px;flex-wrap:wrap;align-items:center;
-}
-footer p{font-size:10px;color:#777b87;margin-top:7px}
-footer .logo{font-size:29px}
-
-@media(max-width:900px){
-  nav{gap:13px}
-  .category-grid,.games-grid,.vbucks-grid{grid-template-columns:repeat(2,1fr)}
-  .product-grid{grid-template-columns:repeat(3,1fr)}
-}
-@media(max-width:650px){
-  header{padding:0 5%;height:65px}
-  nav{display:none}
-  .menu-button{display:block}
-  nav.mobile-open{
-    display:flex;position:absolute;top:65px;left:0;right:0;
-    background:#101116;padding:22px;flex-direction:column;align-items:flex-start;
-    border-bottom:1px solid var(--line);
-  }
-  .hero{min-height:560px;padding:55px 7%;background-position:60% center}
-  .hero-tag{right:6%;bottom:20px}
-  section{padding:55px 5%}
-  .section-head{align-items:flex-start;flex-direction:column}
-  .section-head h2{font-size:37px}
-  .category-grid{grid-template-columns:repeat(2,1fr);gap:10px}
-  .category{height:190px}
-  .category-info{left:12px;bottom:14px}
-  .category-info h3{font-size:23px}
-  .category-arrow{right:10px;bottom:13px}
-  .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-  .product-image{height:155px}
-  .product-info{padding:11px}
-  .product h3{font-size:12px}
-  .price{font-size:15px}
-  .games-grid{grid-template-columns:repeat(2,1fr)}
-  .game-card{height:230px}
-  .vbucks-grid{grid-template-columns:repeat(2,1fr)}
-  .feature-band{padding:35px 6%;align-items:flex-start;flex-direction:column}
-  .search-row{flex-direction:column}
+.games{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.game{height:290px;position:relative;overflow:hidden;border-radius:8px;background:#171922}
+.game img{width:100%;height:100%;object-fit:cover;transition:.3s}
+.game:hover img{transform:scale(1.06)}
+.gametext{position:absolute;bottom:17px;left:15px;z-index:2}
+.gametext small{font-size:9px;color:var(--orange);font-weight:900}
+.gametext h3{font:800 26px "Barlow Condensed";font-style:italic}
+.vbucks{background:linear-gradient(130deg,#15101e,#24152e,#0e1016)}
+.vgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.vcard{background:#191522;border:1px solid #69458a;border-radius:8px;padding:18px;text-align:center}
+.vcard img{width:100%;height:110px;object-fit:contain}
+.vcard h3{font-size:14px;margin:10px}
+.vcard strong{color:#d5a7ff}
+.vcard button{display:block;width:100%;padding:10px;margin-top:12px;background:#7543a9;border:0;color:white;font-weight:900}
+.cart{position:fixed;right:18px;top:90px;width:min(370px,92vw);max-height:75vh;overflow:auto;background:#191b25;border:1px solid #ffffff30;border-radius:8px;padding:20px;z-index:20;display:none;box-shadow:0 15px 60px #000}
+.cart.open{display:block}
+.carttop{display:flex;justify-content:space-between;margin-bottom:15px}
+.carttop button{background:none;border:0;color:white;font-size:22px}
+.cartitem{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #ffffff18;font-size:12px}
+.total{display:flex;justify-content:space-between;padding:18px 0;font-weight:900}
+footer{padding:35px 7%;background:#07080b;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
+footer p{color:#888;font-size:10px;margin-top:8px}
+@media(max-width:900px){.grid{grid-template-columns:repeat(3,1fr)}.categories,.games,.vgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){
+ header{padding:0 4%}nav{display:none}.menu{display:block}
+ nav.open{display:flex;position:absolute;top:75px;left:0;right:0;background:#101116;padding:20px;flex-direction:column}
+ .hero{min-height:520px;padding:60px 6%}.heading{align-items:flex-start;flex-direction:column}
+ section{padding:50px 5%}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .photo{height:155px}.info{padding:10px}.categories{gap:9px}.category{height:180px}
+ .games{gap:9px}.game{height:220px}.vgrid{gap:9px}
+ .band{align-items:flex-start;flex-direction:column}
 }
 </style>
 </head>
-
 <body>
-<div class="topbar">FOOTBALL × GAMING — BIENVENUE CHEZ FOOTNITE</div>
 
+<div class="top">FOOTBALL × GAMING — BIENVENUE CHEZ FOOTNITE</div>
 <header>
-  <a href="#" class="logo">FOOT<span>NITE</span></a>
-  <nav id="nav">
-    <a href="#accueil">ACCUEIL</a>
-    <a href="#univers">UNIVERS</a>
-    <a href="#boutique">BOUTIQUE</a>
-    <a href="#jeux">JEUX VIDÉO</a>
-    <a href="#vbucks">V-BUCKS</a>
-  </nav>
-  <div class="header-right">
-    <button class="cart-button" onclick="toggleCart()">PANIER <span class="cart-count" id="cartCount">0</span></button>
-    <button class="menu-button" onclick="document.getElementById('nav').classList.toggle('mobile-open')">☰</button>
-  </div>
+<a class="logo" href="#">FOOT<span>NITE</span></a>
+<nav id="nav">
+<a href="#accueil">ACCUEIL</a><a href="#univers">UNIVERS</a>
+<a href="#boutique">BOUTIQUE</a><a href="#jeux">JEUX</a><a href="#vbucks">V-BUCKS</a>
+</nav>
+<div>
+<button class="cartbtn" onclick="toggleCart()">PANIER <span id="count">0</span></button>
+<button class="menu" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+</div>
 </header>
 
-<main>
-<section class="hero" id="accueil">
-  <div class="hero-content">
-    <div class="eyebrow">LE TERRAIN DE TOUS LES PASSIONNÉS</div>
-    <h1>PLAY HARD.<span>LIVE BIG.</span></h1>
-    <p>Bienvenue dans un univers où le football rencontre le gaming. Découvre les équipements, les consoles, les jeux et les accessoires qui font la différence.</p>
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="#boutique">DÉCOUVRIR LA BOUTIQUE ↗</a>
-      <a class="btn btn-outline" href="#univers">EXPLORER LES UNIVERS</a>
-    </div>
-  </div>
-  <div class="hero-tag">FOOTBALL <span>×</span> GAMING</div>
-</section>
-
-<div class="ticker">
-  FOOTBALL <span>✦</span> GAMING <span>✦</span> PLAYSTATION <span>✦</span> V-BUCKS <span>✦</span> FOOTNITE
+<div class="hero" id="accueil">
+<div class="hero-content">
+<div class="kicker">LE TERRAIN DE TOUS LES PASSIONNÉS</div>
+<h1>PLAY HARD.<span>LIVE BIG.</span></h1>
+<p>Le football rencontre le gaming. Découvre les maillots, les consoles PlayStation, les iPhones, les jeux vidéo et les accessoires dans un seul univers.</p>
+<a class="btn primary" href="#boutique">DÉCOUVRIR LA BOUTIQUE ↗</a>
+<a class="btn outline" href="#univers">EXPLORER LES UNIVERS</a>
 </div>
+</div>
+
+<div class="ticker">FOOTBALL <span>✦</span> PLAYSTATION <span>✦</span> GAMING <span>✦</span> V-BUCKS <span>✦</span> FOOTNITE</div>
 
 <section id="univers">
-  <div class="section-head">
-    <div>
-      <div class="kicker">TROUVE TON UNIVERS</div>
-      <h2>CHOISIS TON <span>STYLE</span></h2>
-    </div>
-    <p class="section-note">Du terrain de football à ton setup gaming, retrouve tes univers préférés au même endroit.</p>
-  </div>
-
-  <div class="category-grid">
-    <article class="category" onclick="filterProducts('maillots')">
-      <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=800&q=85" alt="Football">
-      <div class="category-info"><small>01 / FOOTBALL</small><h3>MAILLLOTS</h3><p>Les couleurs de ton club</p></div>
-      <div class="category-arrow">↗</div>
-    </article>
-    <article class="category" onclick="filterProducts('ps5')">
-      <img src="https://www.tradeinn.com/f/14001/140014486/playstation-ps5-console-refurbished.jpg" alt="Console PlayStation 5">
-      <div class="category-info"><small>02 / PLAYSTATION</small><h3>PS5 & ACCESSOIRES</h3><p>Ton setup commence ici</p></div>
-      <div class="category-arrow">↗</div>
-    </article>
-    <article class="category" onclick="filterProducts('jeux')">
-      <img src="https://www.xboxpassion.fr/images/jaquette/3-1579-fortnite.jpg" alt="Jeu Fortnite">
-      <div class="category-info"><small>03 / GAMING</small><h3>JEUX VIDÉO</h3><p>Entre dans la partie</p></div>
-      <div class="category-arrow">↗</div>
-    </article>
-    <article class="category" onclick="filterProducts('vbucks')">
-      <img src="https://imageio.forbes.com/specials-images/imageserve/5db44b1bc538200007817100/0x0.jpg?fit=bounds&format=jpg&height=900&width=1600" alt="Cartes V-Bucks">
-      <div class="category-info"><small>04 / FORTNITE</small><h3>V-BUCKS</h3><p>Cartes et univers Fortnite</p></div>
-      <div class="category-arrow">↗</div>
-    </article>
-  </div>
+<div class="heading"><div><div class="kicker">TROUVE TON UNIVERS</div><h2>CHOISIS TON <span>STYLE</span></h2></div><p>Des terrains de football aux setups gaming, explore les univers FOOTNITE.</p></div>
+<div class="categories">
+<div class="category" onclick="filter('maillots')"><img src="https://images.unsplash.com/photo-1668791160369-d20b8175eab2?auto=format&fit=crop&w=900&q=85" alt="Maillots de football sur le terrain"><div class="cattext"><small>01 / FOOTBALL</small><h3>MAILLOTS</h3></div></div>
+<div class="category" onclick="filter('ps5')"><img src="https://www.tradeinn.com/f/14001/140014486/playstation-ps5-console-refurbished.jpg" alt="PlayStation 5"><div class="cattext"><small>02 / PLAYSTATION</small><h3>PS5 & ACCESSOIRES</h3></div></div>
+<div class="category" onclick="filter('jeux')"><img src="https://tm.ibxk.com.br/2023/12/12/12080107413000.jpg?ims=1200x900" alt="Univers Fortnite"><div class="cattext"><small>03 / GAMING</small><h3>JEUX VIDÉO</h3></div></div>
+<div class="category" onclick="filter('vbucks')"><img src="https://imageio.forbes.com/specials-images/imageserve/5db44b1bc538200007817100/0x0.jpg?fit=bounds&format=jpg&height=900&width=1600" alt="Cartes V-Bucks"><div class="cattext"><small>04 / FORTNITE</small><h3>V-BUCKS</h3></div></div>
+</div>
 </section>
 
-<div class="feature-band">
-  <div>
-    <div class="kicker">NOUVEL UNIVERS</div>
-    <h2>TON SETUP <span>PLAYSTATION 5</span></h2>
-    <p>Consoles, manettes et accessoires dans la boutique FOOTNITE.</p>
-  </div>
-  <a class="btn btn-primary" href="#boutique" onclick="filterProducts('ps5')">VOIR LES PS5 ↗</a>
-</div>
+<div class="band"><div><div class="kicker">NOUVEAU DANS LA BOUTIQUE</div><h2>UNIVERS <span>PLAYSTATION 5</span></h2><p>Consoles, manettes et accessoires.</p></div><a class="btn primary" href="#boutique" onclick="filter('ps5')">VOIR LES PS5 ↗</a></div>
 
 <section id="jeux">
-  <div class="section-head">
-    <div>
-      <div class="kicker">À TOI DE JOUER</div>
-      <h2>LES JEUX À <span>DÉCOUVRIR</span></h2>
-    </div>
-    <p class="section-note">Retrouve les univers gaming mis en avant par FOOTNITE.</p>
-  </div>
-  <div class="games-grid">
-    <article class="game-card">
-      <img src="https://www.xboxpassion.fr/images/jaquette/3-1579-fortnite.jpg" alt="Fortnite">
-      <div class="game-info"><small>FREE TO PLAY</small><h3>FORTNITE</h3><p>Battle Royale</p></div>
-    </article>
-    <article class="game-card">
-      <img src="https://myshopville.com/cdn/shop/files/EA-Sports-FC-26-Xbox-one-Xbox-Series-X-box-cover.jpg" alt="EA Sports FC 26">
-      <div class="game-info"><small>FOOTBALL</small><h3>EA SPORTS FC 26</h3><p>Football virtuel</p></div>
-    </article>
-    <article class="game-card">
-      <img src="https://cdn.mobygames.com/9715900a-ac09-11ed-9eb0-02420a000136.webp" alt="Rocket League">
-      <div class="game-info"><small>FREE TO PLAY</small><h3>ROCKET LEAGUE</h3><p>Voitures et football</p></div>
-    </article>
-    <article class="game-card">
-      <img src="https://images.igdb.com/igdb/image/upload/t_1080p_2x/co9hz1.webp" alt="Grand Theft Auto V">
-      <div class="game-info"><small class="age">PEGI 18 — INFORMATION</small><h3>GTA V</h3><p>Jeu réservé aux adultes</p></div>
-    </article>
-  </div>
+<div class="heading"><div><div class="kicker">À TOI DE JOUER</div><h2>LES JEUX À <span>DÉCOUVRIR</span></h2></div><p>Les jaquettes des jeux sont aussi présentes dans la boutique.</p></div>
+<div class="games">
+<div class="game"><img src="https://www.xboxpassion.fr/images/jaquette/3-1579-fortnite.jpg" alt="Fortnite"><div class="gametext"><small>FREE TO PLAY</small><h3>FORTNITE</h3></div></div>
+<div class="game"><img src="https://myshopville.com/cdn/shop/files/EA-Sports-FC-26-Xbox-one-Xbox-Series-X-box-cover.jpg" alt="EA Sports FC 26"><div class="gametext"><small>FOOTBALL</small><h3>EA SPORTS FC 26</h3></div></div>
+<div class="game"><img src="https://cdn.mobygames.com/9715900a-ac09-11ed-9eb0-02420a000136.webp" alt="Rocket League"><div class="gametext"><small>FREE TO PLAY</small><h3>ROCKET LEAGUE</h3></div></div>
+<div class="game"><img src="https://images.igdb.com/igdb/image/upload/t_1080p_2x/co9hz1.webp" alt="GTA V"><div class="gametext"><small>PEGI 18 — INFORMATION</small><h3>GTA V</h3></div></div>
+</div>
 </section>
 
-<section class="vbucks-area" id="vbucks">
-  <div class="section-head">
-    <div>
-      <div class="kicker">UNIVERS FORTNITE</div>
-      <h2>CARTES <span>V-BUCKS</span></h2>
-    </div>
-    <p class="section-note">Présentation de différentes valeurs de cartes V-Bucks. Produits de démonstration, aucun code n'est fourni.</p>
-  </div>
-  <div class="vbucks-grid" id="vbucksGrid"></div>
+<section class="vbucks" id="vbucks">
+<div class="heading"><div><div class="kicker">UNIVERS FORTNITE</div><h2>CARTES <span>V-BUCKS</span></h2></div><p>Cartes illustratives. Aucun code réel n'est fourni.</p></div>
+<div class="vgrid" id="vgrid"></div>
 </section>
 
 <section class="shop" id="boutique">
-  <div class="section-head">
-    <div>
-      <div class="kicker">LE SHOP FOOTNITE</div>
-      <h2>TOUTE LA <span>BOUTIQUE</span></h2>
-    </div>
-    <p class="section-note">Explore les produits et ajoute tes favoris au panier de démonstration.</p>
-  </div>
-  <div class="filters">
-    <button class="filter active" onclick="filterProducts('tout',this)">TOUT</button>
-    <button class="filter" onclick="filterProducts('maillots',this)">MAILLOTS</button>
-    <button class="filter" onclick="filterProducts('ps5',this)">PS5</button>
-    <button class="filter" onclick="filterProducts('telephones',this)">IPHONES</button>
-    <button class="filter" onclick="filterProducts('ecouteurs',this)">ÉCOUTEURS</button>
-    <button class="filter" onclick="filterProducts('vbucks',this)">V-BUCKS</button>
-    <button class="filter" onclick="filterProducts('jeux',this)">JEUX</button>
-  </div>
-  <div class="search-row">
-    <input id="search" type="search" placeholder="Rechercher un produit..." oninput="renderProducts()">
-  </div>
-  <div class="product-grid" id="productGrid"></div>
+<div class="heading"><div><div class="kicker">LE SHOP FOOTNITE</div><h2>TOUTE LA <span>BOUTIQUE</span></h2></div><p>Retrouve tous les produits dans les catégories ci-dessous.</p></div>
+<div class="filters">
+<button class="filter active" onclick="filter('tout',this)">TOUT</button>
+<button class="filter" onclick="filter('maillots',this)">MAILLOTS</button>
+<button class="filter" onclick="filter('ps5',this)">PS5</button>
+<button class="filter" onclick="filter('telephones',this)">IPHONES</button>
+<button class="filter" onclick="filter('ecouteurs',this)">ÉCOUTEURS</button>
+<button class="filter" onclick="filter('vbucks',this)">V-BUCKS</button>
+<button class="filter" onclick="filter('jeux',this)">JEUX VIDÉO</button>
+</div>
+<input id="search" placeholder="Rechercher un produit..." oninput="render()">
+<div class="grid" id="products"></div>
 </section>
-</main>
 
-<footer>
-  <div>
-    <a href="#" class="logo">FOOT<span>NITE</span></a>
-    <p>LE RENDEZ-VOUS DU FOOTBALL ET DU GAMING.</p>
-  </div>
-  <p>© 2026 FOOTNITE — SITE DE DÉMONSTRATION</p>
-</footer>
+<footer><div><a class="logo" href="#">FOOT<span>NITE</span></a><p>LE RENDEZ-VOUS DU FOOTBALL ET DU GAMING.</p></div><p>© 2026 FOOTNITE — SITE DE DÉMONSTRATION</p></footer>
 
-<aside class="cart-panel" id="cartPanel">
-  <div class="cart-title">
-    <h3>TON PANIER</h3>
-    <button class="close-cart" onclick="toggleCart()">×</button>
-  </div>
-  <div id="cartItems"></div>
-  <div class="cart-total"><span>TOTAL</span><span id="cartTotal">0,00 €</span></div>
-  <button class="checkout" onclick="alert('Ceci est un panier de démonstration : aucune commande ni aucun paiement ne sont possibles.')">PANIER DE DÉMONSTRATION</button>
-  <p class="disclaimer">Les prix sont fictifs et servent uniquement à présenter le site. Aucune vente réelle, aucun paiement et aucun code numérique ne sont proposés ici.</p>
-</aside>
+<div class="cart" id="cart">
+<div class="carttop"><h2>TON PANIER</h2><button onclick="toggleCart()">×</button></div>
+<div id="cartitems"></div>
+<div class="total"><span>TOTAL</span><span id="total">0,00 €</span></div>
+<button class="btn primary" style="width:100%;border:0" onclick="alert('Panier de démonstration : aucune commande ni paiement possible.')">PANIER DE DÉMONSTRATION</button>
+<p style="font-size:9px;color:#999;margin-top:12px">Prix fictifs. Aucun paiement ni code numérique réel.</p>
+</div>
 
 <script>
-const images = {
-  maillot:"https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=800&q=85",
-  ps5:"https://www.tradeinn.com/f/14001/140014486/playstation-ps5-console-refurbished.jpg",
-  manette:"https://down-br.img.susercontent.com/file/sg-11134201-82580-mg880h04lnuxb7",
-  iphone:"https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=800&q=85",
-  earbuds:"https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=800&q=85",
-  vbucks:"https://imageio.forbes.com/specials-images/imageserve/5db44b1bc538200007817100/0x0.jpg?fit=bounds&format=jpg&height=900&width=1600",
-  fortnite:"https://www.xboxpassion.fr/images/jaquette/3-1579-fortnite.jpg",
-  fc:"https://myshopville.com/cdn/shop/files/EA-Sports-FC-26-Xbox-one-Xbox-Series-X-box-cover.jpg",
-  rocket:"https://cdn.mobygames.com/9715900a-ac09-11ed-9eb0-02420a000136.webp",
-  gta:"https://images.igdb.com/igdb/image/upload/t_1080p_2x/co9hz1.webp"
-};
+const pitch="https://images.unsplash.com/photo-1668791160369-d20b8175eab2?auto=format&fit=crop&w=1000&q=85";
+const iphone16="https://cdn.neowin.com/news/images/uploaded/2024/09/1725966736_iphone_16_specs_appeal.jpg";
+const iphone15="https://cdn.neowin.com/news/images/uploaded/2023/09/1694594335_iphone_15_iphone_14_iphone_13.jpg";
+const vb="https://imageio.forbes.com/specials-images/imageserve/5db44b1bc538200007817100/0x0.jpg?fit=bounds&format=jpg&height=900&width=1600";
 
-const products = [
-  // MAILLOTS
-  {name:"Maillot PSG",cat:"maillots",price:79,image:images.maillot,tag:"FOOTBALL"},
-  {name:"Maillot FC Barcelone",cat:"maillots",price:79,image:images.maillot,tag:"FOOTBALL"},
-  {name:"Maillot Real Madrid",cat:"maillots",price:79,image:images.maillot,tag:"FOOTBALL"},
-  {name:"Maillot Liverpool",cat:"maillots",price:79,image:images.maillot,tag:"FOOTBALL"},
-  {name:"Maillot AC Milan",cat:"maillots",price:79,image:images.maillot,tag:"FOOTBALL"},
-  {name:"Maillot Arsenal",cat:"maillots",price:79,image:images.maillot,tag:"FOOTBALL"},
-  {name:"Maillot Dortmund",cat:"maillots",price:79,image:images.maillot,tag:"FOOTBALL"},
-  {name:"Maillot Manchester City",cat:"maillots",price:79,image:images.maillot,tag:"FOOTBALL"},
-  {name:"Maillot Équipe de France",cat:"maillots",price:85,image:images.maillot,tag:"FOOTBALL"},
-  {name:"Maillot Inter Milan",cat:"maillots",price:79,image:images.maillot,tag:"FOOTBALL"},
+const data=[
+/* MAILLOTS : visuels de maillots présentés sur une pelouse */
+...["PSG","Barcelone","Real Madrid","Liverpool","AC Milan","Arsenal","Dortmund","Manchester City","Équipe de France","Inter Milan"].map((n,i)=>({name:"Maillot "+n,cat:"maillots",price:79,image:i%2?pitch:"https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1000&q=85",tag:"FOOTBALL",desc:"Maillot présenté dans un univers de terrain"})),
 
-  // PLAYSTATION 5
-  {name:"PlayStation 5 Slim avec lecteur",cat:"ps5",price:549,image:images.ps5,tag:"PLAYSTATION"},
-  {name:"PlayStation 5 Slim Digital",cat:"ps5",price:499,image:images.ps5,tag:"PLAYSTATION"},
-  {name:"PlayStation 5 Pro",cat:"ps5",price:799,image:images.ps5,tag:"PLAYSTATION"},
-  {name:"Manette DualSense blanche",cat:"ps5",price:74,image:images.manette,tag:"PLAYSTATION"},
-  {name:"Manette DualSense noire",cat:"ps5",price:79,image:images.manette,tag:"PLAYSTATION"},
-  {name:"Manette DualSense rouge",cat:"ps5",price:79,image:images.manette,tag:"PLAYSTATION"},
-  {name:"Casque Pulse 3D",cat:"ps5",price:99,image:images.earbuds,tag:"PLAYSTATION"},
-  {name:"Station de recharge manettes",cat:"ps5",price:29,image:images.manette,tag:"PLAYSTATION"},
+/* PLAYSTATION */
+...[
+["PlayStation 5 Slim avec lecteur",549,"https://www.tradeinn.com/f/14001/140014486/playstation-ps5-console-refurbished.jpg"],
+["PlayStation 5 Slim Digital",499,"https://www.tradeinn.com/f/14001/140014486/playstation-ps5-console-refurbished.jpg"],
+["PlayStation 5 Pro",799,"https://www.tradeinn.com/f/14001/140014486/playstation-ps5-console-refurbished.jpg"],
+["Manette DualSense blanche",74,"https://down-br.img.susercontent.com/file/sg-11134201-82580-mg880h04lnuxb7"],
+["Manette DualSense noire",79,"https://down-br.img.susercontent.com/file/sg-11134201-82580-mg880h04lnuxb7"],
+["Manette DualSense rouge",79,"https://down-br.img.susercontent.com/file/sg-11134201-82580-mg880h04lnuxb7"],
+["Casque Pulse 3D",99,"https://images.unsplash.com/photo-1599669454699-248893623440?auto=format&fit=crop&w=800&q=85"],
+["Station de recharge manettes",29,"https://down-br.img.susercontent.com/file/sg-11134201-82580-mg880h04lnuxb7"]
+].map(x=>({name:x[0],price:x[1],image:x[2],cat:"ps5",tag:"PLAYSTATION",desc:"Accessoire de démonstration"})),
 
-  // IPHONES
-  {name:"iPhone 17",cat:"telephones",price:969,image:images.iphone,tag:"APPLE"},
-  {name:"iPhone 16",cat:"telephones",price:869,image:images.iphone,tag:"APPLE"},
-  {name:"iPhone 16 Pro",cat:"telephones",price:1199,image:images.iphone,tag:"APPLE"},
-  {name:"iPhone 15",cat:"telephones",price:749,image:images.iphone,tag:"APPLE"},
-  {name:"iPhone 15 Pro",cat:"telephones",price:999,image:images.iphone,tag:"APPLE"},
-  {name:"iPhone 14 Pro",cat:"telephones",price:849,image:images.iphone,tag:"APPLE"},
-  {name:"iPhone 17 Pro",cat:"telephones",price:1299,image:images.iphone,tag:"APPLE"},
-  {name:"iPhone 14",cat:"telephones",price:649,image:images.iphone,tag:"APPLE"},
-  {name:"iPhone 13 Pro",cat:"telephones",price:699,image:images.iphone,tag:"APPLE"},
-  {name:"iPhone 12",cat:"telephones",price:499,image:images.iphone,tag:"APPLE"},
+/* IPHONES : images différentes selon les générations */
+...[
+["iPhone 17",969,iphone16,"50% 50%"],
+["iPhone 16",869,iphone16,"25% 50%"],
+["iPhone 16 Pro",1199,iphone16,"75% 50%"],
+["iPhone 15",749,iphone15,"20% 50%"],
+["iPhone 15 Pro",999,iphone15,"50% 50%"],
+["iPhone 14 Pro",849,iphone15,"80% 50%"],
+["iPhone 17 Pro",1299,iphone16,"90% 50%"],
+["iPhone 14",649,iphone15,"10% 50%"],
+["iPhone 13 Pro",699,iphone15,"65% 50%"],
+["iPhone 12",499,"https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=900&q=85","50% 50%"]
+].map(x=>({name:x[0],price:x[1],image:x[2],position:x[3],cat:"telephones",tag:"APPLE",desc:"Visuel de présentation du modèle"})),
 
-  // ÉCOUTEURS
-  {name:"AirPods Pro 2",cat:"ecouteurs",price:249,image:images.earbuds,tag:"APPLE"},
-  {name:"Galaxy Buds3 Pro",cat:"ecouteurs",price:199,image:images.earbuds,tag:"SAMSUNG"},
-  {name:"Sony WF-1000XM5",cat:"ecouteurs",price:229,image:images.earbuds,tag:"SONY"},
-  {name:"JBL Tune Buds",cat:"ecouteurs",price:99,image:images.earbuds,tag:"JBL"},
-  {name:"Nothing Ear",cat:"ecouteurs",price:149,image:images.earbuds,tag:"NOTHING"},
-  {name:"Bose QuietComfort Ultra",cat:"ecouteurs",price:299,image:images.earbuds,tag:"BOSE"},
-  {name:"Beats Studio Buds+",cat:"ecouteurs",price:179,image:images.earbuds,tag:"BEATS"},
-  {name:"Google Pixel Buds Pro 2",cat:"ecouteurs",price:229,image:images.earbuds,tag:"GOOGLE"},
-  {name:"Huawei FreeBuds Pro 3",cat:"ecouteurs",price:199,image:images.earbuds,tag:"HUAWEI"},
-  {name:"Soundcore Liberty 4 NC",cat:"ecouteurs",price:99,image:images.earbuds,tag:"SOUNDCORE"},
+/* ÉCOUTEURS */
+...[
+["AirPods Pro 2",249,"APPLE"],["Galaxy Buds3 Pro",199,"SAMSUNG"],
+["Sony WF-1000XM5",229,"SONY"],["JBL Tune Buds",99,"JBL"],
+["Nothing Ear",149,"NOTHING"],["Bose QuietComfort Ultra",299,"BOSE"],
+["Beats Studio Buds+",179,"BEATS"],["Google Pixel Buds Pro 2",229,"GOOGLE"],
+["Huawei FreeBuds Pro 3",199,"HUAWEI"],["Soundcore Liberty 4 NC",99,"SOUNDCORE"]
+].map(x=>({name:x[0],price:x[1],cat:"ecouteurs",tag:x[2],image:"https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=900&q=85",desc:"Écouteurs sans fil"})),
 
-  // V-BUCKS
-  {name:"Carte 1 000 V-Bucks",cat:"vbucks",price:8.99,image:images.vbucks,tag:"FORTNITE"},
-  {name:"Carte 2 800 V-Bucks",cat:"vbucks",price:22.99,image:images.vbucks,tag:"FORTNITE"},
-  {name:"Carte 5 000 V-Bucks",cat:"vbucks",price:36.99,image:images.vbucks,tag:"FORTNITE"},
-  {name:"Carte 13 500 V-Bucks",cat:"vbucks",price:89.99,image:images.vbucks,tag:"FORTNITE"},
+/* CARTES V-BUCKS */
+...[["1 000 V-Bucks",8.99],["2 800 V-Bucks",22.99],["5 000 V-Bucks",36.99],["13 500 V-Bucks",89.99]].map(x=>({name:"Carte "+x[0],price:x[1],cat:"vbucks",tag:"FORTNITE",image:vb,desc:"Carte illustrative — aucun code fourni"})),
 
-  // JEUX
-  {name:"Fortnite",cat:"jeux",price:0,image:images.fortnite,tag:"FREE TO PLAY"},
-  {name:"EA SPORTS FC 26",cat:"jeux",price:79.99,image:images.fc,tag:"FOOTBALL"},
-  {name:"Rocket League",cat:"jeux",price:0,image:images.rocket,tag:"FREE TO PLAY"},
-  {name:"GTA V",cat:"jeux",price:0,image:images.gta,tag:"PEGI 18 — INFORMATION",adult:true}
+/* JEUX : les jaquettes sont aussi dans la boutique */
+{name:"Fortnite",price:0,cat:"jeux",tag:"FREE TO PLAY",image:"https://www.xboxpassion.fr/images/jaquette/3-1579-fortnite.jpg",desc:"Jeu gratuit"},
+{name:"EA SPORTS FC 26",price:79.99,cat:"jeux",tag:"FOOTBALL",image:"https://myshopville.com/cdn/shop/files/EA-Sports-FC-26-Xbox-one-Xbox-Series-X-box-cover.jpg",desc:"Jeu de football"},
+{name:"Rocket League",price:0,cat:"jeux",tag:"FREE TO PLAY",image:"https://cdn.mobygames.com/9715900a-ac09-11ed-9eb0-02420a000136.webp",desc:"Football et voitures"},
+{name:"GTA V",price:0,cat:"jeux",tag:"PEGI 18",image:"https://images.igdb.com/igdb/image/upload/t_1080p_2x/co9hz1.webp",desc:"Jeu réservé aux adultes — information uniquement",adult:true}
 ];
 
-const vbucksProducts = products.filter(p=>p.cat==="vbucks");
-const vbucksGrid = document.getElementById("vbucksGrid");
-vbucksProducts.forEach(p=>{
-  const el=document.createElement("article");
-  el.className="vbuck";
-  el.innerHTML=`
-    <img src="${p.image}" alt="Illustration carte V-Bucks">
-    <h3>${p.name}</h3>
-    <p>Carte présentée à titre de démonstration</p>
-    <strong>${p.price.toFixed(2).replace(".",",")} €</strong>
-    <button type="button">VOIR LE PRODUIT</button>`;
-  el.querySelector("button").addEventListener("click",()=>{
-    document.getElementById("boutique").scrollIntoView({behavior:"smooth"});
-    filterProducts("vbucks");
-  });
-  vbucksGrid.appendChild(el);
-});
+let category="tout",cartItems=[];
+const money=n=>n.toFixed(2).replace(".",",")+" €";
 
-let currentFilter="tout";
-let cart=[];
-
-function money(n){return n.toFixed(2).replace(".",",")+" €"}
-
-function renderProducts(){
-  const search=document.getElementById("search").value.toLowerCase();
-  const grid=document.getElementById("productGrid");
-  grid.innerHTML="";
-  const filtered=products.filter(p=>{
-    const matchesCategory=currentFilter==="tout"||p.cat===currentFilter;
-    const matchesSearch=p.name.toLowerCase().includes(search)||p.tag.toLowerCase().includes(search);
-    return matchesCategory&&matchesSearch;
-  });
-  if(!filtered.length){
-    grid.innerHTML='<p class="no-products">Aucun produit trouvé.</p>';
-    return;
+function render(){
+ const search=document.getElementById("search").value.toLowerCase();
+ const list=data.filter(p=>(category==="tout"||p.cat===category)&&p.name.toLowerCase().includes(search));
+ const root=document.getElementById("products");root.innerHTML="";
+ if(!list.length){root.innerHTML="<p>Aucun produit trouvé.</p>";return}
+ list.forEach(p=>{
+  const el=document.createElement("article");el.className="product";
+  const photo=document.createElement("div");photo.className="photo "+(p.cat==="telephones"?"":"");
+  const img=document.createElement("img");img.src=p.image;img.alt=p.name;
+  if(p.position)img.style.objectPosition=p.position;
+  img.onerror=()=>{photo.innerHTML='<div style="height:100%;display:grid;place-items:center;background:linear-gradient(135deg,#242735,#11131a);color:#ff7045;font-weight:900;font-size:22px;text-align:center;padding:10px">'+p.name+'</div>'};
+  photo.appendChild(img);
+  const tag=document.createElement("span");tag.className="tag";tag.textContent=p.tag;photo.appendChild(tag);
+  const info=document.createElement("div");info.className="info";
+  info.innerHTML='<small>'+p.cat.toUpperCase()+'</small><h3></h3><p></p><div class="bottom"><span class="price"></span></div>';
+  info.querySelector("h3").textContent=p.name;
+  info.querySelector("p").textContent=p.desc;
+  info.querySelector(".price").textContent=p.adult?"—":p.price===0?"GRATUIT":money(p.price);
+  if(!p.adult&&p.price>0){
+   const b=document.createElement("button");b.className="add";b.textContent="+";
+   b.onclick=()=>add(p);info.querySelector(".bottom").appendChild(b);
   }
-  filtered.forEach(p=>{
-    const card=document.createElement("article");
-    card.className="product";
-    card.innerHTML=`
-      <div class="product-image">
-        <img src="${p.image}" alt="${p.name}">
-        <span class="product-label">${p.tag}</span>
-      </div>
-      <div class="product-info">
-        <div class="product-category">${p.cat.toUpperCase()}</div>
-        <h3>${p.name}</h3>
-        <p class="product-desc">${p.adult?"Jeu PEGI 18 — affichage informatif uniquement.":"Produit de démonstration FOOTNITE."}</p>
-        <div class="product-bottom">
-          <span class="price">${p.adult?"—":p.price===0?"GRATUIT":money(p.price)}</span>
-          ${p.adult?"":`<button class="add" aria-label="Ajouter ${p.name}" ${p.price===0?'disabled title="Jeu gratuit"':''}>+</button>`}
-        </div>
-      </div>`;
-    const img=card.querySelector("img");
-    img.onerror=()=>{
-      img.remove();
-      card.querySelector(".product-image").style.background="linear-gradient(135deg,#272a35,#11131a)";
-      const fallback=document.createElement("div");
-      fallback.style.cssText="height:100%;display:grid;place-items:center;color:#ff6840;font-size:38px;font-weight:900;font-family:Arial";
-      fallback.textContent=p.cat==="ps5"?"PS5":p.cat==="maillots"?"⚽":p.cat==="vbucks"?"V-BUCKS":p.cat==="jeux"?"GAMING":"TECH";
-      card.querySelector(".product-image").appendChild(fallback);
-    };
-    const add=card.querySelector(".add");
-    if(add)add.addEventListener("click",()=>addToCart(p));
-    grid.appendChild(card);
-  });
+  el.append(photo,info);root.appendChild(el);
+ });
 }
 
-function filterProducts(category,button){
-  currentFilter=category;
-  document.querySelectorAll(".filter").forEach(b=>b.classList.remove("active"));
-  if(button)button.classList.add("active");
-  else{
-    const matching=[...document.querySelectorAll(".filter")].find(b=>b.textContent.toLowerCase().includes(category));
-    if(matching)matching.classList.add("active");
-    else document.querySelector('.filter').classList.add("active");
-  }
-  document.getElementById("boutique").scrollIntoView({behavior:"smooth"});
-  renderProducts();
+function filter(c,btn){
+ category=c;
+ document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));
+ if(btn)btn.classList.add("active");
+ else document.querySelectorAll(".filter").forEach(x=>{if(x.textContent.toLowerCase().includes(c))x.classList.add("active")});
+ render();
+ document.getElementById("boutique").scrollIntoView({behavior:"smooth"});
 }
-
-function addToCart(product){
-  const found=cart.find(item=>item.name===product.name);
-  if(found)found.quantity++;
-  else cart.push({...product,quantity:1});
-  updateCart();
+function add(p){
+ const old=cartItems.find(x=>x.name===p.name);
+ if(old)old.qty++;else cartItems.push({...p,qty:1});
+ updateCart();
 }
-
 function updateCart(){
-  document.getElementById("cartCount").textContent=cart.reduce((sum,p)=>sum+p.quantity,0);
-  const box=document.getElementById("cartItems");
-  box.innerHTML="";
-  if(!cart.length)box.innerHTML='<p class="empty">Ton panier est vide pour le moment.</p>';
-  cart.forEach((p,index)=>{
-    const row=document.createElement("div");
-    row.className="cart-item";
-    row.innerHTML=`
-      <div><strong>${p.name}</strong><br><small>Quantité : ${p.quantity}</small></div>
-      <div><strong>${money(p.price*p.quantity)}</strong><br><button style="background:none;border:0;color:#ff7777;font-size:10px" data-index="${index}">Retirer</button></div>`;
-    row.querySelector("button").addEventListener("click",()=>{
-      cart.splice(index,1);updateCart();
-    });
-    box.appendChild(row);
-  });
-  document.getElementById("cartTotal").textContent=money(cart.reduce((sum,p)=>sum+p.price*p.quantity,0));
+ document.getElementById("count").textContent=cartItems.reduce((s,p)=>s+p.qty,0);
+ const root=document.getElementById("cartitems");root.innerHTML="";
+ if(!cartItems.length)root.textContent="Ton panier est vide.";
+ cartItems.forEach((p,i)=>{
+  const row=document.createElement("div");row.className="cartitem";
+  const name=document.createElement("span");name.textContent=p.name+" × "+p.qty;
+  const price=document.createElement("strong");price.textContent=money(p.price*p.qty);
+  const remove=document.createElement("button");remove.textContent="×";remove.style.cssText="background:none;color:#ff7777;border:0;margin-left:8px";
+  remove.onclick=()=>{cartItems.splice(i,1);updateCart()};
+  row.append(name,price,remove);root.appendChild(row);
+ });
+ document.getElementById("total").textContent=money(cartItems.reduce((s,p)=>s+p.price*p.qty,0));
 }
+function toggleCart(){document.getElementById("cart").classList.toggle("open")}
 
-function toggleCart(){
-  document.getElementById("cartPanel").classList.toggle("open");
-}
-
-renderProducts();
-updateCart();
+const vg=document.getElementById("vgrid");
+data.filter(p=>p.cat==="vbucks").forEach(p=>{
+ const el=document.createElement("div");el.className="vcard";
+ el.innerHTML='<img src="'+p.image+'" alt="Illustration V-Bucks"><h3></h3><strong></strong><button>VOIR DANS LA BOUTIQUE</button>';
+ el.querySelector("h3").textContent=p.name;
+ el.querySelector("strong").textContent=money(p.price);
+ el.querySelector("button").onclick=()=>filter("vbucks");
+ vg.appendChild(el);
+});
+render();updateCart();
 </script>
 </body>
 </html>
