@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -27,7 +28,8 @@ button{cursor:pointer}
 .section h2{font-size:27px}
 .section p{color:#aaa}
 .universes{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.universe{padding:25px;border:1px solid #303038;border-radius:14px;background:linear-gradient(130deg,#202027,#101014);text-decoration:none;color:white}
+.universe{padding:25px;border:1px solid #303038;border-radius:14px;background:linear-gradient(130deg,#202027,#101014);text-decoration:none;color:white;transition:.2s}
+.universe:hover{border-color:#ff681e;transform:translateY(-4px)}
 .universe strong{font-size:20px;display:block;margin-bottom:10px}
 .universe small{color:#aaa}
 .toolbar{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}
@@ -36,7 +38,8 @@ button{cursor:pointer}
 .filters button{background:#17171c;color:#ddd;border:1px solid #333;padding:10px 13px;border-radius:8px}
 .filters button.active{background:#581c19;border-color:#ff3434}
 .products{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.product{background:#131317;border:1px solid #292930;border-radius:13px;overflow:hidden}
+.product{background:#131317;border:1px solid #292930;border-radius:13px;overflow:hidden;transition:.2s}
+.product:hover{transform:translateY(-4px);border-color:#ff681e}
 .product-img{height:210px;background:white;display:flex;align-items:center;justify-content:center;padding:12px;position:relative}
 .product-img img{width:100%;height:100%;object-fit:contain}
 .tag{position:absolute;top:10px;left:10px;background:#171717;color:white;padding:5px 7px;border-radius:5px;font-size:10px;font-weight:bold}
@@ -117,7 +120,6 @@ nav a{display:none}
 <section class="section" id="boutique">
 <h2>LA BOUTIQUE</h2>
 <p>Découvre tous les produits FOOTNITE.</p>
-
 <div class="toolbar">
 <input id="search" type="search" placeholder="Rechercher un produit...">
 <div class="filters" id="filters">
@@ -129,7 +131,6 @@ nav a{display:none}
 <button data-filter="jeu">Jeux vidéo</button>
 </div>
 </div>
-
 <div class="products" id="products"></div>
 </section>
 
@@ -154,7 +155,7 @@ Site de démonstration. Prix indicatifs.
 <script>
 const products = [
 
-/* LES 10 MAILLOTS */
+/* MAILLOTS */
 
 {id:1,name:"Maillot PSG",category:"football",price:89.99,tag:"FOOTBALL",desc:"Maillot domicile du Paris Saint-Germain.",image:"https://soccerwearhouse.com/cdn/shop/files/nike-paris-saint-germain-authentic-home-jersey-2526-midnight-navy-soccerwearhouse-7022127_3000x.jpg?v=1777945212"},
 
@@ -176,7 +177,7 @@ const products = [
 
 {id:10,name:"Maillot Inter Milan",category:"football",price:89.99,tag:"FOOTBALL",desc:"Maillot bleu et noir de l'Inter.",image:"https://cdn.shopify.com/s/files/1/0603/3031/1875/files/Capture-2025-06-10-193545.png?v=1749609614"},
 
-/* LES 10 IPHONE - FOND BLANC */
+/* IPHONE */
 
 {id:11,name:"iPhone 17",category:"iphone",price:999,tag:"APPLE",desc:"iPhone 17 nouvelle génération.",image:"https://cdn.mafrservices.com/pim-content/UAE/media/product/2258787/1757614204/2258787_main.jpg"},
 
@@ -198,7 +199,7 @@ const products = [
 
 {id:20,name:"iPhone 12",category:"iphone",price:399,tag:"APPLE",desc:"iPhone 12 blanc.",image:"https://www.tunisianet.com.tn/185683-large/telephone-portable-apple-iphone-12-128-go-blanc.jpg"},
 
-/* LES 10 ECOUTEURS - FOND BLANC */
+/* ECOUTEURS */
 
 {id:21,name:"AirPods Pro 2",category:"ecouteurs",price:249,tag:"APPLE",desc:"Écouteurs sans fil Apple.",image:"https://newtime.ua/upload/2022-09/apple-airpods-pro-2-magsafe-charging-case-with-speaker-mqd83.webp"},
 
@@ -220,7 +221,7 @@ const products = [
 
 {id:30,name:"Soundcore Liberty 4 NC",category:"ecouteurs",price:99,tag:"SOUNDCORE",desc:"Écouteurs Soundcore noirs.",image:"https://www.phoneplacekenya.com/wp-content/uploads/2024/06/Anker-Liberty-4-NC.jpg"},
 
-/* LES V-BUCKS */
+/* GAMING ET V-BUCKS */
 
 {id:31,name:"1 000 V-Bucks",category:"vbuck",price:8.99,tag:"FORTNITE",desc:"Pack de V-Bucks - démonstration.",image:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/V-Bucks_icon.png/512px-V-Bucks_icon.png"},
 
@@ -242,7 +243,7 @@ const products = [
 
 {id:40,name:"Accessoire gaming",category:"vbuck",price:14.99,tag:"GAMING",desc:"Accessoire fictif pour la maquette.",image:"https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=800&q=85"},
 
-/* LES JEUX VIDEO */
+/* JEUX VIDEO */
 
 {id:41,name:"EA SPORTS FC",category:"jeu",price:69.99,tag:"JEU VIDÉO",desc:"Jeu de football - démonstration.",image:"https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=85"},
 
@@ -261,105 +262,100 @@ const money=n=>n.toLocaleString("fr-FR",{style:"currency",currency:"EUR"});
 const productsEl=document.getElementById("products");
 
 function renderProducts(){
- const q=document.getElementById("search").value.toLowerCase().trim();
+const q=document.getElementById("search").value.toLowerCase().trim();
 
- const list=products.filter(p=>
- (activeFilter==="tout"||p.category===activeFilter)&&
- (`${p.name} ${p.desc} ${p.tag}`).toLowerCase().includes(q)
- );
+const list=products.filter(p=>
+(activeFilter==="tout"||p.category===activeFilter)&&
+(`${p.name} ${p.desc} ${p.tag}`).toLowerCase().includes(q)
+);
 
- productsEl.innerHTML=list.map(p=>`
- <article class="product">
- <div class="product-img">
- <span class="tag">${p.tag}</span>
- <img src="${p.image}" alt="${p.name}" loading="lazy"
- onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<span style=&quot;color:#777;font-size:12px&quot;>Image indisponible</span>')">
- </div>
- <div class="product-info">
- <h3>${p.name}</h3>
- <p>${p.desc}</p>
- <div class="price-row">
- <span class="price">${p.price===0?"Gratuit":money(p.price)}</span>
- <button class="add" onclick="addToCart(${p.id})">Ajouter +</button>
- </div>
- </div>
- </article>
- `).join("");
+productsEl.innerHTML=list.map(p=>`
+<article class="product">
+<div class="product-img">
+<span class="tag">${p.tag}</span>
+<img src="${p.image}" alt="${p.name}" loading="lazy"
+onerror="this.parentElement.remove()">
+</div>
+<div class="product-info">
+<h3>${p.name}</h3>
+<p>${p.desc}</p>
+<div class="price-row">
+<span class="price">${p.price===0?"Gratuit":money(p.price)}</span>
+<button class="add" onclick="addToCart(${p.id})">Ajouter +</button>
+</div>
+</div>
+</article>
+`).join("");
 
- if(!list.length){
- productsEl.innerHTML="<p>Aucun produit trouvé.</p>";
- }
+if(!list.length){
+productsEl.innerHTML="<p>Aucun produit trouvé.</p>";
+}
 }
 
 function addToCart(id){
- const p=products.find(x=>x.id===id);
- const found=cart.find(x=>x.id===id);
+const p=products.find(x=>x.id===id);
+const found=cart.find(x=>x.id===id);
 
- if(found)found.qty++;
- else cart.push({...p,qty:1});
+if(found)found.qty++;
+else cart.push({...p,qty:1});
 
- renderCart();
- document.getElementById("cartPanel").classList.add("open");
+renderCart();
+document.getElementById("cartPanel").classList.add("open");
 }
 
 function removeFromCart(id){
- cart=cart.filter(x=>x.id!==id);
- renderCart();
+cart=cart.filter(x=>x.id!==id);
+renderCart();
 }
 
 function renderCart(){
- document.getElementById("cartCount").textContent=
- cart.reduce((s,p)=>s+p.qty,0);
+document.getElementById("cartCount").textContent=
+cart.reduce((s,p)=>s+p.qty,0);
 
- document.getElementById("cartItems").innerHTML=
- cart.length?
- cart.map(p=>`
- <div class="cart-item">
- <span>${p.name} × ${p.qty}</span>
- <span>${money(p.price*p.qty)}
- <button onclick="removeFromCart(${p.id})">Retirer</button>
- </span>
- </div>
- `).join("")
- :"Ton panier est vide.";
+document.getElementById("cartItems").innerHTML=
+cart.length?
+cart.map(p=>`
+<div class="cart-item">
+<span>${p.name} × ${p.qty}</span>
+<span>${money(p.price*p.qty)}
+<button onclick="removeFromCart(${p.id})">Retirer</button>
+</span>
+</div>
+`).join("")
+:"Ton panier est vide.";
 
- document.getElementById("cartTotal").textContent=
- money(cart.reduce((s,p)=>s+p.price*p.qty,0));
+document.getElementById("cartTotal").textContent=
+money(cart.reduce((s,p)=>s+p.price*p.qty,0));
 }
 
 document.getElementById("search").addEventListener("input",renderProducts);
 
 document.querySelectorAll("#filters button").forEach(b=>{
- b.addEventListener("click",()=>{
- activeFilter=b.dataset.filter;
-
- document.querySelectorAll("#filters button").forEach(x=>{
- x.classList.toggle("active",x===b);
- });
-
- renderProducts();
- });
+b.addEventListener("click",()=>{
+activeFilter=b.dataset.filter;
+document.querySelectorAll("#filters button").forEach(x=>{
+x.classList.toggle("active",x===b);
+});
+renderProducts();
+});
 });
 
 document.querySelectorAll("[data-jump]").forEach(a=>{
- a.addEventListener("click",()=>{
- const f=a.dataset.jump;
- activeFilter=f;
-
- document.querySelectorAll("#filters button").forEach(x=>{
- x.classList.toggle("active",x.dataset.filter===activeFilter);
- });
-
- renderProducts();
- });
+a.addEventListener("click",()=>{
+activeFilter=a.dataset.jump;
+document.querySelectorAll("#filters button").forEach(x=>{
+x.classList.toggle("active",x.dataset.filter===activeFilter);
+});
+renderProducts();
+});
 });
 
 document.getElementById("cartToggle").addEventListener("click",()=>{
- document.getElementById("cartPanel").classList.toggle("open");
+document.getElementById("cartPanel").classList.toggle("open");
 });
 
 document.getElementById("cartClose").addEventListener("click",()=>{
- document.getElementById("cartPanel").classList.remove("open");
+document.getElementById("cartPanel").classList.remove("open");
 });
 
 renderProducts();
