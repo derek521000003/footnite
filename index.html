@@ -42,7 +42,9 @@ button{cursor:pointer}
 .product:hover{transform:translateY(-4px);border-color:#ff681e}
 .product-img{height:210px;background:white;display:flex;align-items:center;justify-content:center;padding:12px;position:relative}
 .product-img img{width:100%;height:100%;object-fit:contain}
-.tag{position:absolute;top:10px;left:10px;background:#171717;color:white;padding:5px 7px;border-radius:5px;font-size:10px;font-weight:bold}
+.product-img.vbucks{background:radial-gradient(circle,#25252c,#101014)}
+.product-img.vbucks img{width:160px;height:160px;object-fit:contain}
+.tag{position:absolute;top:10px;left:10px;background:#171717;color:white;padding:5px 7px;border-radius:5px;font-size:10px;font-weight:bold;z-index:1}
 .product-info{padding:14px}
 .product-info h3{font-size:15px;margin:0 0 8px}
 .product-info p{font-size:12px;color:#aaa;min-height:30px}
@@ -58,6 +60,7 @@ button{cursor:pointer}
 .cart-total{display:flex;justify-content:space-between;font-weight:bold;margin:16px 0}
 .notice{font-size:11px;color:#aaa;line-height:1.5}
 footer{text-align:center;color:#888;border-top:1px solid #292930;padding:30px;margin-top:60px;font-size:12px}
+
 @media(max-width:900px){.products{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:650px){
 nav a{display:none}
@@ -67,6 +70,7 @@ nav a{display:none}
 .universes{grid-template-columns:1fr}
 .products{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .product-img{height:155px}
+.product-img.vbucks img{width:125px;height:125px}
 .product-info{padding:10px}
 .product-info h3{font-size:13px}
 .price{font-size:14px}
@@ -153,104 +157,79 @@ Site de démonstration. Prix indicatifs.
 </footer>
 
 <script>
+
+/* LOGO V-BUCKS INTÉGRÉ AU SITE */
+const vbucksLogo = "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(`
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+<defs>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#fff5a0"/>
+<stop offset=".45" stop-color="#e9a900"/>
+<stop offset="1" stop-color="#8b4b00"/>
+</linearGradient>
+</defs>
+<circle cx="150" cy="150" r="139" fill="#171717" stroke="#ffcf32" stroke-width="12"/>
+<circle cx="150" cy="150" r="119" fill="url(#gold)" stroke="#fff0a0" stroke-width="5"/>
+<circle cx="150" cy="150" r="100" fill="#20232b" stroke="#ffcf32" stroke-width="5"/>
+<path d="M85 65 L145 65 L215 235 L155 235 Z" fill="#fff" stroke="#a8b4c8" stroke-width="5"/>
+<path d="M85 65 L145 65 L165 115 L125 115 Z" fill="#ffcf32"/>
+<path d="M125 115 L165 115 L215 235 L155 235 Z" fill="#e7a900"/>
+<text x="150" y="273" font-family="Arial" font-size="25" font-weight="bold" text-anchor="middle" fill="#ffcf32">V-BUCKS</text>
+</svg>
+`);
+
+/* PRODUITS */
 const products = [
 
-/* MAILLOTS */
-
 {id:1,name:"Maillot PSG",category:"football",price:89.99,tag:"FOOTBALL",desc:"Maillot domicile du Paris Saint-Germain.",image:"https://soccerwearhouse.com/cdn/shop/files/nike-paris-saint-germain-authentic-home-jersey-2526-midnight-navy-soccerwearhouse-7022127_3000x.jpg?v=1777945212"},
-
 {id:2,name:"Maillot Barcelone",category:"football",price:89.99,tag:"FOOTBALL",desc:"Maillot du FC Barcelone.",image:"https://shootify.us/wp-content/uploads/2024/09/flat-lay-photography_4-1-500x563.jpg"},
-
 {id:3,name:"Maillot Real Madrid",category:"football",price:94.99,tag:"FOOTBALL",desc:"Maillot domicile du Real Madrid.",image:"https://ultraslb.com/cdn/shop/files/81C252BA-0B4C-4EF3-A11C-12E485676819.png?v=1760099620"},
-
 {id:4,name:"Maillot Liverpool",category:"football",price:89.99,tag:"FOOTBALL",desc:"Maillot de Liverpool.",image:"https://static.ticimax.cloud/60559/uploads/urunresimleri/buyuk/yeni-sezon-liverpool-fc-2025-ic-saha-p-ca6-e2.jpg"},
-
 {id:5,name:"Maillot AC Milan",category:"football",price:84.99,tag:"FOOTBALL",desc:"Maillot rouge et noir de l'AC Milan.",image:"https://santkicks.com/cdn/shop/files/cl_3c73cdaf-dc1e-4ea9-ad99-c69db60d55e6.png?v=1749669900&width=3840"},
-
 {id:6,name:"Maillot Arsenal",category:"football",price:89.99,tag:"FOOTBALL",desc:"Maillot domicile d'Arsenal.",image:"https://laligasoccer.ca/cdn/shop/files/IT6140_2_APPAREL_Photography_FrontCenterView_white_800x.jpg?v=1754341054"},
-
-{id:7,name:"Maillot Dortmund",category:"football",price:84.99,tag:"FOOTBALL",desc:"Maillot du Borussia Dortmund.",image:"https://images.puma.com/image/upload/f_auto%2Cq_auto%2Cb_rgb%3Afafafa%2Cw_2000%2Ch_2000/global/774956/02/fnd/IND/fmt/png/Borussia-Dortmund-24/25-Away-Men%27s-Football-Jersey"},
-
+{id:7,name:"Maillot Dortmund",category:"football",price:84.99,tag:"FOOTBALL",desc:"Maillot du Borussia Dortmund.",image:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/774956/02/fnd/IND/fmt/png/Borussia-Dortmund-24/25-Away-Men's-Football-Jersey"},
 {id:8,name:"Maillot Manchester City",category:"football",price:89.99,tag:"FOOTBALL",desc:"Maillot de Manchester City.",image:"https://shop.mancity.com/dw/image/v2/BDWJ_PRD/on/demandware.static/-/Sites-master-catalog-MAN/default/dwd3cc3a78/images/large/701237128001_pp_01_mcfc.png?sh=1600&sm=fit&sw=1600"},
-
 {id:9,name:"Maillot France",category:"football",price:94.99,tag:"FOOTBALL",desc:"Maillot de l'équipe de France.",image:"https://www.rsport.co.il/cdn/shop/files/44_3502df66-db17-4202-b7e8-650fd6db2f02.jpg?v=1751244115"},
-
 {id:10,name:"Maillot Inter Milan",category:"football",price:89.99,tag:"FOOTBALL",desc:"Maillot bleu et noir de l'Inter.",image:"https://cdn.shopify.com/s/files/1/0603/3031/1875/files/Capture-2025-06-10-193545.png?v=1749609614"},
 
-/* IPHONE */
-
 {id:11,name:"iPhone 17",category:"iphone",price:999,tag:"APPLE",desc:"iPhone 17 nouvelle génération.",image:"https://cdn.mafrservices.com/pim-content/UAE/media/product/2258787/1757614204/2258787_main.jpg"},
-
 {id:12,name:"iPhone 16",category:"iphone",price:899,tag:"APPLE",desc:"iPhone 16 blanc.",image:"https://www.anmolmobiles.com/cdn/shop/files/Apple-iphone-16-white-128gb-Front-Back-View.png?v=1757338598&width=1346"},
-
 {id:13,name:"iPhone 16 Pro",category:"iphone",price:1099,tag:"APPLE",desc:"iPhone 16 Pro titane blanc.",image:"https://www.pbtech.co.nz/imgprod/M/P/MPHAPP416221.jpg?h=155183543"},
-
 {id:14,name:"iPhone 15",category:"iphone",price:749,tag:"APPLE",desc:"iPhone 15 bleu clair.",image:"https://switchtechnology.pt/switch-cont/uploads/2023/09/MTP93QL.jpg"},
-
 {id:15,name:"iPhone 15 Pro",category:"iphone",price:949,tag:"APPLE",desc:"iPhone 15 Pro titane noir.",image:"https://i.ebayimg.com/images/g/qm4AAOSwqilmTGDD/s-l1600.jpg"},
-
 {id:16,name:"iPhone 14 Pro",category:"iphone",price:799,tag:"APPLE",desc:"iPhone 14 Pro noir.",image:"https://istore.co.na/cdn/shop/products/iPhone14Pro_SpaceBlack_e1992f7b-0359-4fdb-bb0a-a85dfeff8763_2048x.png?v=1664344280"},
-
 {id:17,name:"iPhone 17 Pro",category:"iphone",price:1199,tag:"APPLE",desc:"iPhone 17 Pro argent.",image:"https://img.landtop.com.tw/landtop_prod/productimage/4711/image/0b3cfc975a39a95788faa53c724310d1.png"},
-
 {id:18,name:"iPhone 14",category:"iphone",price:649,tag:"APPLE",desc:"iPhone 14 lumière stellaire.",image:"https://cdn.shopify.com/s/files/1/0566/7120/7498/files/416251-Product-0-I-638917018778832953.jpg?v=1756111325"},
-
 {id:19,name:"iPhone 13 Pro",category:"iphone",price:599,tag:"APPLE",desc:"iPhone 13 Pro argent.",image:"https://media.ldlc.com/r1600/ld/products/00/05/88/62/LD0005886266_1.jpg"},
-
 {id:20,name:"iPhone 12",category:"iphone",price:399,tag:"APPLE",desc:"iPhone 12 blanc.",image:"https://www.tunisianet.com.tn/185683-large/telephone-portable-apple-iphone-12-128-go-blanc.jpg"},
 
-/* ECOUTEURS */
-
 {id:21,name:"AirPods Pro 2",category:"ecouteurs",price:249,tag:"APPLE",desc:"Écouteurs sans fil Apple.",image:"https://newtime.ua/upload/2022-09/apple-airpods-pro-2-magsafe-charging-case-with-speaker-mqd83.webp"},
-
 {id:22,name:"Galaxy Buds3 Pro",category:"ecouteurs",price:199,tag:"SAMSUNG",desc:"Écouteurs Samsung argentés.",image:"https://service.pcconnection.com/images/inhouse/9839014E-0543-4CF6-9189-F32E52FE57EE.jpg?downsize=800%3A%2A&interpolation=lanczos-none"},
-
 {id:23,name:"Sony WF-1000XM5",category:"ecouteurs",price:229,tag:"SONY",desc:"Écouteurs Sony sans fil.",image:"https://tainghe.com.vn/media/product/5292_tai_nghe_true_wireless_sony_wf_1000xm5_xuan_vu_audio_4.png"},
-
 {id:24,name:"JBL Tune Buds",category:"ecouteurs",price:79,tag:"JBL",desc:"Écouteurs JBL noirs.",image:"https://www.jbl.com.au/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw14ea1478/01.JBL_Tune%20Buds_Product%20Image_Hero_Black.png"},
-
 {id:25,name:"Nothing Ear",category:"ecouteurs",price:149,tag:"NOTHING",desc:"Écouteurs au design transparent.",image:"https://cdn11.bigcommerce.com/s-q8jsr/images/stencil/2560w/products/4724/32471/Nothing_Ear_Wht-2__25377.1719629541.jpg?c=2"},
-
-{id:26,name:"Bose QuietComfort Ultra",category:"ecouteurs",price:299,tag:"BOSE",desc:"Écouteurs Bose blancs.",image:"https://www.virginmegastore.ae/medias/62420-main.jpg?context=bWFzdGVyfHJvb3R8NDU4Mjh8aW1hZ2UvanBlZ3xhRGt3TDJneE1TOHhNRE00T0RFd01qTTBPRGd6TUM4Mk1qUXlNRjlmYldGcGJpNXFjR2N8NzQ4OTU3MjA4ZTQzMjg1ODllZDEyMjAwNGI1YWM3OWExOWMxYjMzMTM1MDJmZjA5ZWQzMWE3NDVlMmU5NzAxNw"},
-
+{id:26,name:"Bose QuietComfort Ultra",category:"ecouteurs",price:299,tag:"BOSE",desc:"Écouteurs Bose blancs.",image:"https://www.virginmegastore.ae/medias/62420-main.jpg"},
 {id:27,name:"Beats Studio Buds+",category:"ecouteurs",price:169,tag:"BEATS",desc:"Écouteurs Beats couleur ivoire.",image:"https://media.tatacroma.com/Croma%20Assets/Entertainment/Wireless%20Earbuds/Images/310085_myjugy.png"},
-
 {id:28,name:"Google Pixel Buds Pro 2",category:"ecouteurs",price:229,tag:"GOOGLE",desc:"Écouteurs Google couleur porcelaine.",image:"https://www.proshop.no/Images/915x900/3317376_8a11f284c30b.jpg"},
-
 {id:29,name:"Huawei FreeBuds Pro 3",category:"ecouteurs",price:179,tag:"HUAWEI",desc:"Écouteurs Huawei blancs.",image:"https://api.technodom.kz/f3/api/v1/images/800/800/naushniki_huawei_freebuds_pro_3_ceramic_white_277918_2.jpg"},
-
 {id:30,name:"Soundcore Liberty 4 NC",category:"ecouteurs",price:99,tag:"SOUNDCORE",desc:"Écouteurs Soundcore noirs.",image:"https://www.phoneplacekenya.com/wp-content/uploads/2024/06/Anker-Liberty-4-NC.jpg"},
 
-/* GAMING ET V-BUCKS */
-
-{id:31,name:"1 000 V-Bucks",category:"vbuck",price:8.99,tag:"FORTNITE",desc:"Pack de V-Bucks - démonstration.",image:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/V-Bucks_icon.png/512px-V-Bucks_icon.png"},
-
-{id:32,name:"2 800 V-Bucks",category:"vbuck",price:22.99,tag:"FORTNITE",desc:"Pack de V-Bucks - démonstration.",image:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/V-Bucks_icon.png/512px-V-Bucks_icon.png"},
-
-{id:33,name:"5 000 V-Bucks",category:"vbuck",price:36.99,tag:"FORTNITE",desc:"Pack de V-Bucks - démonstration.",image:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/V-Bucks_icon.png/512px-V-Bucks_icon.png"},
-
-{id:34,name:"13 500 V-Bucks",category:"vbuck",price:89.99,tag:"FORTNITE",desc:"Pack de V-Bucks - démonstration.",image:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/V-Bucks_icon.png/512px-V-Bucks_icon.png"},
-
+/* V-BUCKS : LOGO LOCAL INTÉGRÉ */
+{id:31,name:"1 000 V-Bucks",category:"vbuck",price:8.99,tag:"FORTNITE",desc:"Pack de V-Bucks - démonstration.",image:vbucksLogo},
+{id:32,name:"2 800 V-Bucks",category:"vbuck",price:22.99,tag:"FORTNITE",desc:"Pack de V-Bucks - démonstration.",image:vbucksLogo},
+{id:33,name:"5 000 V-Bucks",category:"vbuck",price:36.99,tag:"FORTNITE",desc:"Pack de V-Bucks - démonstration.",image:vbucksLogo},
+{id:34,name:"13 500 V-Bucks",category:"vbuck",price:89.99,tag:"FORTNITE",desc:"Pack de V-Bucks - démonstration.",image:vbucksLogo},
 {id:35,name:"Carte cadeau gaming",category:"vbuck",price:10,tag:"GAMING",desc:"Carte cadeau de démonstration.",image:"https://images.unsplash.com/photo-1605899435973-ca2d1a8861cf?auto=format&fit=crop&w=800&q=85"},
-
-{id:36,name:"Pack V-Bucks découverte",category:"vbuck",price:4.99,tag:"FORTNITE",desc:"Fiche de présentation fictive.",image:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/V-Bucks_icon.png/512px-V-Bucks_icon.png"},
-
-{id:37,name:"Pack V-Bucks standard",category:"vbuck",price:12.99,tag:"FORTNITE",desc:"Fiche de présentation fictive.",image:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/V-Bucks_icon.png/512px-V-Bucks_icon.png"},
-
-{id:38,name:"Pack V-Bucks premium",category:"vbuck",price:29.99,tag:"FORTNITE",desc:"Fiche de présentation fictive.",image:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/V-Bucks_icon.png/512px-V-Bucks_icon.png"},
-
-{id:39,name:"Pack V-Bucks ultime",category:"vbuck",price:49.99,tag:"FORTNITE",desc:"Fiche de présentation fictive.",image:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/V-Bucks_icon.png/512px-V-Bucks_icon.png"},
-
+{id:36,name:"Pack V-Bucks découverte",category:"vbuck",price:4.99,tag:"FORTNITE",desc:"Fiche de présentation fictive.",image:vbucksLogo},
+{id:37,name:"Pack V-Bucks standard",category:"vbuck",price:12.99,tag:"FORTNITE",desc:"Fiche de présentation fictive.",image:vbucksLogo},
+{id:38,name:"Pack V-Bucks premium",category:"vbuck",price:29.99,tag:"FORTNITE",desc:"Fiche de présentation fictive.",image:vbucksLogo},
+{id:39,name:"Pack V-Bucks ultime",category:"vbuck",price:49.99,tag:"FORTNITE",desc:"Fiche de présentation fictive.",image:vbucksLogo},
 {id:40,name:"Accessoire gaming",category:"vbuck",price:14.99,tag:"GAMING",desc:"Accessoire fictif pour la maquette.",image:"https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=800&q=85"},
 
-/* JEUX VIDEO */
-
+/* JEUX VIDÉO */
 {id:41,name:"EA SPORTS FC",category:"jeu",price:69.99,tag:"JEU VIDÉO",desc:"Jeu de football - démonstration.",image:"https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=85"},
-
 {id:42,name:"Fortnite",category:"jeu",price:0,tag:"FREE TO PLAY",desc:"Jeu gratuit - fiche de présentation.",image:"https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=85"},
-
 {id:43,name:"Rocket League",category:"jeu",price:0,tag:"FREE TO PLAY",desc:"Football et voitures - jeu gratuit.",image:"https://images.unsplash.com/photo-1493711662062-fa541ad?auto=format&fit=crop&w=800&q=85"},
-
 {id:44,name:"Grand Theft Auto V",category:"jeu",price:29.99,tag:"PEGI 18",desc:"Jeu réservé aux adultes - fiche informative.",image:"https://images.unsplash.com/photo-1493711662062-fa541ad?auto=format&fit=crop&w=800&q=85"}
 
 ];
@@ -270,11 +249,10 @@ const list=products.filter(p=>
 );
 
 productsEl.innerHTML=list.map(p=>`
-<article class="product">
-<div class="product-img">
+<article class="product" data-product-id="${p.id}">
+<div class="product-img ${p.category==="vbuck"?"vbucks":""}">
 <span class="tag">${p.tag}</span>
-<img src="${p.image}" alt="${p.name}" loading="lazy"
-onerror="this.parentElement.remove()">
+<img src="${p.image}" alt="${p.name}" loading="lazy">
 </div>
 <div class="product-info">
 <h3>${p.name}</h3>
@@ -290,6 +268,14 @@ onerror="this.parentElement.remove()">
 if(!list.length){
 productsEl.innerHTML="<p>Aucun produit trouvé.</p>";
 }
+
+/* SI L'IMAGE NE CHARGE PAS, ON SUPPRIME TOUTE LA FICHE */
+productsEl.querySelectorAll(".product img").forEach(img=>{
+img.addEventListener("error",()=>{
+const card=img.closest(".product");
+if(card)card.remove();
+});
+});
 }
 
 function addToCart(id){
@@ -360,7 +346,7 @@ document.getElementById("cartPanel").classList.remove("open");
 
 renderProducts();
 renderCart();
-</script>
 
+</script>
 </body>
 </html>
