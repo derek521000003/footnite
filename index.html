@@ -4,491 +4,206 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FOOTNITE | Play • Foot • Shop</title>
+<title>FOOTNITE — Football & Gaming</title>
 <style>
-:root{
-  --bg:#080a11;--panel:#121725;--line:#293247;
-  --white:#fff;--muted:#aab2c4;--purple:#8655ff;
-  --blue:#168bff;--red:#ff414d;
-}
+:root{--bg:#08090d;--panel:#11141b;--line:#292e39;--white:#f7f7f8;--muted:#a3a8b3;--red:#e53945;--orange:#ff6b35}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--white);font-family:Arial,sans-serif}
-a{text-decoration:none;color:inherit}
-button{cursor:pointer;font-family:inherit}
-header{
-  position:sticky;top:0;z-index:20;background:#090c15ed;
-  backdrop-filter:blur(14px);border-bottom:1px solid var(--line)
-}
-.nav{
-  max-width:1250px;margin:auto;padding:10px 20px;
-  display:flex;align-items:center;justify-content:space-between;gap:20px
-}
-.brand{display:flex;align-items:center;gap:10px}
-.brand img{width:60px;height:55px;object-fit:contain}
-.brand strong{font-size:20px;letter-spacing:2px}
-.brand small{display:block;color:#a78aff;font-size:9px;letter-spacing:2px;margin-top:4px}
-nav{display:flex;gap:22px}
-nav a{font-size:12px;font-weight:bold;color:#e0e4ef}
-nav a:hover{color:#a98aff}
-.cart-btn,.primary{
-  border:0;border-radius:7px;padding:12px 17px;
-  background:linear-gradient(100deg,#713bff,#167fff);
-  color:white;font-weight:bold
-}
-
-/* ACCUEIL */
-.hero{
-  max-width:1250px;min-height:530px;margin:28px auto;
-  position:relative;overflow:hidden;border-radius:17px;
-  border:1px solid #30384c;
-  background:#111725;
-  display:flex;align-items:center;
-}
-.hero:before{
-  content:"";position:absolute;inset:0;
-  background:
-   linear-gradient(90deg,#080a11 2%,rgba(8,10,17,.91) 38%,rgba(8,10,17,.2) 100%),
-   url("https://officialkdsports.co.uk/uploads/2025/02/how-to-identify-official-matches-understanding-official-matches-in-football.webp") center/cover;
-}
-.hero:after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(0deg,rgba(8,10,17,.65),transparent 45%);
-}
-.hero-text{position:relative;z-index:2;padding:55px;max-width:680px}
-.eyebrow{font-size:11px;color:#b79cff;letter-spacing:3px;font-weight:bold}
-.hero h1{font-size:clamp(50px,8vw,88px);line-height:.94;letter-spacing:-4px;margin:22px 0}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit}
+button{cursor:pointer}
+header{position:sticky;top:0;z-index:30;background:#08090df2;border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}
+.nav{max-width:1280px;margin:auto;padding:13px 22px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.brand{display:flex;align-items:center;gap:12px;min-width:190px}
+.brand img{width:49px;height:49px;object-fit:contain}
+.brand strong{font-size:19px;letter-spacing:3px;font-weight:900}
+.brand small{display:block;font-size:9px;letter-spacing:2px;color:var(--muted);margin-top:4px}
+nav{display:flex;gap:25px}
+nav a{font-size:11px;font-weight:800;letter-spacing:1px;color:#d9dbe0}
+nav a:hover{color:var(--orange)}
+.cart-btn,.btn{border:0;border-radius:4px;padding:12px 17px;background:var(--red);color:white;font-size:11px;font-weight:900;letter-spacing:1px}
+.cart-btn:hover,.btn:hover{background:#ff4d58}
+.hero{max-width:1280px;min-height:560px;margin:24px auto 0;position:relative;overflow:hidden;background:#151922;border:1px solid var(--line)}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#08090d 0%,rgba(8,9,13,.95) 30%,rgba(8,9,13,.55) 58%,rgba(8,9,13,.08) 100%),url("https://officialkdsports.co.uk/uploads/2025/02/how-to-identify-official-matches-understanding-official-matches-in-football.webp") center/cover}
+.hero-content{position:relative;z-index:2;max-width:670px;padding:78px 7%}
+.kicker{font-size:10px;color:var(--orange);letter-spacing:3px;font-weight:900}
+.hero h1{font-size:clamp(52px,8vw,100px);line-height:.9;letter-spacing:-5px;margin:22px 0}
 .hero h1 span{color:var(--red)}
-.hero p{max-width:460px;color:#e1e5ef;line-height:1.7;margin-bottom:26px}
-.hero-buttons{display:flex;gap:12px;flex-wrap:wrap}
-.secondary{
-  padding:13px 18px;border:1px solid #727b91;border-radius:7px;
-  color:white;background:#171d2a;font-weight:bold
-}
-.hero-bottom{
-  position:absolute;right:25px;bottom:22px;z-index:2;
-  font-size:10px;letter-spacing:3px;color:#e4e7f0
-}
-
-/* SECTIONS */
-.section{max-width:1250px;margin:65px auto;padding:0 20px}
-.section-top{margin-bottom:23px}
-.section-top small{color:#a88aff;letter-spacing:3px;font-size:10px;font-weight:bold}
-.section-top h2{font-size:clamp(27px,4vw,37px);margin-top:9px}
-.section-top p{font-size:13px;color:var(--muted);margin-top:8px}
-
-/* JEUX */
-.game-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.game-card{
-  background:var(--panel);border:1px solid var(--line);
-  border-radius:13px;overflow:hidden;transition:.25s
-}
-.game-card:hover{transform:translateY(-5px);border-color:var(--purple)}
-.game-card img{width:100%;height:290px;object-fit:cover;display:block;background:#202638}
-.game-info{padding:16px}
-.game-info small{color:#a78aff;font-size:10px;letter-spacing:2px;font-weight:bold}
-.game-info h3{font-size:17px;margin-top:8px}
-.game-info p{font-size:12px;color:var(--muted);margin-top:7px;line-height:1.5}
-.game-label{
-  display:inline-block;margin-top:12px;background:#25213c;
-  color:#c7b4ff;padding:6px 9px;border-radius:4px;font-size:9px
-}
-.game-extra{
-  margin-top:17px;display:grid;grid-template-columns:1.4fr 1fr;gap:17px
-}
-.player-photo{
-  min-height:230px;border-radius:13px;overflow:hidden;position:relative;
-  background:url("https://painel.zonadogol.com.br/uploads/brasileirao-2026-quando-comeca-termina-calendario-41d156e7dfef9a1e.webp") center/cover
-}
-.player-photo div{
-  position:absolute;inset:auto 0 0;padding:30px 20px 18px;
-  background:linear-gradient(transparent,#080a11)
-}
-.player-photo strong{font-size:21px}
-.player-photo p{font-size:12px;color:#d2d7e4;margin-top:6px}
-.game-message{
-  border:1px solid var(--line);border-radius:13px;
-  background:linear-gradient(140deg,#191d32,#10131d);
-  padding:25px;display:flex;flex-direction:column;justify-content:center
-}
-.game-message small{color:#a78aff;letter-spacing:2px}
-.game-message h3{font-size:25px;margin:12px 0}
-.game-message p{font-size:13px;color:var(--muted);line-height:1.6}
-
-/* CATEGORIES */
-.category-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:13px}
-.category{
-  min-height:135px;padding:18px;border:1px solid var(--line);
-  border-radius:11px;background:linear-gradient(145deg,#1a2030,#10131d);
-  display:flex;flex-direction:column;justify-content:space-between;
-  transition:.2s
-}
-.category:hover{transform:translateY(-4px);border-color:#8c64ff}
-.category .symbol{font-size:27px}
+.hero p{max-width:470px;color:#d0d2d8;line-height:1.8;font-size:14px;margin-bottom:28px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn-outline{display:inline-block;border:1px solid #777d89;padding:12px 17px;border-radius:4px;font-size:11px;font-weight:900;letter-spacing:1px}
+.btn-outline:hover{border-color:white;background:#ffffff12}
+.hero-note{position:absolute;right:24px;bottom:22px;z-index:2;font-size:9px;letter-spacing:3px;color:#eee}
+.section{max-width:1280px;margin:78px auto;padding:0 22px}
+.section-head{margin-bottom:25px}
+.section-head small{font-size:10px;color:var(--orange);font-weight:900;letter-spacing:3px}
+.section-head h2{font-size:clamp(27px,4vw,40px);letter-spacing:-1px;margin-top:9px}
+.section-head p{font-size:13px;color:var(--muted);margin-top:9px;line-height:1.6}
+.games{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.game{background:var(--panel);border:1px solid var(--line);overflow:hidden;transition:.25s}
+.game:hover,.product:hover{transform:translateY(-4px);border-color:#626a78}
+.game img{width:100%;height:300px;object-fit:cover;display:block;background:#171b24}
+.game-info{padding:18px}
+.game-info small{font-size:9px;color:var(--orange);letter-spacing:2px;font-weight:900}
+.game-info h3{font-size:18px;margin:9px 0}
+.game-info p{font-size:12px;color:var(--muted);line-height:1.6}
+.football-banner{margin-top:18px;min-height:245px;display:grid;grid-template-columns:1.4fr 1fr;border:1px solid var(--line);background:var(--panel)}
+.football-photo{min-height:245px;background:url("https://painel.zonadogol.com.br/uploads/brasileirao-2026-quando-comeca-termina-calendario-41d156e7dfef9a1e.webp") center/cover}
+.football-copy{padding:35px;display:flex;flex-direction:column;justify-content:center}
+.football-copy small{color:var(--orange);font-size:10px;letter-spacing:2px;font-weight:900}
+.football-copy h3{font-size:27px;margin:12px 0}
+.football-copy p{font-size:13px;color:var(--muted);line-height:1.7}
+.categories{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.category{padding:23px 17px;min-height:125px;border:1px solid var(--line);background:linear-gradient(145deg,#171b24,#0e1016);display:flex;flex-direction:column;justify-content:space-between;transition:.2s}
+.category:hover{border-color:var(--orange);transform:translateY(-3px)}
+.category span{font-size:10px;color:var(--orange);font-weight:900;letter-spacing:2px}
 .category strong{font-size:13px;letter-spacing:1px}
 .category small{font-size:10px;color:var(--muted);margin-top:5px}
-
-/* BOUTIQUE */
-.tools{display:flex;gap:10px;margin:22px 0;flex-wrap:wrap}
-.tools input,.tools select{
-  background:#141a28;border:1px solid #343e55;
-  border-radius:7px;padding:13px;color:white
-}
-.tools input{flex:1;min-width:190px}
 .products{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
-.product{
-  background:var(--panel);border:1px solid var(--line);
-  border-radius:12px;overflow:hidden;transition:.2s
-}
-.product:hover{transform:translateY(-4px);border-color:#7255cf}
-.product-art{
-  height:220px;background:#f4f4f4;position:relative;
-  display:flex;align-items:center;justify-content:center;
-  overflow:hidden;padding:12px
-}
+.product{background:var(--panel);border:1px solid var(--line);overflow:hidden;transition:.2s}
+.product-art{height:255px;background:#f3f3f3;position:relative;display:flex;align-items:center;justify-content:center;padding:16px;overflow:hidden}
 .product-art img{width:100%;height:100%;object-fit:contain}
-.product-art .art-text{color:#222;text-align:center;font-size:13px;font-weight:bold}
-.product-tag{
-  position:absolute;top:12px;left:12px;padding:6px 8px;
-  background:#171c2a;color:white;border-radius:4px;
-  font-size:9px;letter-spacing:1px
-}
-.product-info{padding:15px}
-.product-info small{font-size:10px;color:#ad91ff;letter-spacing:2px}
-.product-info h3{font-size:15px;margin:8px 0}
-.product-info p{font-size:12px;color:var(--muted);min-height:32px;line-height:1.5}
-.product-bottom{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:14px}
-.price{font-size:18px;font-weight:bold}
-.add{
-  border:0;border-radius:6px;padding:10px 12px;
-  background:linear-gradient(100deg,#713bff,#167fff);
-  color:white;font-size:10px;font-weight:bold
-}
-
-/* VISUELS PS5 */
-.console-art{
-  height:220px;position:relative;display:flex;align-items:center;
-  justify-content:center;overflow:hidden;
-  background:radial-gradient(circle,#343c59,#111625 72%)
-}
-.console-art svg{width:175px;height:195px;filter:drop-shadow(0 12px 10px #0009)}
-.console-label{
-  position:absolute;top:13px;left:13px;background:#252c42;
-  padding:6px 8px;border-radius:4px;font-size:9px;letter-spacing:1px
-}
-
-/* PANIER */
-.cart-panel{
-  display:none;position:fixed;right:18px;top:85px;z-index:50;
-  width:min(360px,calc(100% - 36px));padding:18px;
-  border:1px solid #515b78;border-radius:12px;
-  background:#151b2b;box-shadow:0 15px 45px #000b
-}
+.product-tag{position:absolute;top:13px;left:13px;background:#11141b;color:white;padding:7px 9px;font-size:9px;letter-spacing:1px;font-weight:900}
+.product-info{padding:17px}
+.product-info small{font-size:9px;color:var(--orange);letter-spacing:2px;font-weight:900}
+.product-info h3{font-size:16px;margin:8px 0}
+.product-info p{font-size:12px;color:var(--muted);line-height:1.5;min-height:36px}
+.product-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:16px}
+.price{font-size:18px;font-weight:900}
+.add{border:0;border-radius:3px;padding:10px 12px;background:#292e39;color:white;font-size:10px;font-weight:900;letter-spacing:.5px}
+.add:hover{background:var(--red)}
+.tools{display:flex;gap:10px;margin:22px 0;flex-wrap:wrap}
+.tools input,.tools select{background:var(--panel);border:1px solid var(--line);color:white;padding:13px;border-radius:3px}
+.tools input{flex:1;min-width:200px}
+.tools select{min-width:190px}
+.ps5-note{font-size:11px;color:var(--muted);margin-top:15px;line-height:1.6}
+.ps5-note a{color:white;text-decoration:underline}
+.cart-panel{display:none;position:fixed;right:20px;top:82px;z-index:60;width:min(380px,calc(100% - 40px));padding:20px;background:#151922;border:1px solid #555e6c;box-shadow:0 20px 60px #000c}
 .cart-panel.open{display:block}
-.cart-head{display:flex;justify-content:space-between;margin-bottom:15px}
-.cart-head button{background:none;border:0;color:white;font-size:23px}
-.cart-line{display:flex;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:1px solid #30384b;font-size:12px}
-.cart-total{display:flex;justify-content:space-between;margin-top:17px;font-weight:bold}
-.clear-cart{width:100%;padding:11px;margin-top:14px;background:#293149;border:1px solid #46516d;color:white;border-radius:7px}
-footer{margin-top:70px;border-top:1px solid var(--line);padding:35px 20px;text-align:center;color:#939db2;font-size:11px;line-height:2}
-footer strong{color:white;letter-spacing:3px}
-
-@media(max-width:850px){
- .category-grid{grid-template-columns:repeat(3,1fr)}
- .products{grid-template-columns:repeat(2,1fr)}
- .game-card img{height:220px}
-}
-@media(max-width:600px){
- .nav{flex-wrap:wrap}
- nav{order:3;width:100%;justify-content:space-between;gap:5px}
- nav a{font-size:9px}
- .brand img{width:48px;height:45px}
- .brand strong{font-size:16px}
- .hero{margin:15px 10px;min-height:450px}
- .hero-text{padding:25px}
- .hero h1{font-size:55px}
- .hero-bottom{font-size:8px}
- .game-grid{grid-template-columns:1fr}
- .game-card img{height:250px}
- .game-extra{grid-template-columns:1fr}
- .category-grid{grid-template-columns:repeat(2,1fr)}
- .products{grid-template-columns:1fr}
-}
+.cart-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}
+.cart-head button{background:none;border:0;color:white;font-size:25px}
+.cart-line{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:12px}
+.cart-total{display:flex;justify-content:space-between;margin-top:17px;font-weight:900}
+.clear-cart{width:100%;margin-top:15px;padding:12px;background:#292e39;border:0;color:white;font-size:10px;font-weight:900}
+footer{border-top:1px solid var(--line);padding:38px 20px;text-align:center;color:var(--muted);font-size:11px;line-height:2.1;margin-top:80px}
+footer strong{color:white;letter-spacing:4px;font-size:15px}
+@media(max-width:900px){nav{gap:13px}.categories{grid-template-columns:repeat(3,1fr)}.products{grid-template-columns:repeat(2,1fr)}.game img{height:240px}}
+@media(max-width:620px){.nav{flex-wrap:wrap}.brand{min-width:0}nav{order:3;width:100%;justify-content:space-between;gap:5px}nav a{font-size:9px}.cart-btn{margin-left:auto}.hero{margin:12px 10px 0;min-height:480px}.hero-content{padding:45px 25px}.hero h1{font-size:58px;letter-spacing:-3px}.games,.products{grid-template-columns:1fr}.game img{height:270px}.football-banner{grid-template-columns:1fr}.football-photo{min-height:200px}.categories{grid-template-columns:repeat(2,1fr)}.section{margin:58px auto;padding:0 14px}}
 </style>
 </head>
 <body>
-
 <header>
  <div class="nav">
-  <a class="brand" href="#accueil">
-   <img src="logo-footnite.png" alt="Logo FOOTNITE">
-   <div><strong>FOOTNITE</strong><small>PLAY • FOOT • SHOP</small></div>
-  </a>
-  <nav>
-   <a href="#accueil">ACCUEIL</a>
-   <a href="#jeux">JEUX</a>
-   <a href="#categories">CATÉGORIES</a>
-   <a href="#ps5">PS5</a>
-   <a href="#boutique">BOUTIQUE</a>
-  </nav>
+  <a class="brand" href="#accueil"><img src="logo-footnite.png" alt="Logo FOOTNITE"><div><strong>FOOTNITE</strong><small>FOOTBALL • GAMING • BOUTIQUE</small></div></a>
+  <nav><a href="#accueil">ACCUEIL</a><a href="#jeux">JEUX</a><a href="#categories">CATÉGORIES</a><a href="#ps5">CONSOLES</a><a href="#boutique">BOUTIQUE</a></nav>
   <button class="cart-btn" onclick="toggleCart()">PANIER (<span id="count">0</span>)</button>
  </div>
 </header>
 
 <div class="cart-panel" id="cart">
- <div class="cart-head"><h3>MON PANIER</h3><button onclick="toggleCart()">×</button></div>
+ <div class="cart-head"><h3>MON PANIER</h3><button onclick="toggleCart()" aria-label="Fermer">×</button></div>
  <div id="cart-items">Ton panier est vide.</div>
  <div class="cart-total"><span>Total</span><span id="total">0,00 €</span></div>
  <button class="clear-cart" onclick="clearCart()">VIDER LE PANIER</button>
- <p style="font-size:10px;color:#9da6bc;margin-top:10px">Panier de démonstration, aucun paiement réel.</p>
+ <p style="font-size:10px;color:#a3a8b3;margin-top:11px">Panier de démonstration : aucun paiement réel.</p>
 </div>
 
-<!-- ACCUEIL -->
 <section class="hero" id="accueil">
- <div class="hero-text">
-  <div class="eyebrow">FOOTBALL • GAMING • CULTURE</div>
-  <h1>THE NEXT<br><span>LEVEL.</span></h1>
-  <p>Le meilleur du football et du gaming réuni dans un seul univers. Découvre les jeux, les équipements et les nouveautés FOOTNITE.</p>
-  <div class="hero-buttons">
-   <a class="primary" href="#jeux">DÉCOUVRIR LES JEUX</a>
-   <a class="secondary" href="#boutique">EXPLORER LA BOUTIQUE</a>
-  </div>
+ <div class="hero-content">
+  <div class="kicker">L'UNIVERS DU FOOT ET DU GAMING</div>
+  <h1>JOUE.<br><span>VIS.</span><br>GAGNE.</h1>
+  <p>Retrouve au même endroit tes jeux préférés, les équipements de football et les accessoires gaming. Bienvenue dans l'univers FOOTNITE.</p>
+  <div class="hero-actions"><a class="btn" href="#boutique">DÉCOUVRIR LA BOUTIQUE</a><a class="btn-outline" href="#jeux">VOIR LES JEUX</a></div>
  </div>
- <div class="hero-bottom">FOOTNITE — PLAY • FOOT • SHOP</div>
+ <div class="hero-note">FOOTNITE — DEPUIS 2026</div>
 </section>
 
-<!-- JEUX ET PHOTOS -->
 <section class="section" id="jeux">
- <div class="section-top">
-  <small>GAMING ZONE</small>
-  <h2>LES UNIVERS À LA UNE</h2>
-  <p>Les jeux qui réunissent football et gaming.</p>
+ <div class="section-head"><small>SÉLECTION GAMING</small><h2>LES JEUX À LA UNE</h2><p>Une sélection de jeux pour les passionnés de sport et de gaming.</p></div>
+ <div class="games">
+  <article class="game"><img src="https://assetsio.gnwcdn.com/coa8yi.jpg?auto=webp&fit=bounds&format=jpg&height=2048&quality=85&width=2048" alt="Visuel Fortnite"><div class="game-info"><small>BATTLE ROYALE</small><h3>FORTNITE</h3><p>Retrouve l'univers de Fortnite et ses différents modes de jeu.</p></div></article>
+  <article class="game"><img src="https://store-images.s-microsoft.com/image/apps.39200.14145291960194275.263e78bd-2ea0-43c6-8a5b-5578131f4b02.ba171ef6-2bab-4956-b9d7-e67e253520d1" alt="Visuel EA Sports FC 26"><div class="game-info"><small>JEU DE FOOTBALL</small><h3>EA SPORTS FC 26</h3><p>Le football virtuel, les clubs et les grandes compétitions.</p></div></article>
+  <article class="game"><img src="https://cdn.mobygames.com/9715900a-ac09-11ed-9eb0-02420a000136.webp" alt="Visuel Rocket League"><div class="game-info"><small>SPORT & ACTION</small><h3>ROCKET LEAGUE</h3><p>Un mélange de football et de voitures dans une arène.</p></div></article>
  </div>
-
- <div class="game-grid">
-  <article class="game-card">
-   <img src="https://assetsio.gnwcdn.com/coa8yi.jpg?auto=webp&fit=bounds&format=jpg&height=2048&quality=85&width=2048" alt="Fortnite">
-   <div class="game-info">
-    <small>GAMING</small><h3>FORTNITE</h3>
-    <p>Retrouve l'univers de Fortnite et ses nombreuses aventures.</p>
-    <span class="game-label">BATTLE ROYALE</span>
-   </div>
-  </article>
-  <article class="game-card">
-   <img src="https://store-images.s-microsoft.com/image/apps.39200.14145291960194275.263e78bd-2ea0-43c6-8a5b-5578131f4b02.ba171ef6-2bab-4956-b9d7-e67e253520d1" alt="EA Sports FC 26">
-   <div class="game-info">
-    <small>FOOTBALL</small><h3>EA SPORTS FC 26</h3>
-    <p>Le football virtuel, les clubs et les grandes compétitions.</p>
-    <span class="game-label">FOOTBALL GAME</span>
-   </div>
-  </article>
-  <article class="game-card">
-   <img src="https://cdn.mobygames.com/9715900a-ac09-11ed-9eb0-02420a000136.webp" alt="Rocket League">
-   <div class="game-info">
-    <small>SPORT & GAMING</small><h3>ROCKET LEAGUE</h3>
-    <p>Un mélange de football et de voitures dans une arène.</p>
-    <span class="game-label">SPORT GAME</span>
-   </div>
-  </article>
- </div>
-
- <div class="game-extra">
-  <div class="player-photo">
-   <div><strong>LE FOOTBALL, EN GRAND.</strong><p>La passion du terrain au cœur de FOOTNITE.</p></div>
-  </div>
-  <div class="game-message">
-   <small>FOOTNITE EXPERIENCE</small>
-   <h3>DU TERRAIN À L'ÉCRAN.</h3>
-   <p>Les fans de football et de jeux vidéo se retrouvent ici. Découvre nos univers, nos accessoires et notre sélection gaming.</p>
-  </div>
- </div>
+ <div class="football-banner"><div class="football-photo"></div><div class="football-copy"><small>L'ESPRIT FOOTNITE</small><h3>DU TERRAIN À L'ÉCRAN.</h3><p>Le football et le gaming réunis dans une boutique pensée pour les passionnés.</p></div></div>
 </section>
 
-<!-- CATEGORIES -->
 <section class="section" id="categories">
- <div class="section-top">
-  <small>EXPLORE LE SHOP</small>
-  <h2>CHOISIS TON UNIVERS</h2>
-  <p>Tout l'univers FOOTNITE au même endroit.</p>
- </div>
- <div class="category-grid">
-  <a class="category" href="#boutique" onclick="setFilter('maillots')"><span class="symbol">⚽</span><div><strong>MAILLOTS</strong><small>Football</small></div></a>
-  <a class="category" href="#boutique" onclick="setFilter('iphones')"><span class="symbol">📱</span><div><strong>IPHONES</strong><small>Apple</small></div></a>
-  <a class="category" href="#boutique" onclick="setFilter('ecouteurs')"><span class="symbol">🎧</span><div><strong>ÉCOUTEURS</strong><small>Audio sans fil</small></div></a>
-  <a class="category" href="#ps5" onclick="setFilter('gaming')"><span class="symbol">🎮</span><div><strong>PS5 & GAMING</strong><small>Consoles et accessoires</small></div></a>
-  <a class="category" href="#boutique" onclick="setFilter('vbucks')"><span class="symbol">💎</span><div><strong>V-BUCKS</strong><small>Univers Fortnite</small></div></a>
+ <div class="section-head"><small>TOUS LES UNIVERS</small><h2>CHOISIS TA CATÉGORIE</h2><p>Accède directement aux produits qui t'intéressent.</p></div>
+ <div class="categories">
+  <a class="category" href="#boutique" onclick="setFilter('maillots')"><span>01 / FOOTBALL</span><div><strong>MAILLOTS</strong><small>Maillots de clubs</small></div></a>
+  <a class="category" href="#boutique" onclick="setFilter('iphones')"><span>02 / MOBILE</span><div><strong>IPHONES</strong><small>Smartphones Apple</small></div></a>
+  <a class="category" href="#boutique" onclick="setFilter('ecouteurs')"><span>03 / AUDIO</span><div><strong>ÉCOUTEURS</strong><small>Audio sans fil</small></div></a>
+  <a class="category" href="#ps5" onclick="setFilter('gaming')"><span>04 / CONSOLES</span><div><strong>PS5 & ACCESSOIRES</strong><small>Univers PlayStation</small></div></a>
+  <a class="category" href="#boutique" onclick="setFilter('vbucks')"><span>05 / FORTNITE</span><div><strong>V-BUCKS</strong><small>Cartes cadeaux illustrées</small></div></a>
  </div>
 </section>
 
-<!-- PS5 -->
 <section class="section" id="ps5">
- <div class="section-top">
-  <small>PLAYSTATION COLLECTION</small>
-  <h2>PS5 — COLOR EDITION</h2>
-  <p>Découvre les maquettes de consoles FOOTNITE dans plusieurs couleurs.</p>
- </div>
+ <div class="section-head"><small>COLLECTION PLAYSTATION</small><h2>LES CONSOLES PS5</h2><p>Les modèles PlayStation 5 présentés avec leurs véritables visuels, sans versions fantaisie.</p></div>
  <div class="products" id="console-products"></div>
- <p style="color:#929db2;font-size:11px;margin-top:15px">Les coloris présentés sont des concepts visuels personnalisés, pas des éditions officielles de Sony.</p>
+ <p class="ps5-note">Visuels des consoles : références photographiques de produits PlayStation. Les prix affichés sont indicatifs pour la maquette et ne constituent pas une offre de vente. <a href="https://www.playstation.com/fr-fr/ps5/buy-now.html" target="_blank" rel="noopener">Voir les consoles sur le site officiel PlayStation</a>.</p>
 </section>
 
-<!-- BOUTIQUE -->
 <section class="section" id="boutique">
- <div class="section-top">
-  <small>FOOTNITE STORE</small>
-  <h2>LA BOUTIQUE</h2>
-  <p>Retrouve les accessoires et les produits de démonstration.</p>
- </div>
- <div class="tools">
-  <input id="search" type="search" placeholder="Rechercher un produit..." oninput="renderProducts()">
-  <select id="filter" onchange="renderProducts()">
-   <option value="all">Toutes les catégories</option>
-   <option value="maillots">Maillots</option>
-   <option value="iphones">iPhones</option>
-   <option value="ecouteurs">Écouteurs</option>
-   <option value="gaming">Gaming</option>
-   <option value="vbucks">V-Bucks</option>
-  </select>
- </div>
+ <div class="section-head"><small>LA SÉLECTION FOOTNITE</small><h2>LA BOUTIQUE</h2><p>Parcours les produits, recherche un article et ajoute-le à ton panier de démonstration.</p></div>
+ <div class="tools"><input id="search" type="search" placeholder="Rechercher un produit…" oninput="renderProducts()"><select id="filter" onchange="renderProducts()"><option value="all">Toutes les catégories</option><option value="maillots">Maillots</option><option value="iphones">iPhones</option><option value="ecouteurs">Écouteurs</option><option value="gaming">Gaming</option><option value="vbucks">V-Bucks</option></select></div>
  <div class="products" id="products"></div>
 </section>
 
-<footer>
- <strong>FOOTNITE</strong><br>
- PLAY • FOOT • SHOP<br>
- Site de démonstration — aucun paiement réel.<br>
- Les marques, logos et images appartiennent à leurs propriétaires respectifs.
-</footer>
+<footer><strong>FOOTNITE</strong><br>FOOTBALL • GAMING • BOUTIQUE<br>Site de démonstration — aucun paiement réel.<br>Les marques, logos et images appartiennent à leurs propriétaires respectifs.</footer>
 
 <script>
 const consoles=[
- {name:"PS5 BLANCHE",color:"#f3f4f6",edge:"#aeb7c5",price:499.99,tag:"WHITE EDITION"},
- {name:"PS5 NOIRE",color:"#252a35",edge:"#080a10",price:519.99,tag:"BLACK EDITION"},
- {name:"PS5 ROUGE",color:"#ed2947",edge:"#8e122b",price:529.99,tag:"RED EDITION"},
- {name:"PS5 BLEUE",color:"#168cff",edge:"#0752a5",price:529.99,tag:"BLUE EDITION"},
- {name:"PS5 VIOLETTE",color:"#873bff",edge:"#481b9a",price:539.99,tag:"PURPLE EDITION"},
- {name:"PS5 ROSE",color:"#f27db6",edge:"#a73d76",price:539.99,tag:"PINK EDITION"}
+ {name:"PlayStation 5 Slim — avec lecteur",price:549.99,tag:"LECTEUR DE DISQUE",desc:"Console PS5 Slim avec lecteur de disque.",img:"https://www.tradeinn.com/f/14001/140014486/playstation-ps5-console-refurbished.jpg"},
+ {name:"PlayStation 5 Slim — édition numérique",price:499.99,tag:"ÉDITION NUMÉRIQUE",desc:"Console PS5 Slim sans lecteur de disque.",img:"https://www.01net.com/app/uploads/2024/09/ps5-Pro-PS5-slim-comparo.jpg",position:"left"},
+ {name:"PlayStation 5 Pro — 2 To",price:899.99,tag:"MODÈLE PRO",desc:"Console PS5 Pro, édition numérique.",img:"https://www.01net.com/app/uploads/2024/09/ps5-Pro-PS5-slim-comparo.jpg",position:"right"}
 ];
-
 const products=[
  {name:"Maillot PSG",cat:"maillots",price:89.99,tag:"FOOTBALL",desc:"Maillot du Paris Saint-Germain.",img:"https://pictures.tribuna.com/image/985674f3-d720-4990-86d9-fc46766b8bcb?quality=70&width=1920"},
  {name:"Maillot Liverpool",cat:"maillots",price:84.99,tag:"FOOTBALL",desc:"Maillot de football rouge.",img:"https://sneakershyllan.se/cdn/shop/files/3AD53A19-C419-4FD1-945A-3AD95FD7104D_1_201_a.jpg?v=1751288364"},
- {name:"Maillots clubs",cat:"maillots",price:79.99,tag:"FOOTBALL",desc:"Sélection de maillots de clubs.",img:"https://static.supersports.co.th/is/image/cenergy/210824_SSP---Football-New-Season-Jersey-2024_25_New-Arrivals_Editorial-Banner_1216x970?%24JPEG%24=&wid=608"},
-
+ {name:"Sélection de maillots",cat:"maillots",price:79.99,tag:"FOOTBALL",desc:"Découvre différents maillots de clubs.",img:"https://static.supersports.co.th/is/image/cenergy/210824_SSP---Football-New-Season-Jersey-2024_25_New-Arrivals_Editorial-Banner_1216x970?%24JPEG%24=&wid=608"},
  {name:"iPhone 17",cat:"iphones",price:969,tag:"APPLE",desc:"Smartphone Apple.",img:"https://image.vandenborre.be/WEB/images/products/superzoom/apple_iphone-17-256gb-white_7654359_1.jpg"},
  {name:"iPhone 16 Pro",cat:"iphones",price:1199,tag:"APPLE",desc:"Smartphone Apple Pro.",img:"https://rptech.qa/cdn/shop/files/iPhone_16_Pro_White_Titanium_PDP_Image_Position_1__en-ME_61edb4d0-0c5d-4554-8bae-f0e45bc04179.png?v=1733896562"},
- {name:"Collection iPhone",cat:"iphones",price:799,tag:"APPLE",desc:"Découvre différents modèles.",img:"https://img1.kakaku.k-img.com/images/maga/icv/sp1200/19511/thumbnail_l.jpg"},
-
- {name:"JBL Tune Buds",cat:"ecouteurs",price:89.99,tag:"JBL",desc:"Écouteurs Bluetooth.",img:"https://media.falabella.com/falabellaPE/139356471_02/w%3D1500%2Ch%3D1500%2Cfit%3Dcover"},
+ {name:"Collection iPhone",cat:"iphones",price:799,tag:"APPLE",desc:"Visuel de plusieurs modèles iPhone.",img:"https://img1.kakaku.k-img.com/images/maga/icv/sp1200/19511/thumbnail_l.jpg"},
+ {name:"JBL Tune Buds",cat:"ecouteurs",price:89.99,tag:"JBL",desc:"Écouteurs Bluetooth sans fil.",img:"https://media.falabella.com/falabellaPE/139356471_02/w%3D1500%2Ch%3D1500%2Cfit%3Dcover"},
  {name:"Écouteurs sans fil",cat:"ecouteurs",price:59.99,tag:"AUDIO",desc:"Écouteurs et boîtier de recharge.",img:"https://images.indianexpress.com/2024/04/best-tws-earbuds.jpg"},
-
- {name:"Manette DualSense",cat:"gaming",price:74.99,tag:"PLAYSTATION",desc:"Manette sans fil PS5.",img:"https://down-br.img.susercontent.com/file/sg-11134201-82580-mg880h04lnuxb"},
- {name:"Casque gaming PS5",cat:"gaming",price:99.99,tag:"PLAYSTATION",desc:"Casque pour les sessions gaming.",img:"https://gmedia.playstation.com/is/image/SIEPDC/pulse-3d-headset-product-thumbnail-01-en-14sep20"},
- {name:"Console PlayStation 5",cat:"gaming",price:499.99,tag:"PLAYSTATION",desc:"Console de démonstration.",img:"https://www.tradeinn.com/f/14001/140014486/playstation-ps5-console-refurbished.jpg"},
-
- {name:"Carte V-Bucks 1 000",cat:"vbucks",price:8.99,tag:"FORTNITE",desc:"Visuel de carte V-Bucks.",img:"https://imageio.forbes.com/specials-images/imageserve/5db44b1bc538200007817100/0x0.jpg?fit=bounds&format=jpg&height=900&width=1600"},
- {name:"Carte V-Bucks 2 800",cat:"vbucks",price:22.99,tag:"FORTNITE",desc:"Visuel de carte V-Bucks.",img:"https://imageio.forbes.com/specials-images/imageserve/5db44b1bc538200007817100/0x0.jpg?fit=bounds&format=jpg&height=900&width=1600"},
- {name:"Carte V-Bucks 5 000",cat:"vbucks",price:36.99,tag:"FORTNITE",desc:"Visuel de carte V-Bucks.",img:"https://imageio.forbes.com/specials-images/imageserve/5db44b1bc538200007817100/0x0.jpg?fit=bounds&format=jpg&height=900&width=1600"}
+ {name:"Manette DualSense",cat:"gaming",price:74.99,tag:"PLAYSTATION",desc:"Manette sans fil pour PS5.",img:"https://down-br.img.susercontent.com/file/sg-11134201-82580-mg880h04lnuxb"},
+ {name:"Casque Pulse 3D",cat:"gaming",price:99.99,tag:"PLAYSTATION",desc:"Casque audio pour les sessions gaming.",img:"https://gmedia.playstation.com/is/image/SIEPDC/pulse-3d-headset-product-thumbnail-01-en-14sep20"},
+ {name:"Console PlayStation 5",cat:"gaming",price:499.99,tag:"PLAYSTATION",desc:"Console PlayStation 5 — visuel produit.",img:"https://www.tradeinn.com/f/14001/140014486/playstation-ps5-console-refurbished.jpg"},
+ {name:"Carte V-Bucks — 1 000",cat:"vbucks",price:8.99,tag:"FORTNITE",desc:"Visuel de carte V-Bucks — prix indicatif.",img:"https://imageio.forbes.com/specials-images/imageserve/5db44b1bc538200007817100/0x0.jpg?fit=bounds&format=jpg&height=900&width=1600"},
+ {name:"Carte V-Bucks — 2 800",cat:"vbucks",price:22.99,tag:"FORTNITE",desc:"Visuel de carte V-Bucks — prix indicatif.",img:"https://imageio.forbes.com/specials-images/imageserve/5db44b1bc538200007817100/0x0.jpg?fit=bounds&format=jpg&height=900&width=1600"},
+ {name:"Carte V-Bucks — 5 000",cat:"vbucks",price:36.99,tag:"FORTNITE",desc:"Visuel de carte V-Bucks — prix indicatif.",img:"https://imageio.forbes.com/specials-images/imageserve/5db44b1bc538200007817100/0x0.jpg?fit=bounds&format=jpg&height=900&width=1600"}
 ];
-
 let cart=[];
-
-function money(n){
- return n.toLocaleString("fr-FR",{style:"currency",currency:"EUR"});
+function money(n){return n.toLocaleString("fr-FR",{style:"currency",currency:"EUR"});}
+function card(item,type,index){
+ const pos=item.position?`object-position:${item.position} center;`:"";
+ return `<article class="product"><div class="product-art"><span class="product-tag">${item.tag}</span><img src="${item.img}" alt="${item.name}" style="${pos}" onerror="this.style.display='none';this.parentElement.style.background='#e7e7e7';this.parentElement.insertAdjacentHTML('beforeend','<span style=&quot;color:#333;font-size:13px;font-weight:bold;text-align:center&quot;>Visuel indisponible</span>')"></div><div class="product-info"><small>${type==='console'?'PLAYSTATION':item.cat.toUpperCase()}</small><h3>${item.name}</h3><p>${item.desc}</p><div class="product-bottom"><span class="price">${money(item.price)}</span><button class="add" onclick="addCart('${type}',${index})">AJOUTER AU PANIER</button></div></div></article>`;
 }
-
-function consoleSVG(c){
- return `<svg viewBox="0 0 200 230" xmlns="http://www.w3.org/2000/svg">
- <ellipse cx="100" cy="211" rx="58" ry="8" fill="#000" opacity=".4"/>
- <path d="M73 15 Q48 24 43 68 L47 196 Q51 211 75 205 L88 49 Q90 20 73 15Z" fill="${c.color}" stroke="${c.edge}" stroke-width="3"/>
- <path d="M126 15 Q151 24 157 68 L153 196 Q149 211 125 205 L112 49 Q110 20 126 15Z" fill="${c.color}" stroke="${c.edge}" stroke-width="3"/>
- <path d="M89 36 Q100 30 111 36 L119 198 Q100 207 81 198Z" fill="#111522"/>
- <path d="M89 36 Q100 30 111 36" stroke="#fff" stroke-width="3" opacity=".7"/>
- <circle cx="100" cy="191" r="3" fill="#4f8cff"/>
- </svg>`;
-}
-
-function renderConsoles(){
- document.getElementById("console-products").innerHTML=consoles.map((c,i)=>`
- <article class="product">
-  <div class="console-art">
-   <span class="console-label">${c.tag}</span>${consoleSVG(c)}
-  </div>
-  <div class="product-info">
-   <small>PLAYSTATION CONCEPT</small>
-   <h3>${c.name}</h3>
-   <p>Concept visuel personnalisé FOOTNITE.</p>
-   <div class="product-bottom">
-    <span class="price">${money(c.price)}</span>
-    <button class="add" onclick="addCart('console',${i})">AJOUTER +</button>
-   </div>
-  </div>
- </article>`).join("");
-}
-
+function renderConsoles(){document.getElementById("console-products").innerHTML=consoles.map((p,i)=>card(p,"console",i)).join("");}
 function renderProducts(){
  const q=document.getElementById("search").value.toLowerCase();
  const f=document.getElementById("filter").value;
- const list=products.filter(p=>
-  (f==="all"||p.cat===f) &&
-  (p.name.toLowerCase().includes(q)||p.desc.toLowerCase().includes(q))
- );
- const area=document.getElementById("products");
- if(!list.length){
-  area.innerHTML='<p style="color:#aab2c4">Aucun produit trouvé.</p>';
-  return;
- }
- area.innerHTML=list.map(p=>`
-  <article class="product">
-   <div class="product-art">
-    <span class="product-tag">${p.tag}</span>
-    <img src="${p.img}" alt="${p.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-    <span class="art-text" style="display:none">${p.name}</span>
-   </div>
-   <div class="product-info">
-    <small>${p.cat.toUpperCase()}</small>
-    <h3>${p.name}</h3>
-    <p>${p.desc}</p>
-    <div class="product-bottom">
-     <span class="price">${money(p.price)}</span>
-     <button class="add" onclick="addCart('product',${products.indexOf(p)})">AJOUTER +</button>
-    </div>
-   </div>
-  </article>`).join("");
+ const list=products.map((p,i)=>({...p,index:i})).filter(p=>(f==="all"||p.cat===f)&&(p.name.toLowerCase().includes(q)||p.desc.toLowerCase().includes(q)));
+ document.getElementById("products").innerHTML=list.length?list.map(p=>card(p,"product",p.index)).join():'<p style="color:#a3a8b3">Aucun produit trouvé.</p>';
 }
-
-function setFilter(category){
- document.getElementById("filter").value=category;
- renderProducts();
-}
-
+function setFilter(cat){document.getElementById("filter").value=cat;renderProducts();}
 function addCart(type,index){
- let item=type==="console"?consoles[index]:products[index];
- let name=item.name;
- let existing=cart.find(p=>p.name===name);
- if(existing)existing.qty++;
- else cart.push({name:name,price:item.price,qty:1});
+ const item=type==="console"?consoles[index]:products[index];
+ const found=cart.find(p=>p.name===item.name);
+ if(found)found.qty++;else cart.push({name:item.name,price:item.price,qty:1});
  updateCart();
 }
-
 function updateCart(){
  document.getElementById("count").textContent=cart.reduce((s,p)=>s+p.qty,0);
  document.getElementById("total").textContent=money(cart.reduce((s,p)=>s+p.price*p.qty,0));
- document.getElementById("cart-items").innerHTML=cart.length?
- cart.map(p=>`<div class="cart-line"><span>${p.name} × ${p.qty}</span><strong>${money(p.price*p.qty)}</strong></div>`).join("")
- :"Ton panier est vide.";
+ document.getElementById("cart-items").innerHTML=cart.length?cart.map(p=>`<div class="cart-line"><span>${p.name} × ${p.qty}</span><strong>${money(p.price*p.qty)}</strong></div>`).join(""):"Ton panier est vide.";
 }
-
-function toggleCart(){
- document.getElementById("cart").classList.toggle("open");
-}
-function clearCart(){
- cart=[];
- updateCart();
-}
-
-renderConsoles();
-renderProducts();
-updateCart();
+function toggleCart(){document.getElementById("cart").classList.toggle("open");}
+function clearCart(){cart=[];updateCart();}
+renderConsoles();renderProducts();updateCart();
 </script>
 </body>
 </html>
