@@ -3,312 +3,215 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#ffffff">
-<title>FOOTNITE — Boutique officielle</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff">
+<title>FOOTNITE — Football, Gaming & Technologie</title>
 
 <style>
 :root{
-  --black:#101114;
   --red:#e52b36;
-  --grey:#f3f3f3;
+  --black:#111;
+  --grey:#f4f4f4;
   --muted:#777;
-  --line:#e7e7e7;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;color:var(--black);background:white}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--black);background:#fff}
 a{text-decoration:none;color:inherit}
 button,input,select{font:inherit}
 button{cursor:pointer}
-img{display:block;max-width:100%}
 .container{width:min(1440px,94%);margin:auto}
 
 /* BANDEAU */
 .topbar{
-  background:var(--black);color:white;
-  text-align:center;padding:10px;
-  font-size:10px;font-weight:800;letter-spacing:1.5px;
+  background:#111;color:#fff;text-align:center;
+  padding:10px;font-size:10px;font-weight:900;letter-spacing:1.5px
 }
-.topbar span{color:#ff555e}
+.topbar span{color:#ff5963}
 
 /* HEADER */
-header{
-  position:sticky;top:0;z-index:50;
-  background:white;border-bottom:1px solid var(--line);
-}
+header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #eee}
 .header-main{
   min-height:78px;display:flex;align-items:center;
-  justify-content:space-between;gap:25px;
+  justify-content:space-between;gap:25px
 }
 .logo{display:flex;align-items:center;gap:10px}
-.logo img{width:43px;height:43px;object-fit:contain}
+.logo img{width:44px;height:44px;object-fit:contain}
 .logo strong{font-size:25px;letter-spacing:2px;font-weight:1000}
 .logo strong span{color:var(--red)}
-.search{
-  flex:1;max-width:500px;position:relative;
-}
+.search{flex:1;max-width:510px}
 .search input{
-  width:100%;border:1px solid #ddd;background:#f7f7f7;
-  padding:14px 18px;border-radius:3px;font-size:12px;
-  outline:none;
+  width:100%;padding:14px 17px;border:1px solid #ddd;
+  background:#f7f7f7;outline:none;font-size:12px
 }
 .search input:focus{border-color:var(--red)}
-.header-actions{display:flex;gap:18px;align-items:center}
-.header-actions button{
-  border:0;background:none;font-size:11px;font-weight:900;
-}
+.header-actions{display:flex;align-items:center;gap:15px}
 .cart-button{
-  background:var(--red)!important;color:white;
-  padding:13px 18px;border-radius:2px;
+  border:0;background:var(--red);color:#fff;
+  padding:14px 18px;font-size:10px;font-weight:900
 }
-.menu-toggle{display:none}
+.menu-toggle{display:none;border:0;background:none;font-size:23px}
 
-/* NAVIGATION */
-.nav-wrap{border-top:1px solid var(--line)}
-nav{
-  display:flex;justify-content:center;
-  align-items:center;gap:34px;min-height:48px;
-}
-nav a{
-  font-size:11px;font-weight:900;
-  text-transform:uppercase;letter-spacing:.6px;
-  padding:17px 0;position:relative;
+/* MENU */
+.nav-wrap{border-top:1px solid #eee}
+nav{display:flex;justify-content:center;align-items:center;gap:34px;min-height:48px}
+nav>a,.nav-dropdown>a{
+  font-size:11px;font-weight:900;letter-spacing:.6px;
+  text-transform:uppercase;padding:17px 0;display:block
 }
 nav a:hover{color:var(--red)}
-nav a.sale{color:var(--red)}
-.nav-dropdown{
-  position:relative;
-}
+.nav-dropdown{position:relative}
 .mega{
-  display:none;position:absolute;top:100%;left:0;
-  width:560px;background:white;
-  border:1px solid var(--line);
-  box-shadow:0 12px 30px #00000012;
-  padding:25px;grid-template-columns:repeat(3,1fr);
-  gap:20px;
+  display:none;position:absolute;top:100%;left:0;width:560px;
+  background:white;border:1px solid #eee;
+  box-shadow:0 12px 30px #0002;padding:25px;
+  grid-template-columns:repeat(3,1fr);gap:20px
 }
 .nav-dropdown:hover .mega{display:grid}
-.mega h4{font-size:11px;margin-bottom:13px}
-.mega a{
-  display:block;padding:7px 0;
-  font-size:11px;color:#666;text-transform:none;
-  font-weight:500;
-}
+.mega h4{font-size:11px;margin-bottom:12px}
+.mega a{display:block;font-size:11px;color:#666;padding:7px 0;font-weight:500}
 .mega a:hover{color:var(--red)}
 
-/* HERO */
+/* ACCUEIL */
 .hero{
-  position:relative;min-height:520px;
-  margin-top:20px;overflow:hidden;
-  background:#17191e;color:white;
-  display:flex;align-items:center;
+  position:relative;min-height:530px;margin-top:20px;
+  overflow:hidden;background:#151515;color:#fff;
+  display:flex;align-items:center
 }
 .hero>img{
   position:absolute;inset:0;width:100%;height:100%;
-  object-fit:cover;opacity:.55;
+  object-fit:cover;opacity:.58
 }
 .hero:after{
   content:"";position:absolute;inset:0;
-  background:linear-gradient(90deg,#08090c 0%,#08090cbb 45%,transparent 100%);
+  background:linear-gradient(90deg,#080808 0%,#080808c9 42%,#08080815 100%)
 }
-.hero-content{
-  position:relative;z-index:2;
-  padding:60px 7%;max-width:650px;
-}
-.hero-tag{
-  font-size:10px;font-weight:900;
-  letter-spacing:3px;color:#ff6870;
-}
+.hero-content{position:relative;z-index:2;padding:55px 7%;max-width:700px}
+.eyebrow{font-size:10px;font-weight:900;letter-spacing:3px;color:#ff626c}
 .hero h1{
-  font-size:clamp(50px,7vw,88px);
-  line-height:.92;letter-spacing:-4px;
-  margin:20px 0;
+  font-size:clamp(48px,7vw,88px);line-height:.92;
+  letter-spacing:-4px;margin:20px 0
 }
 .hero h1 span{color:var(--red)}
-.hero p{font-size:14px;line-height:1.8;color:#ddd;max-width:420px}
+.hero p{font-size:14px;line-height:1.8;color:#ddd;max-width:430px}
 .hero-buttons{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
 .btn{
-  display:inline-block;padding:15px 22px;
-  background:var(--red);color:white;
-  font-size:10px;font-weight:900;letter-spacing:1px;
-  border:0;transition:.2s;
+  display:inline-block;background:var(--red);color:#fff;
+  padding:16px 22px;font-size:10px;font-weight:900;
+  letter-spacing:1px;border:1px solid var(--red);transition:.2s
 }
-.btn:hover{background:#bd1824}
-.btn-outline{background:transparent;border:1px solid white}
-.btn-outline:hover{background:white;color:black}
+.btn:hover{background:#bd1724;border-color:#bd1724}
+.btn-outline{background:transparent;border-color:#fff}
+.btn-outline:hover{background:#fff;color:#111}
 
 /* SECTIONS */
-section.content{padding:65px 0}
+section.content{padding:62px 0}
 .section-title{
-  display:flex;justify-content:space-between;
-  align-items:end;gap:15px;margin-bottom:25px;
+  display:flex;justify-content:space-between;align-items:end;
+  gap:15px;margin-bottom:25px
 }
-.section-title h2{
-  font-size:clamp(25px,4vw,36px);
-  letter-spacing:-1px;text-transform:uppercase;
-}
+.section-title h2{font-size:clamp(25px,4vw,36px);letter-spacing:-1px;text-transform:uppercase}
 .section-title p{font-size:12px;color:var(--muted);margin-top:8px}
 .view-all{font-size:10px;font-weight:900;text-decoration:underline}
 
-/* CATEGORY CARDS */
-.categories{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
-}
-.category{
-  min-height:190px;position:relative;overflow:hidden;
-  background:#ddd;color:white;
-}
-.category img{
-  width:100%;height:190px;object-fit:cover;
-  transition:.4s;
-}
-.category:hover img{transform:scale(1.06)}
+/* CATÉGORIES */
+.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.category{height:210px;position:relative;overflow:hidden;background:#222;color:#fff}
+.category img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.category:hover img{transform:scale(1.07)}
 .category:after{
   content:"";position:absolute;inset:0;
-  background:linear-gradient(0deg,#000b,transparent 75%);
+  background:linear-gradient(0deg,#000c,transparent 75%)
 }
 .category strong{
-  position:absolute;z-index:2;bottom:18px;left:18px;
-  font-size:17px;letter-spacing:1px;
+  position:absolute;z-index:2;bottom:19px;left:19px;
+  font-size:17px;letter-spacing:1px
 }
 
-/* PROMO STRIP */
+/* BANDEAU */
 .promo-strip{
-  background:var(--red);color:white;
-  display:grid;grid-template-columns:repeat(3,1fr);
-  margin:15px 0;
+  background:var(--red);color:#fff;
+  display:grid;grid-template-columns:repeat(3,1fr);margin:15px 0
 }
-.promo-item{text-align:center;padding:24px 10px;border-right:1px solid #ffffff40}
+.promo-item{text-align:center;padding:24px 10px;border-right:1px solid #ffffff55}
 .promo-item:last-child{border:0}
 .promo-item strong{display:block;font-size:13px;margin-bottom:6px}
-.promo-item span{font-size:10px;opacity:.9}
+.promo-item span{font-size:10px}
 
-/* PRODUCTS */
-.toolbar{
-  display:flex;gap:12px;margin:25px 0;flex-wrap:wrap;
-}
+/* PRODUITS */
+.toolbar{display:flex;gap:12px;margin:25px 0;flex-wrap:wrap}
 .toolbar input,.toolbar select{
-  padding:13px;border:1px solid #ddd;background:white;
-  font-size:12px;outline:none;
+  padding:13px;border:1px solid #ddd;background:#fff;
+  font-size:12px;outline:none
 }
 .toolbar input{flex:1;min-width:200px}
-.products{
-  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:16px;
-}
-.product{
-  position:relative;min-width:0;
-  border:1px solid #eee;background:white;
-  transition:.2s;
-}
-.product:hover{box-shadow:0 8px 24px #00000012;transform:translateY(-3px)}
+.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.product{min-width:0;border:1px solid #eee;background:#fff;transition:.2s}
+.product:hover{box-shadow:0 8px 25px #00000013;transform:translateY(-3px)}
 .product-photo{
-  height:250px;background:#f5f5f5;
-  position:relative;padding:15px;
+  height:255px;background:#f4f4f4;position:relative;
   display:flex;align-items:center;justify-content:center;
-  overflow:hidden;
+  overflow:hidden;padding:12px
 }
-.product-photo img{
-  width:100%;height:100%;object-fit:contain;
-  transition:.3s;
-}
+.product-photo img{width:100%;height:100%;object-fit:contain;transition:.3s}
 .product:hover .product-photo img{transform:scale(1.04)}
 .tag{
-  position:absolute;top:12px;left:12px;
-  background:var(--red);color:white;
-  font-size:8px;font-weight:900;
-  padding:7px 9px;letter-spacing:1px;
+  position:absolute;z-index:2;top:12px;left:12px;
+  background:var(--red);color:#fff;padding:7px 9px;
+  font-size:8px;font-weight:900;letter-spacing:1px
 }
 .product-info{padding:15px}
-.product-brand{
-  color:#888;font-size:9px;
-  font-weight:800;letter-spacing:1px;
-}
+.product-brand{font-size:9px;font-weight:900;color:#888;letter-spacing:1px}
 .product h3{font-size:13px;margin:8px 0;min-height:30px}
 .product-desc{font-size:10px;color:#777;line-height:1.5;min-height:30px}
-.product-bottom{
-  display:flex;align-items:center;
-  justify-content:space-between;gap:8px;margin-top:15px;
-}
+.product-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:15px}
 .price{font-size:16px;font-weight:900}
-.add{
-  background:var(--black);color:white;
-  border:0;padding:11px 13px;
-  font-size:9px;font-weight:900;
-}
+.add{background:#111;color:#fff;border:0;padding:11px 13px;font-size:9px;font-weight:900}
 .add:hover{background:var(--red)}
 .empty{grid-column:1/-1;text-align:center;padding:35px;color:#777}
 
-/* FEATURE BANNER */
+/* BANNIÈRE */
 .feature{
-  min-height:260px;background:#111;color:white;
+  min-height:270px;background:#111;color:#fff;
   display:flex;align-items:center;justify-content:space-between;
-  padding:40px 6%;overflow:hidden;gap:20px;
+  padding:40px 6%;overflow:hidden;gap:20px
 }
 .feature h2{font-size:clamp(30px,5vw,52px);margin:12px 0}
 .feature p{font-size:12px;color:#bbb;line-height:1.7}
 .feature-mark{font-size:90px;color:var(--red);font-weight:1000}
 
 /* FOOTER */
-footer{background:#111;color:white;margin-top:60px;padding:50px 0 20px}
-.footer-grid{
-  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;
-  gap:30px;padding-bottom:40px;
-}
+footer{background:#111;color:#fff;margin-top:60px;padding:50px 0 20px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px;padding-bottom:40px}
 .footer-grid h3{font-size:13px;margin-bottom:18px}
-.footer-grid p,.footer-grid a{
-  display:block;color:#aaa;font-size:11px;
-  line-height:2.2;
-}
-.footer-grid a:hover{color:white}
+.footer-grid p,.footer-grid a{display:block;color:#aaa;font-size:11px;line-height:2.2}
+.footer-grid a:hover{color:#fff}
 .footer-bottom{
-  border-top:1px solid #333;padding-top:20px;
-  color:#888;font-size:10px;
-  display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;
+  border-top:1px solid #333;padding-top:20px;color:#888;
+  font-size:10px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap
 }
 
 /* PANIER */
-.overlay{
-  display:none;position:fixed;inset:0;
-  background:#0009;z-index:90;
-}
+.overlay{display:none;position:fixed;inset:0;background:#0009;z-index:90}
 .overlay.open{display:block}
 .cart{
   position:fixed;right:0;top:0;z-index:100;
-  width:min(420px,100%);height:100%;
-  background:white;padding:25px;
-  transform:translateX(110%);transition:.25s;
-  overflow:auto;color:#111;
+  width:min(420px,100%);height:100%;background:#fff;
+  padding:25px;transform:translateX(110%);transition:.25s;overflow:auto
 }
 .cart.open{transform:translateX(0)}
-.cart-head{
-  display:flex;justify-content:space-between;
-  align-items:center;border-bottom:1px solid #ddd;padding-bottom:18px;
-}
+.cart-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ddd;padding-bottom:18px}
 .cart-head h2{font-size:19px}
 .cart-head button{border:0;background:none;font-size:28px}
 .cart-items{padding:15px 0}
-.cart-item{
-  display:flex;justify-content:space-between;
-  gap:12px;padding:14px 0;border-bottom:1px solid #eee;
-}
+.cart-item{display:flex;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid #eee}
 .cart-item h4{font-size:12px;margin-bottom:7px}
 .cart-item small{font-size:10px;color:#777}
 .cart-item-actions{display:flex;gap:8px;align-items:center;margin-top:9px}
-.cart-item-actions button{
-  width:25px;height:25px;border:0;background:#eee;
-}
+.cart-item-actions button{width:25px;height:25px;border:0;background:#eee}
 .cart-item-price{font-size:12px;font-weight:900}
-.cart-total{
-  border-top:1px solid #ddd;padding-top:18px;
-  display:flex;justify-content:space-between;font-weight:900;
-}
-.checkout{
-  margin-top:18px;width:100%;padding:15px;
-  background:var(--red);border:0;color:white;
-  font-size:10px;font-weight:900;
-}
+.cart-total{border-top:1px solid #ddd;padding-top:18px;display:flex;justify-content:space-between;font-weight:900}
+.checkout{margin-top:18px;width:100%;padding:15px;background:var(--red);border:0;color:#fff;font-size:10px;font-weight:900}
 .note{font-size:10px;color:#777;line-height:1.6;margin-top:12px}
 .empty-cart{font-size:12px;color:#777;padding:20px 0}
 
@@ -337,9 +240,9 @@ footer{background:#111;color:white;margin-top:60px;padding:50px 0 20px}
   .products{grid-template-columns:1fr}
   .product-photo{height:260px}
   .categories{grid-template-columns:1fr 1fr}
-  .category,.category img{height:150px;min-height:150px}
+  .category{height:150px}
   .promo-strip{grid-template-columns:1fr}
-  .promo-item{border-right:0;border-bottom:1px solid #ffffff40}
+  .promo-item{border-right:0;border-bottom:1px solid #ffffff55}
   .footer-grid{grid-template-columns:1fr}
 }
 </style>
@@ -363,7 +266,7 @@ footer{background:#111;color:white;margin-top:60px;padding:50px 0 20px}
     </div>
 
     <div class="header-actions">
-      <button onclick="openCart()" class="cart-button">PANIER (<span id="count">0</span>)</button>
+      <button class="cart-button" onclick="openCart()">PANIER (<span id="count">0</span>)</button>
       <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     </div>
   </div>
@@ -378,14 +281,16 @@ footer{background:#111;color:white;margin-top:60px;padding:50px 0 20px}
           <div><h4>COLLECTION</h4><a href="#boutique" onclick="filter('maillots')">Nouvelle collection</a><a href="#boutique" onclick="filter('maillots')">Sélection FOOTNITE</a></div>
         </div>
       </div>
+
       <div class="nav-dropdown">
         <a href="#boutique">GAMING</a>
         <div class="mega">
           <div><h4>CONSOLES</h4><a href="#boutique" onclick="filter('consoles')">PlayStation</a><a href="#boutique" onclick="filter('consoles')">Manettes</a></div>
           <div><h4>ACCESSOIRES</h4><a href="#boutique" onclick="filter('souris')">Souris gaming</a><a href="#boutique" onclick="filter('claviers')">Claviers gaming</a></div>
-          <div><h4>UNIVERS</h4><a href="#jeux">Jeux vidéo</a><a href="#jeux">Gaming</a></div>
+          <div><h4>UNIVERS</h4><a href="#boutique" onclick="filter('consoles')">Découvrir le gaming</a></div>
         </div>
       </div>
+
       <div class="nav-dropdown">
         <a href="#boutique">TECHNOLOGIE</a>
         <div class="mega">
@@ -394,9 +299,10 @@ footer{background:#111;color:white;margin-top:60px;padding:50px 0 20px}
           <div><h4>HIGH-TECH</h4><a href="#boutique">Tous les produits</a></div>
         </div>
       </div>
+
       <a href="#nouveautes">NOUVEAUTÉS</a>
       <a href="#boutique">TOUTE LA BOUTIQUE</a>
-      <a class="sale" href="#boutique">SÉLECTION</a>
+      <a href="#boutique" style="color:#e52b36">SÉLECTION</a>
     </nav>
   </div>
 </header>
@@ -404,9 +310,9 @@ footer{background:#111;color:white;margin-top:60px;padding:50px 0 20px}
 <main class="container">
 
   <section class="hero" id="accueil">
-    <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=1800" alt="Football" onerror="this.style.display='none'">
+    <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=1800&auto=format&fit=crop" alt="Football" onerror="this.style.display='none'">
     <div class="hero-content">
-      <div class="hero-tag">LA NOUVELLE GÉNÉRATION</div>
+      <div class="eyebrow">LA NOUVELLE GÉNÉRATION</div>
       <h1>YOUR GAME.<br><span>YOUR STYLE.</span></h1>
       <p>Découvre l'univers FOOTNITE : football, gaming et technologie. Tout ce qui te passionne, au même endroit.</p>
       <div class="hero-buttons">
@@ -420,21 +326,22 @@ footer{background:#111;color:white;margin-top:60px;padding:50px 0 20px}
     <div class="section-title">
       <div><h2>Explore nos univers</h2><p>Retrouve tes catégories préférées.</p></div>
     </div>
+
     <div class="categories">
       <a class="category" href="#boutique" onclick="filter('maillots')">
-        <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=700" alt="Football" onerror="this.closest('.category').style.display='none'">
+        <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=800&auto=format&fit=crop" alt="Football" onerror="this.src=categoryFallback('FOOTBALL')">
         <strong>FOOTBALL</strong>
       </a>
       <a class="category" href="#boutique" onclick="filter('consoles')">
-        <img src="https://images.unsplash.com/photo-1486401899868-0e435ed85128?w=700" alt="Gaming" onerror="this.closest('.category').style.display='none'">
+        <img src="https://images.unsplash.com/photo-1592840496694-26d035b52b48?w=800&auto=format&fit=crop" alt="Gaming" onerror="this.src=categoryFallback('GAMING')">
         <strong>GAMING</strong>
       </a>
       <a class="category" href="#boutique" onclick="filter('iphones')">
-        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=700" alt="Technologie" onerror="this.closest('.category').style.display='none'">
+        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&auto=format&fit=crop" alt="Smartphones" onerror="this.src=categoryFallback('TECH')">
         <strong>SMARTPHONES</strong>
       </a>
       <a class="category" href="#boutique" onclick="filter('ordinateurs')">
-        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=700" alt="Ordinateurs" onerror="this.closest('.category').style.display='none'">
+        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&auto=format&fit=crop" alt="Ordinateurs" onerror="this.src=categoryFallback('ORDINATEURS')">
         <strong>ORDINATEURS</strong>
       </a>
     </div>
@@ -458,8 +365,9 @@ footer{background:#111;color:white;margin-top:60px;padding:50px 0 20px}
     <div class="section-title">
       <div><h2>La boutique</h2><p>Découvre tous nos produits.</p></div>
     </div>
+
     <div class="toolbar">
-      <input id="search2" type="search" placeholder="Rechercher..." oninput="renderProducts()">
+      <input id="search2" type="search" placeholder="Rechercher un produit..." oninput="renderProducts()">
       <select id="category" onchange="renderProducts()">
         <option value="all">Toutes les catégories</option>
         <option value="maillots">Maillots de football</option>
@@ -471,13 +379,14 @@ footer{background:#111;color:white;margin-top:60px;padding:50px 0 20px}
         <option value="ordinateurs">Ordinateurs Apple</option>
       </select>
     </div>
+
     <div class="products" id="productGrid"></div>
   </section>
 
   <section class="content">
     <div class="feature">
       <div>
-        <div class="hero-tag">L'ESPRIT FOOTNITE</div>
+        <div class="eyebrow">L'ESPRIT FOOTNITE</div>
         <h2>DU TERRAIN<br>À L'ÉCRAN.</h2>
         <p>Un seul univers. Toutes tes passions.</p>
         <a href="#boutique" class="btn" style="margin-top:20px">DÉCOUVRIR</a>
@@ -522,6 +431,7 @@ footer{background:#111;color:white;margin-top:60px;padding:50px 0 20px}
 </footer>
 
 <div class="overlay" id="overlay" onclick="closeCart()"></div>
+
 <aside class="cart" id="cart">
   <div class="cart-head">
     <h2>MON PANIER</h2>
@@ -537,111 +447,219 @@ footer{background:#111;color:white;margin-top:60px;padding:50px 0 20px}
 </aside>
 
 <script>
+/* VISUELS DE SECOURS */
+function makeFallback(label, symbol){
+  const svg = `
+  <svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
+    <defs>
+      <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#292929"/>
+        <stop offset="1" stop-color="#090909"/>
+      </linearGradient>
+    </defs>
+    <rect width="800" height="800" fill="url(#g)"/>
+    <circle cx="400" cy="340" r="210" fill="#e52b36" opacity=".12"/>
+    <text x="400" y="390" text-anchor="middle" font-size="180" fill="#ffffff">${symbol}</text>
+    <text x="400" y="650" text-anchor="middle" font-family="Arial" font-size="44" font-weight="bold" fill="#ffffff">${label}</text>
+    <text x="400" y="710" text-anchor="middle" font-family="Arial" font-size="25" fill="#e52b36">FOOTNITE</text>
+  </svg>`;
+  return "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg);
+}
+
+function categoryFallback(name){
+  return makeFallback(name,"★");
+}
+
+const fallbackImages={
+  maillots:makeFallback("FOOTBALL","⚽"),
+  iphones:makeFallback("SMARTPHONE","▯"),
+  ecouteurs:makeFallback("AUDIO","♫"),
+  consoles:makeFallback("GAMING","🎮"),
+  souris:makeFallback("SOURIS","⌖"),
+  claviers:makeFallback("CLAVIER","⌨"),
+  ordinateurs:makeFallback("APPLE","▣")
+};
+
 const products=[
-{id:1,name:"Maillot de football rouge",brand:"FOOTBALL",category:"maillots",price:44.99,image:"https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=800"},
-{id:2,name:"Maillot de football",brand:"SPORT",category:"maillots",price:39.99,image:"https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800"},
-{id:3,name:"Maillot de football bleu",brand:"FOOTBALL",category:"maillots",price:49.99,image:"https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=800"},
-{id:4,name:"iPhone 17",brand:"APPLE",category:"iphones",price:969,image:"https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=800"},
-{id:5,name:"iPhone Pro",brand:"APPLE",category:"iphones",price:1199,image:"https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800"},
-{id:6,name:"iPhone design classique",brand:"APPLE",category:"iphones",price:799,image:"https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=800"},
-{id:7,name:"Écouteurs sans fil",brand:"AUDIO",category:"ecouteurs",price:89.99,image:"https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?w=800"},
-{id:8,name:"Casque audio",brand:"AUDIO",category:"ecouteurs",price:119.99,image:"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800"},
-{id:9,name:"Écouteurs premium",brand:"AUDIO",category:"ecouteurs",price:149.99,image:"https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=800"},
-{id:10,name:"PlayStation 5 classique",brand:"PLAYSTATION",category:"consoles",price:549.99,image:"https://www.tradeinn.com/f/14001/140014486/playstation-ps5-console-refurbished.jpg"},
-{id:11,name:"PlayStation 5 Slim digitale",brand:"PLAYSTATION",category:"consoles",price:499.99,image:"https://boulanger.scene7.com/is/image/Boulanger/0711719020837_h_f_l_0?fmt=png-alpha&hei=800&wid=800"},
-{id:12,name:"PlayStation 5 Pro",brand:"PLAYSTATION",category:"consoles",price:899.99,image:"https://boulanger.scene7.com/is/image/Boulanger/0711719024040_h_f_l_0?fmt=png-alpha&hei=800&wid=800"},
-{id:13,name:"Manette DualSense",brand:"PLAYSTATION",category:"consoles",price:74.99,image:"https://images.unsplash.com/photo-1600080972464-8e5f35f63d08?w=800"},
-{id:14,name:"Souris gaming",brand:"GAMING",category:"souris",price:59.99,image:"https://images.unsplash.com/photo-1527814050087-3793815479db?w=800"},
-{id:15,name:"Souris gaming sans fil",brand:"GAMING",category:"souris",price:99.99,image:"https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=800"},
-{id:16,name:"Souris gaming ergonomique",brand:"GAMING",category:"souris",price:79.99,image:"https://images.unsplash.com/photo-1613141411244-0e4ac259d217?w=800"},
-{id:17,name:"Clavier mécanique RGB",brand:"GAMING",category:"claviers",price:129.99,image:"https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800"},
-{id:18,name:"Clavier compact",brand:"GAMING",category:"claviers",price:99.99,image:"https://images.unsplash.com/photo-1595225476474-87563907a212?w=800"},
-{id:19,name:"Clavier gaming premium",brand:"GAMING",category:"claviers",price:159.99,image:"https://images.unsplash.com/photo-1595044426077-d36d9236d54a?w=800"},
-{id:20,name:"MacBook Air",brand:"APPLE",category:"ordinateurs",price:1199,image:"https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800"},
-{id:21,name:"MacBook Pro",brand:"APPLE",category:"ordinateurs",price:1999,image:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800"},
-{id:22,name:"iMac",brand:"APPLE",category:"ordinateurs",price:1599,image:"https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800"}
+{id:1,name:"Maillot de football rouge",brand:"FOOTBALL",category:"maillots",price:44.99,image:"https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=800&auto=format&fit=crop"},
+{id:2,name:"Maillot de football",brand:"SPORT",category:"maillots",price:39.99,image:"https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&auto=format&fit=crop"},
+{id:3,name:"Maillot de football bleu",brand:"FOOTBALL",category:"maillots",price:49.99,image:"https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=800&auto=format&fit=crop"},
+
+{id:4,name:"iPhone 17",brand:"APPLE",category:"iphones",price:969,image:"https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=800&auto=format&fit=crop"},
+{id:5,name:"iPhone Pro",brand:"APPLE",category:"iphones",price:1199,image:"https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&auto=format&fit=crop"},
+{id:6,name:"iPhone design classique",brand:"APPLE",category:"iphones",price:799,image:"https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=800&auto=format&fit=crop"},
+
+{id:7,name:"Écouteurs sans fil",brand:"AUDIO",category:"ecouteurs",price:89.99,image:"https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?w=800&auto=format&fit=crop"},
+{id:8,name:"Casque audio",brand:"AUDIO",category:"ecouteurs",price:119.99,image:"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop"},
+{id:9,name:"Écouteurs premium",brand:"AUDIO",category:"ecouteurs",price:149.99,image:"https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=800&auto=format&fit=crop"},
+
+{id:10,name:"PlayStation 5 classique",brand:"PLAYSTATION",category:"consoles",price:549.99,image:"https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=800&auto=format&fit=crop"},
+{id:11,name:"PlayStation 5 Slim digitale",brand:"PLAYSTATION",category:"consoles",price:499.99,image:"https://images.unsplash.com/photo-1607853202273-797f1c22a38e?w=800&auto=format&fit=crop"},
+{id:12,name:"PlayStation 5 Pro",brand:"PLAYSTATION",category:"consoles",price:899.99,image:"https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=800&auto=format&fit=crop"},
+{id:13,name:"Manette de jeu sans fil",brand:"GAMING",category:"consoles",price:74.99,image:"https://images.unsplash.com/photo-1600080972464-8e5f35f63d08?w=800&auto=format&fit=crop"},
+
+{id:14,name:"Souris gaming",brand:"GAMING",category:"souris",price:59.99,image:"https://images.unsplash.com/photo-1527814050087-3793815479db?w=800&auto=format&fit=crop"},
+{id:15,name:"Souris gaming sans fil",brand:"GAMING",category:"souris",price:99.99,image:"https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=800&auto=format&fit=crop"},
+{id:16,name:"Souris gaming ergonomique",brand:"GAMING",category:"souris",price:79.99,image:"https://images.unsplash.com/photo-1613141411244-0e4ac259d217?w=800&auto=format&fit=crop"},
+
+{id:17,name:"Clavier mécanique RGB",brand:"GAMING",category:"claviers",price:129.99,image:"https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800&auto=format&fit=crop"},
+{id:18,name:"Clavier compact",brand:"GAMING",category:"claviers",price:99.99,image:"https://images.unsplash.com/photo-1595225476474-87563907a212?w=800&auto=format&fit=crop"},
+{id:19,name:"Clavier gaming premium",brand:"GAMING",category:"claviers",price:159.99,image:"https://images.unsplash.com/photo-1595044426077-d36d9236d54a?w=800&auto=format&fit=crop"},
+
+{id:20,name:"MacBook Air",brand:"APPLE",category:"ordinateurs",price:1199,image:"https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&auto=format&fit=crop"},
+{id:21,name:"MacBook Pro",brand:"APPLE",category:"ordinateurs",price:1999,image:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800&auto=format&fit=crop"},
+{id:22,name:"iMac",brand:"APPLE",category:"ordinateurs",price:1599,image:"https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&auto=format&fit=crop"}
 ];
 
 let cartItems=[];
-const money=n=>n.toLocaleString("fr-FR",{style:"currency",currency:"EUR"});
 
+const money=n=>n.toLocaleString("fr-FR",{
+  style:"currency",currency:"EUR"
+});
+
+/* FICHE PRODUIT */
 function card(p){
-return `<article class="product">
-<div class="product-photo">
-<span class="tag">${p.brand}</span>
-<img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.closest('.product').remove()">
-</div>
-<div class="product-info">
-<div class="product-brand">${p.brand}</div>
-<h3>${p.name}</h3>
-<p class="product-desc">Découvre ce produit dans la sélection FOOTNITE.</p>
-<div class="product-bottom">
-<strong class="price">${money(p.price)}</strong>
-<button class="add" onclick="add(${p.id})">AJOUTER</button>
-</div>
-</div>
-</article>`;
+  const fallback=fallbackImages[p.category];
+
+  return `
+  <article class="product">
+    <div class="product-photo">
+      <span class="tag">${p.brand}</span>
+      <img
+        src="${p.image}"
+        alt="${p.name}"
+        loading="lazy"
+        data-fallback="${fallback}"
+        onerror="
+          if(this.dataset.fallback){
+            this.src=this.dataset.fallback;
+            this.dataset.fallback='';
+          }
+        "
+      >
+    </div>
+    <div class="product-info">
+      <div class="product-brand">${p.brand}</div>
+      <h3>${p.name}</h3>
+      <p class="product-desc">Découvre ce produit dans la sélection FOOTNITE.</p>
+      <div class="product-bottom">
+        <strong class="price">${money(p.price)}</strong>
+        <button class="add" onclick="add(${p.id})">AJOUTER</button>
+      </div>
+    </div>
+  </article>`;
 }
 
+/* AFFICHAGE DE LA BOUTIQUE */
 function renderProducts(){
-const q1=document.getElementById("search").value.toLowerCase().trim();
-const q2=document.getElementById("search2")?.value.toLowerCase().trim()||"";
-const q=q1||q2;
-const cat=document.getElementById("category").value;
-const list=products.filter(p=>(cat==="all"||p.category===cat)&&p.name.toLowerCase().includes(q));
-document.getElementById("productGrid").innerHTML=list.length?list.map(card).join():'<div class="empty">Aucun produit trouvé.</div>';
+  const q1=document.getElementById("search").value.toLowerCase().trim();
+  const q2=document.getElementById("search2").value.toLowerCase().trim();
+  const q=q1||q2;
+  const cat=document.getElementById("category").value;
+
+  const list=products.filter(p=>
+    (cat==="all"||p.category===cat)&&
+    (p.name+" "+p.brand).toLowerCase().includes(q)
+  );
+
+  document.getElementById("productGrid").innerHTML=
+    list.length
+    ?list.map(card).join("")
+    :'<div class="empty">Aucun produit trouvé.</div>';
 }
 
-function filter(cat){
-document.getElementById("category").value=cat;
-renderProducts();
-}
-
+/* PRODUITS À LA UNE */
 function renderFeatured(){
-document.getElementById("featured").innerHTML=products.slice(0,4).map(card).join("");
+  document.getElementById("featured").innerHTML=
+    products.slice(0,4).map(card).join("");
 }
 
+/* FILTRES */
+function filter(cat){
+  document.getElementById("category").value=cat;
+  renderProducts();
+}
+
+/* PANIER */
 function add(id){
-const p=products.find(x=>x.id===id);
-const old=cartItems.find(x=>x.id===id);
-if(old)old.qty++;
-else cartItems.push({...p,qty:1});
-updateCart();openCart();
+  const p=products.find(x=>x.id===id);
+  if(!p)return;
+
+  const old=cartItems.find(x=>x.id===id);
+  if(old)old.qty++;
+  else cartItems.push({...p,qty:1});
+
+  updateCart();
+  openCart();
 }
 
 function updateCart(){
-document.getElementById("count").textContent=cartItems.reduce((s,p)=>s+p.qty,0);
-document.getElementById("total").textContent=money(cartItems.reduce((s,p)=>s+p.price*p.qty,0));
-const area=document.getElementById("cartItems");
-if(!cartItems.length){area.innerHTML='<p class="empty-cart">Ton panier est vide.</p>';return;}
-area.innerHTML=cartItems.map(p=>`
-<div class="cart-item">
-<div>
-<h4>${p.name}</h4><small>${money(p.price)} l'unité</small>
-<div class="cart-item-actions">
-<button onclick="quantity(${p.id},-1)">−</button>
-<span>${p.qty}</span>
-<button onclick="quantity(${p.id},1)">+</button>
-<button onclick="removeItem(${p.id})">×</button>
-</div>
-</div>
-<strong class="cart-item-price">${money(p.price*p.qty)}</strong>
-</div>`).join("");
+  document.getElementById("count").textContent=
+    cartItems.reduce((s,p)=>s+p.qty,0);
+
+  document.getElementById("total").textContent=
+    money(cartItems.reduce((s,p)=>s+p.price*p.qty,0));
+
+  const area=document.getElementById("cartItems");
+
+  if(!cartItems.length){
+    area.innerHTML='<p class="empty-cart">Ton panier est vide.</p>';
+    return;
+  }
+
+  area.innerHTML=cartItems.map(p=>`
+    <div class="cart-item">
+      <div>
+        <h4>${p.name}</h4>
+        <small>${money(p.price)} l'unité</small>
+        <div class="cart-item-actions">
+          <button onclick="quantity(${p.id},-1)">−</button>
+          <span>${p.qty}</span>
+          <button onclick="quantity(${p.id},1)">+</button>
+          <button onclick="removeItem(${p.id})">×</button>
+        </div>
+      </div>
+      <strong class="cart-item-price">${money(p.price*p.qty)}</strong>
+    </div>
+  `).join("");
 }
 
 function quantity(id,n){
-const p=cartItems.find(x=>x.id===id);if(!p)return;
-p.qty+=n;if(p.qty<=0)removeItem(id);else updateCart();
+  const p=cartItems.find(x=>x.id===id);
+  if(!p)return;
+  p.qty+=n;
+  if(p.qty<=0)removeItem(id);
+  else updateCart();
 }
-function removeItem(id){cartItems=cartItems.filter(p=>p.id!==id);updateCart()}
-function openCart(){document.getElementById("cart").classList.add("open");document.getElementById("overlay").classList.add("open")}
-function closeCart(){document.getElementById("cart").classList.remove("open");document.getElementById("overlay").classList.remove("open")}
-function toggleMenu(){document.getElementById("navWrap").classList.toggle("show")}
-function checkout(){alert("Cette boutique est une démonstration. Aucun paiement réel n'est disponible.");}
 
+function removeItem(id){
+  cartItems=cartItems.filter(p=>p.id!==id);
+  updateCart();
+}
+
+function openCart(){
+  document.getElementById("cart").classList.add("open");
+  document.getElementById("overlay").classList.add("open");
+}
+
+function closeCart(){
+  document.getElementById("cart").classList.remove("open");
+  document.getElementById("overlay").classList.remove("open");
+}
+
+function toggleMenu(){
+  document.getElementById("navWrap").classList.toggle("show");
+}
+
+function checkout(){
+  alert("Cette boutique est une démonstration. Aucun paiement réel n'est disponible.");
+}
+
+/* DÉMARRAGE */
 renderProducts();
 renderFeatured();
 updateCart();
 </script>
+
 </body>
 </html>
