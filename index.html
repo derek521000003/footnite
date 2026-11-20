@@ -25,7 +25,7 @@ nav a:hover{color:var(--orange)}
 .cart-btn,.btn{border:0;border-radius:4px;padding:12px 17px;background:var(--red);color:white;font-size:11px;font-weight:900;letter-spacing:1px}
 .cart-btn:hover,.btn:hover{background:#ff4d58}
 .hero{max-width:1280px;min-height:560px;margin:24px auto 0;position:relative;overflow:hidden;background:#151922;border:1px solid var(--line)}
-.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#08090d 0%,rgba(8,9,13,.95) 30%,rgba(8,9,13,.55) 58%,rgba(8,9,13,.08) 100%),url("https://officialkdsports.co.uk/uploads/2025/02/how-to-identify-official-matches-understanding-official-matches-in-football.webp") center/cover}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#08090d 0%,rgba(8,9,13,.95) 30%,rgba(8,9,13,.55) 58%,rgba(8,9,13,.08) 100%),url("https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=1800") center/cover}
 .hero-content{position:relative;z-index:2;max-width:670px;padding:78px 7%}
 .kicker{font-size:10px;color:var(--orange);letter-spacing:3px;font-weight:900}
 .hero h1{font-size:clamp(52px,8vw,100px);line-height:.9;letter-spacing:-5px;margin:22px 0}
@@ -49,7 +49,7 @@ nav a:hover{color:var(--orange)}
 .game-info h3{font-size:18px;margin:9px 0}
 .game-info p{font-size:12px;color:var(--muted);line-height:1.6}
 .football-banner{margin-top:18px;min-height:245px;display:grid;grid-template-columns:1.4fr 1fr;border:1px solid var(--line);background:var(--panel)}
-.football-photo{min-height:245px;background:url("https://painel.zonadogol.com.br/uploads/brasileirao-2026-quando-comeca-termina-calendario-41d156e7dfef9a1e.webp") center/cover}
+.football-photo{min-height:245px;background:url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=1200") center/cover}
 .football-copy{padding:35px;display:flex;flex-direction:column;justify-content:center}
 .football-copy small{color:var(--orange);font-size:10px;letter-spacing:2px;font-weight:900}
 .football-copy h3{font-size:27px;margin:12px 0}
@@ -64,7 +64,7 @@ nav a:hover{color:var(--orange)}
 .product{background:var(--panel);border:1px solid var(--line);overflow:hidden;transition:.2s}
 .product-art{height:255px;background:#f3f3f3;position:relative;display:flex;align-items:center;justify-content:center;padding:16px;overflow:hidden}
 .product-art img{width:100%;height:100%;object-fit:contain}
-.product-tag{position:absolute;top:13px;left:13px;background:#11141b;color:white;padding:7px 9px;font-size:9px;letter-spacing:1px;font-weight:900}
+.product-tag{position:absolute;top:13px;left:13px;background:#11141b;color:white;padding:7px 9px;font-size:9px;letter-spacing:1px;font-weight:900;z-index:2}
 .product-info{padding:17px}
 .product-info small{font-size:9px;color:var(--orange);letter-spacing:2px;font-weight:900}
 .product-info h3{font-size:16px;margin:8px 0}
@@ -112,7 +112,7 @@ footer strong{color:white;letter-spacing:4px;font-size:15px}
 </header>
 
 <div class="cart-panel" id="cart">
- <div class="cart-head"><h3>MON PANIER</h3><button onclick="toggleCart()" aria-label="Fermer">×</button></div>
+ <div class="cart-head"><h3>MON PANIER</h3><button onclick="toggleCart()">×</button></div>
  <div id="cart-items">Ton panier est vide.</div>
  <div class="cart-total"><span>Total</span><span id="total">0,00 €</span></div>
  <button class="clear-cart" onclick="clearCart()">VIDER LE PANIER</button>
@@ -169,21 +169,20 @@ footer strong{color:white;letter-spacing:4px;font-size:15px}
   <a class="category" href="#boutique" onclick="setFilter('iphones')"><span>02 / MOBILE</span><div><strong>IPHONES</strong><small>Smartphones Apple</small></div></a>
   <a class="category" href="#boutique" onclick="setFilter('ecouteurs')"><span>03 / AUDIO</span><div><strong>ÉCOUTEURS</strong><small>Audio sans fil</small></div></a>
   <a class="category" href="#ps5" onclick="setFilter('gaming')"><span>04 / CONSOLES</span><div><strong>PS5 ET ACCESSOIRES</strong><small>Univers PlayStation</small></div></a>
-  <a class="category" href="#boutique" onclick="setFilter('vbucks')"><span>05 / FORTNITE</span><div><strong>V-BUCKS</strong><small>Cartes cadeaux</small></div></a>
-  <a class="category" href="#boutique" onclick="setFilter('souris')"><span>06 / GAMING</span><div><strong>SOURIS</strong><small>Souris pour ordinateur</small></div></a>
-  <a class="category" href="#boutique" onclick="setFilter('claviers')"><span>07 / GAMING</span><div><strong>CLAVIERS</strong><small>Claviers mécaniques et gaming</small></div></a>
-  <a class="category" href="#boutique" onclick="setFilter('ordinateurs')"><span>08 / APPLE</span><div><strong>ORDINATEURS APPLE</strong><small>MacBook et iMac</small></div></a>
+  <a class="category" href="#boutique" onclick="setFilter('souris')"><span>05 / GAMING</span><div><strong>SOURIS</strong><small>Souris pour ordinateur</small></div></a>
+  <a class="category" href="#boutique" onclick="setFilter('claviers')"><span>06 / GAMING</span><div><strong>CLAVIERS</strong><small>Claviers mécaniques et gaming</small></div></a>
+  <a class="category" href="#boutique" onclick="setFilter('ordinateurs')"><span>07 / APPLE</span><div><strong>ORDINATEURS APPLE</strong><small>MacBook et iMac</small></div></a>
  </div>
 </section>
 
 <section class="section" id="ps5">
  <div class="section-head">
   <small>COLLECTION PLAYSTATION</small>
-  <h2>LES CONSOLES PS5</h2>
-  <p>Découvre les consoles PlayStation 5.</p>
+  <h2>LES CONSOLES PLAYSTATION</h2>
+  <p>Trois modèles différents avec leurs propres visuels.</p>
  </div>
  <div class="products" id="console-products"></div>
- <p class="ps5-note">Prix indicatifs pour la maquette. <a href="https://www.playstation.com/fr-fr/ps5/buy-now.html" target="_blank" rel="noopener">Voir les consoles sur le site officiel PlayStation</a>.</p>
+ <p class="ps5-note">Prix indicatifs pour la maquette. <a href="https://www.playstation.com/fr-fr/ps5/buy-now.html" target="_blank" rel="noopener">Découvrir les consoles sur le site officiel PlayStation</a>.</p>
 </section>
 
 <section class="section" id="boutique">
@@ -200,7 +199,6 @@ footer strong{color:white;letter-spacing:4px;font-size:15px}
    <option value="iphones">iPhones</option>
    <option value="ecouteurs">Écouteurs</option>
    <option value="gaming">Accessoires PlayStation</option>
-   <option value="vbucks">V-Bucks</option>
    <option value="souris">Souris gaming</option>
    <option value="claviers">Claviers gaming</option>
    <option value="ordinateurs">Ordinateurs Apple</option>
@@ -218,15 +216,15 @@ footer strong{color:white;letter-spacing:4px;font-size:15px}
 
 <script>
 const consoles=[
- {name:"PlayStation 5 Slim — avec lecteur",price:549.99,tag:"LECTEUR DE DISQUE",desc:"Console PS5 Slim avec lecteur de disque.",img:"https://www.tradeinn.com/f/14001/140014486/playstation-ps5-console-refurbished.jpg"},
- {name:"PlayStation 5 Slim — édition numérique",price:499.99,tag:"ÉDITION NUMÉRIQUE",desc:"Console PS5 Slim sans lecteur de disque.",img:"https://www.01net.com/app/uploads/2024/09/ps5-Pro-PS5-slim-comparo.jpg",position:"left"},
- {name:"PlayStation 5 Pro — 2 To",price:899.99,tag:"MODÈLE PRO",desc:"Console PS5 Pro, édition numérique.",img:"https://www.01net.com/app/uploads/2024/09/ps5-Pro-PS5-slim-comparo.jpg",position:"right"}
+ {name:"PlayStation 5 classique",price:549.99,tag:"AVEC LECTEUR",desc:"Console PlayStation 5 avec lecteur de disque.",img:"https://www.tradeinn.com/f/14001/140014486/playstation-ps5-console-refurbished.jpg"},
+ {name:"PlayStation 5 Slim digitale",price:499.99,tag:"SLIM NUMÉRIQUE",desc:"Console PS5 Slim sans lecteur de disque.",img:"https://boulanger.scene7.com/is/image/Boulanger/0711719020837_h_f_l_0?fmt=png-alpha&hei=800&wid=800"},
+ {name:"PlayStation 5 Pro",price:899.99,tag:"MODÈLE PRO",desc:"Console PS5 Pro avec 2 To de stockage.",img:"https://boulanger.scene7.com/is/image/Boulanger/0711719024040_h_f_l_0?fmt=png-alpha&hei=800&wid=800"}
 ];
 
 const products=[
  {name:"Maillot PSG",cat:"maillots",price:89.99,tag:"FOOTBALL",desc:"Maillot du Paris Saint-Germain.",img:"https://pictures.tribuna.com/image/985674f3-d720-4990-86d9-fc46766b8bcb?quality=70&width=1920"},
  {name:"Maillot Liverpool",cat:"maillots",price:84.99,tag:"FOOTBALL",desc:"Maillot de football rouge.",img:"https://sneakershyllan.se/cdn/shop/files/3AD53A19-C419-4FD1-945A-3AD95FD7104D_1_201_a.jpg?v=1751288364"},
- {name:"Sélection de maillots",cat:"maillots",price:79.99,tag:"FOOTBALL",desc:"Découvre différents maillots de clubs.",img:"https://static.supersports.co.th/is/image/cenergy/210824_SSP---Football-New-Season-Jersey-2024_25_New-Arrivals_Editorial-Banner_1216x970?%24JPEG%24=&wid=608"},
+ {name:"Collection de maillots",cat:"maillots",price:79.99,tag:"FOOTBALL",desc:"Découvre différents maillots de clubs.",img:"https://static.supersports.co.th/is/image/cenergy/210824_SSP---Football-New-Season-Jersey-2024_25_New-Arrivals_Editorial-Banner_1216x970?%24JPEG%24=&wid=608"},
 
  {name:"iPhone 17",cat:"iphones",price:969,tag:"APPLE",desc:"Smartphone Apple.",img:"https://image.vandenborre.be/WEB/images/products/superzoom/apple_iphone-17-256gb-white_7654359_1.jpg"},
  {name:"iPhone 16 Pro",cat:"iphones",price:1199,tag:"APPLE",desc:"Smartphone Apple Pro.",img:"https://rptech.qa/cdn/shop/files/iPhone_16_Pro_White_Titanium_PDP_Image_Position_1__en-ME_61edb4d0-0c5d-4554-8bae-f0e45bc04179.png?v=1733896562"},
@@ -237,19 +235,14 @@ const products=[
 
  {name:"Manette DualSense",cat:"gaming",price:74.99,tag:"PLAYSTATION",desc:"Manette sans fil pour PS5.",img:"https://down-br.img.susercontent.com/file/sg-11134201-82580-mg880h04lnuxb"},
  {name:"Casque Pulse 3D",cat:"gaming",price:99.99,tag:"PLAYSTATION",desc:"Casque audio pour les sessions gaming.",img:"https://gmedia.playstation.com/is/image/SIEPDC/pulse-3d-headset-product-thumbnail-01-en-14sep20"},
- {name:"Console PlayStation 5",cat:"gaming",price:499.99,tag:"PLAYSTATION",desc:"Console PlayStation 5.",img:"https://www.tradeinn.com/f/14001/140014486/playstation-ps5-console-refurbished.jpg"},
-
- {name:"Carte V-Bucks — 1 000",cat:"vbucks",price:8.99,tag:"FORTNITE",desc:"Carte V-Bucks — prix indicatif.",img:"https://imageio.forbes.com/specials-images/imageserve/5db44b1bc538200007817100/0x0.jpg?fit=bounds&format=jpg&height=900&width=1600"},
- {name:"Carte V-Bucks — 2 800",cat:"vbucks",price:22.99,tag:"FORTNITE",desc:"Carte V-Bucks — prix indicatif.",img:"https://imageio.forbes.com/specials-images/imageserve/5db44b1bc538200007817100/0x0.jpg?fit=bounds&format=jpg&height=900&width=1600"},
- {name:"Carte V-Bucks — 5 000",cat:"vbucks",price:36.99,tag:"FORTNITE",desc:"Carte V-Bucks — prix indicatif.",img:"https://imageio.forbes.com/specials-images/imageserve/5db44b1bc538200007817100/0x0.jpg?fit=bounds&format=jpg&height=900&width=1600"},
 
  {name:"Logitech G502 HERO",cat:"souris",price:59.99,tag:"SOURIS GAMING",desc:"Souris gaming filaire avec boutons programmables.",img:"https://images.unsplash.com/photo-1527814050087-3793815479db?w=900"},
  {name:"Logitech G PRO X SUPERLIGHT",cat:"souris",price:129.99,tag:"SOURIS GAMING",desc:"Souris gaming sans fil légère.",img:"https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=900"},
- {name:"Razer DeathAdder",cat:"souris",price:79.99,tag:"SOURIS GAMING",desc:"Souris conçue pour les jeux vidéo.",img:"https://images.unsplash.com/photo-1613141411244-0e4ac259d217?w=900"},
+ {name:"Razer DeathAdder V3",cat:"souris",price:79.99,tag:"SOURIS GAMING",desc:"Souris ergonomique conçue pour le jeu.",img:"https://assets3.razerzone.com/rBbKG3at03idsvj5iiExUW1CFyc=/1920x1280/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh79%2Fhaf%2F9529652674590%2Fdeathadder-v3-2-500x500.png"},
 
- {name:"Clavier Logitech G PRO",cat:"claviers",price:109.99,tag:"CLAVIER GAMING",desc:"Clavier mécanique compact pour le jeu.",img:"https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=900"},
- {name:"Clavier gaming RGB",cat:"claviers",price:69.99,tag:"CLAVIER RGB",desc:"Clavier rétroéclairé pour ordinateur.",img:"https://images.unsplash.com/photo-1595225476474-87563907a212?w=900"},
- {name:"Clavier mécanique",cat:"claviers",price:89.99,tag:"MÉCANIQUE",desc:"Clavier mécanique pour jouer et travailler.",img:"https://images.unsplash.com/photo-1595044426077-d36d9236d54a?w=900"},
+ {name:"Logitech PRO X TKL",cat:"claviers",price:159.99,tag:"CLAVIER GAMING",desc:"Clavier mécanique sans fil compact.",img:"https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=1000"},
+ {name:"Razer BlackWidow V4",cat:"claviers",price:189.99,tag:"CLAVIER RGB",desc:"Clavier mécanique avec éclairage RGB.",img:"https://assets3.razerzone.com/WxxUmEsmsh9fAFVJ-JKED5wILAo=/1920x1280/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh36%2Fh5a%2F9640099184670%2Fblackwidow-v4-2-500x500.png"},
+ {name:"Razer BlackWidow V4 X",cat:"claviers",price:149.99,tag:"CLAVIER MÉCANIQUE",desc:"Clavier mécanique Razer avec touches macro.",img:"https://assets3.razerzone.com/vU-2VHqbcwmBoDl_78_x_1BshhA=/1920x1280/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh8%2Fh57%2F9640099217438%2Fblackwidow-v4-black-x-500x500.png"},
 
  {name:"MacBook Air",cat:"ordinateurs",price:1199,tag:"APPLE",desc:"Ordinateur portable Apple MacBook Air.",img:"https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=1000"},
  {name:"MacBook Pro",cat:"ordinateurs",price:1999,tag:"APPLE",desc:"Ordinateur portable Apple pour les usages avancés.",img:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=1000"},
@@ -263,14 +256,14 @@ function money(n){
 }
 
 function card(item,type,index){
- const pos=item.position?`object-position:${item.position} center;`:"";
  return `<article class="product">
  <div class="product-art">
  <span class="product-tag">${item.tag}</span>
- <img src="${item.img}" alt="${item.name}" style="${pos}" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=&quot;color:#333;font-size:13px;font-weight:bold;text-align:center&quot;>Photo indisponible</span>'">
+ <img src="${item.img}" alt="${item.name}" loading="lazy"
+ onerror="this.closest('.product').remove()">
  </div>
  <div class="product-info">
- <small>${type==='console'?'PLAYSTATION':item.cat.toUpperCase()}</small>
+ <small>${type==="console"?"PLAYSTATION":item.cat.toUpperCase()}</small>
  <h3>${item.name}</h3>
  <p>${item.desc}</p>
  <div class="product-bottom">
@@ -282,7 +275,8 @@ function card(item,type,index){
 }
 
 function renderConsoles(){
- document.getElementById("console-products").innerHTML=consoles.map((p,i)=>card(p,"console",i)).join("");
+ document.getElementById("console-products").innerHTML=
+ consoles.map((p,i)=>card(p,"console",i)).join("");
 }
 
 function renderProducts(){
